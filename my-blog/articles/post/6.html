@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!-- 声明文档类型 -->
+<html lang="en"> <!-- 设置文档语言为英语 -->
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，以确保页面在移动设备上正确显示 -->
+    <title>peng gan Blog</title>  <!-- 设置页面标题 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+</head>
+<body>
+<div class="header"> <!-- 定义一个类为header的div -->
+            <a href="../../index.html">My Blog</a> <!-- 链接内容 -->
+        </div>
+    <div class="container"> <!-- 定义一个类为container的div -->
+        
+        <div class="subheader"> <!-- 定义一个类为subheader的div -->
+            <h1>TV更改NTP&刷机</h1> <!-- 文章主题 -->
+      </div>
+        <div class="date" id="lastModified"></div> <!-- 定义一个类为date的div，显示创建时的日期与时间 -->
+        <div class="content"> <!-- 定义一个类为content的div -->
+            <!-- 文章内容 -->
+            <p> </span></p><p> ADB是什么 ADB的全称是 Android Debug Bridge ，顾名词义，这是用来给Android系统和App做Debug调试用的工具。你可以看做是其他终端和安卓设备的通信。实现原理就不说了，容易跑题。</p><p> ADB调试通常分为有线和无线两种，下文中提到的调试方法都是用WIFI 无线的方式。不在赘述。</p><p> 盒子精并不需要使用太多的命令行。对你来说。你只需要了解如何连接adb 如何断开adb就够了。至于执行什么命令 通常是复制粘贴。除此之外，你需要有一个基本的认知，那就是报错之后不要继续执行后面的步骤</span>。要检查前面到底哪里报错了，根据报错信息，提供给有经验的人或者自行百度。利用现有的线索给帮助你的人提供有价值的信息。</p><p>----------废话的分割线------------</p><p>以google tv为例，其他盒子类似。</p><p>配套adb工具包：</p><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>https://github.com/ligl0702/Pan/releases/tag/ADB</code></pre><h1 class="pgc-h-arrow-right"><strong>1、打开adb</strong></h1><p>设置-系统-关于-连续点击4次 Android TV操作系统版本，此时回到系统就有开发者选项-勾选USB调试</p><h1 class="pgc-h-arrow-right"><strong>2、连接adb</strong></h1><p><strong>双击cmd-here.exe</strong></p><p><strong>输入： adb connect 盒子的ip地址</strong></p><p>执行这个步骤之后，过几秒，屏幕上会弹出一个授权提示，</span></p><p>此处必须要点击允许</span></p><p>之后你的命令行可能会出现：</span></p><h1 class="pgc-h-arrow-right"><strong>failed to connect to 192.168.6.240:5555</span></strong></h1><p>如果你不听劝，报错之后依旧执行后面的步骤，很可能会出现</p><h1 class="pgc-h-arrow-right">error: more than one device/emulator</span></h1><p>别着急，这是因为你先申请的连接adb，后点的设备授权，因此连接失败。此时你可以输入</p><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb disconnect</code></pre><blockquote><p> (断开连接,此时屏幕出现 <strong>disconnected everything</strong>)</p></blockquote><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb connect 192.168.xx.xx</code></pre><blockquote><p> (再次连接adb)</p></blockquote><p>此时屏幕上出现 </p><h1 class="pgc-h-arrow-right"><strong>connected to 192.168.6.240:5555</strong></h1><p>这样就代表连接成功了，此时你在写入adb命令 才是真正可以生效的。而前面如果你没有真正连接成功，后面的步骤是无法生效的！！！<strong>一定要记住 不要报错后，一错再错！！！！</span></strong></p><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell settings put global ntp_server ntp1.aliyun.com &nbsp; &nbsp;</code></pre><blockquote><p>（写入新的ntp服务器地址）</p></blockquote><p>如何你可以手动重启，或者命令行重启</p><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb reboot</code></pre><p>开机后，检查一些时间是否正确，一般时间正确的情况下，联网的问题就解决了。</span></p></article></div></div></div></div></div> 
+              
+ 
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+                </footer>
+</body>
+</html>

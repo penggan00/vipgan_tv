@@ -1,0 +1,127 @@
+<!DOCTYPE html> <!-- 声明文档类型 -->
+<html lang="en"> <!-- 设置文档语言为英语 -->
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，以确保页面在移动设备上正确显示 -->
+    <title>peng gan Blog</title>  <!-- 设置页面标题 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+</head>
+<body>
+<div class="header"> <!-- 定义一个类为header的div -->
+            <a href="../../index.html">My Blog</a> <!-- 链接内容 -->
+        </div>
+    <div class="container"> <!-- 定义一个类为container的div -->
+        
+        <div class="subheader"> <!-- 定义一个类为subheader的div -->
+            <h1> clouflare开源图床</h1> <!-- 文章主题 -->
+      </div>
+        <div class="date" id="lastModified"></div> <!-- 定义一个类为date的div，显示创建时的日期与时间 -->
+        <div class="content"> <!-- 定义一个类为content的div -->
+            <!-- 文章内容 -->
+            <a href="https://youtu.be/H_RKkkmBiTs">视频解说：https://youtu.be/H_RKkkmBiTs</a>  
+            <h1 id="telegraph-Image：搭建你的专属开源图床"><a href="#telegraph-Image：搭建你的专属开源图床" class="headerlink" title="telegraph-Image：搭建你的专属开源图床"></a><a target="_blank" rel="noopener" href="https://github.com/x-dr/telegraph-Image">telegraph-Image：搭建你的专属开源图床</a></h1><p> <strong></strong>提供的 Pages、D1，搭建一个专属于你自己的开源图床，如果你有更多需求还可通过优选加速图片载入时间，更有接入ModerateContent提供的审查图像内容的API key，过滤涩涩内容！</p>
+            <h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3>
+            <strong>无限图片储存数量</strong>，你可以上传不限数量的图片 <strong>but！</strong><em><strong>单张图片不能超过5MB</strong></em>
+            <strong>无需服务器</strong>，托管于Cloudflare的网络上，当使用量不超过Cloudflare的免费额度时，完全免费
+            <strong>无需域名</strong>，可以使用Cloudflare Pages提供的*.pages.dev的免费二级域名，同时也支持绑定自定义域名
+            <strong>支持图片审查API</strong>，可根据需要开启，开启后不良图片将自动屏蔽，不再加载
+            <strong>支持后台管理</strong>，日志管理，查看访问前20的Referer、IP、img,可以对上传的图片进行在线预览，添加白名单，黑名单等操作
+            </ol>
+            <hr>
+            <h2 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h2><h3 id="1-Pages-部署-telegraph-Image-项目"><a href="#1-Pages-部署-telegraph-Image-项目" class="headerlink" title="1. Pages 部署 telegraph-Image 项目"></a>1. Pages 部署 <strong>telegraph-Image 项目</strong></h3>
+            打开<a target="_blank" rel="noopener" href="https://github.com/x-dr/telegraph-Image">telegraph-Image仓库</a>项目，先给作者点击<code>Star</code>后再点击<code>Fork</code>！可以增加成功率！！！<strong>手动狗头</strong>
+            回到 <strong>Workers 和 Pages</strong> &gt; <strong>概述</strong> &gt; <strong>创建</strong> &gt; <strong>Pages</strong> &gt; <strong>连接到Git</strong> &gt; 选择<code>telegraph-Image</code>项目 &gt; <strong>保存并部署</strong>即可
+            
+            <hr>
+            <h3 id="2-绑定自定义域"><a href="#2-绑定自定义域" class="headerlink" title="2. 绑定自定义域"></a>2. 绑定自定义域</h3>
+            这里推荐优先使用已经转入CF的域名，并开启<strong>小黄云</strong>。如果你没有域名，也可以退而求其次使用<strong>CNAME方式</strong>使用免费域名接入自定义域。
+            回到 <strong>Workers 和 Pages &#x2F;</strong><code>telegraph-Image</code>项目 &gt; <strong>设置</strong> &gt; <strong>函数</strong> &gt; <strong>放置</strong> &gt; <strong>制作</strong> &gt; <strong>智能</strong> &gt; <strong>保存</strong>
+            
+            <hr>
+            <h3 id="3-创建管理后台"><a href="#3-创建管理后台" class="headerlink" title="3. 创建管理后台"></a>3. 创建管理后台</h3>
+            3.1 回到 <strong>Workers 和 Pages</strong> &gt; <strong>D1</strong> &gt; <strong>创建数据库</strong> &gt; <strong>仪表盘</strong> &gt; 数据库名称<code>img</code><em>(名称可取任意值)</em> &gt; <strong>创建</strong>
+            3.2 进入<code>img</code>数据库 &gt; <strong>控制台</strong> &gt; <code>粘贴以下代码</code>后 &gt; 点击<strong>执行</strong> &gt; 等待提示<strong>此查询已成功执行。</strong>  
+               <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>DROP TABLE IF EXISTS tgimglog;
+CREATE TABLE IF NOT EXISTS tgimglog (
+    `id` integer PRIMARY KEY NOT NULL,
+    `url` text,
+    `referer` text,
+    `ip` varchar(255),
+    `time` DATE
+);
+DROP TABLE IF EXISTS imginfo;
+CREATE TABLE IF NOT EXISTS imginfo (
+    `id` integer PRIMARY KEY NOT NULL,
+    `url` text,
+    `referer` text,
+    `ip` varchar(255),
+    `rating` text,
+    `total` integer,
+    `time` DATE
+);
+</code></pre>
+            3.3 回到 <strong>Workers 和 Pages &#x2F;</strong><code>telegraph-Image</code>项目 &gt; <strong>设置</strong> &gt; <strong>函数</strong> &gt; <strong>D1 数据库绑定</strong> &gt; 变量名<code>IMG</code> &gt; <code>img</code>数据库 &gt; 点击<strong>保存</strong>
+            3.4 回到 <strong>Workers 和 Pages &#x2F;</strong><code>telegraph-Image</code>项目 &gt; <strong>设置</strong> &gt; <strong>环境变量</strong> &gt; <strong>为生产环境定义变量</strong> &gt; 变量内容如下:
+            变量名 <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>BASIC_USER</code></pre>，值为你的<strong>后台管理员用户名</strong>
+            变量名 <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>BASIC_PASS</code></pre>，值为你的<strong>后台管理员密码</strong>
+            <strong>无需审查涩涩内容可跳过这一步</strong>
+            打开<a target="_blank" rel="noopener" href="https://moderatecontent.com/signup">ModerateContent</a> API申请页面，输入你的邮箱后点击<strong>SUBMIT</strong>
+            前往你的邮箱将 <strong>ModerateContent.com Sup</strong> 邮件内的 <strong>API Key</strong> 复制出来
+            变量名<code>ModerateContentApiKey</code>，值为你的 <strong>API Key</strong>
+            
+            
+            点击<strong>保存</strong>
+            
+            
+            3.5 回到 <strong>Workers 和 Pages &#x2F;</strong><code>telegraph-Image</code>项目 &gt; <strong>部署</strong> &gt; 右下角<strong>三个点</strong> &gt; <strong>重试部署</strong>即可
+            
+            <hr>
+            <h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>例如：你的 <strong>Pages自定义域</strong> 为<code>img.131213.xyz</code></p>
+            
+            <code>https://img.131213.xyz</code> 为 <strong>图床上传使用地址</strong>
+            <code>https://img.131213.xyz/admin</code> 为 <strong>图床后台管理地址</strong>
+            <code>https://img.131213.xyz/list</code> 为 <strong>图床访问日志</strong>
+            
+            <hr>
+
+        <pre>    <h2 id="变量说明"><a href="#变量说明" class="headerlink" title="变量说明"></a>变量说明</h2><table>
+            <thead>
+            <tr>
+            <td>变量名</th>
+            <td>示例</th>
+            <td>备注</th>
+            </tr>
+            </thead>
+            <tbody><tr>
+            <td>BASIC_USER</td>
+            <td>admin</td>
+            <td>后台管理员用户名</td>
+            </tr>
+            <tr>
+            <td>BASIC_PASS</td>
+            <td>123456</td>
+            <td>后台管理员密码</td>
+            </tr>
+            <tr>
+            <td>ModerateContentApiKey</td>
+            <td>8ba353957d6c2bea538dca28a66a04cd</td>
+            <td>审查图像内容的API key</td>
+            </tr>
+            <tr>
+            <td>RATINGAPI</td>
+            <td><code>https://xxx.xxx/rating</code></td>
+            <td><a target="_blank" rel="noopener" href="https://github.com/x-dr/nsfwjs-api">自建的鉴黄api</a></td>
+            </tr>
+            </tbody></table>
+            <p>注意优先级 <code>RATINGAPI</code> &gt; <code>ModerateContentApiKey</code></p></pre>
+            <hr>
+            
+ <!-- 文章内容 -->
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+                </footer>
+</body>
+</html>

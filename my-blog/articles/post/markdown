@@ -1,0 +1,10 @@
+blog/
+│
+├── index.html
+├── style.css
+├── script.js
+├── articles.json
+└── articles/articles/
+    ├── article1.html
+    ├── article2.html
+    └── ...

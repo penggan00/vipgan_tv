@@ -1,0 +1,174 @@
+<!DOCTYPE html> <!-- 声明文档类型 -->
+<html lang="en"> <!-- 设置文档语言为英语 -->
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，以确保页面在移动设备上正确显示 -->
+    <title>peng gan Bolg</title>  <!-- 设置页面标题 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+</head>
+<body>
+<div class="header"> <!-- 定义一个类为header的div -->
+            <a href="../../index.html">My Blog</a> <!-- 链接内容 -->
+        </div>
+    <div class="container"> <!-- 定义一个类为container的div -->
+        
+        <div class="subheader"> <!-- 定义一个类为subheader的div -->
+            <h1>      10年免费主机部署vless节点</h1> <!-- 文章主题 -->
+      </div>
+        <div class="date" id="lastModified"></div> <!-- 定义一个类为date的div，显示创建时的日期与时间 -->
+        <div class="content"> <!-- 定义一个类为content的div -->
+            <!-- 文章内容 -->
+
+
+</script>
+        
+
+<h2>Serv00 是一家提供免费虚拟主机的厂商。它的免费套餐包含:</h2>
+<a>3GB 存储空间
+<a>512MB 内存
+<a>不限流量
+<a>支持PHP、MySQL等网站开发语言和数据库
+<a>提供免费的二级域名
+<a>可自定义开放端口
+<a>支持SSH访问
+<p>要求是每3个月需登录一次控制面板或SSH,避免账号被回收</p>
+
+<p>访问官网: <a href="https://www.serv00.com/" target="_blank" rel="noopener">https://www.serv00.com/</a>
+
+</p>
+
+
+<h2>点击「Register an account」进入注册页面,注册之前需要注意三点</h2>
+
+<a>邮箱必须是真实邮箱，需要激活验证</p>
+<p>用户名(Username)自己设置英文就可以，同时也代表域名比如yixiu,域名就是yixiu.serv00.com
+<a>答案(Answer)不要空着，可填写free</p>
+<p>输好之后点击「Create account」,如果用户名被占用了，换一个就行，如果没有被占用就会给你输入的邮箱发送消息。如果页面上方出现以下绿色提示信息，就代表账户注册成功了，去检查邮箱就可以
+<p>Serv00欢迎邮件包括所有的重要信息，包括后台管理面板和ssh登录的用户名密码，以及ssh主机名等，邮件千万记得保存，或者复制下来保存都可以。</p>
+<p>Serv00后台面板为DevilWeb，用起来还是很方便的，登录的账户密码就是邮件里面的Login和Password，这个账号同样适用其他服务，比如ssh、mysql等。如果没有安装第三方的ssh客户端可以使用windows自带的openssh，mac的终端来登录</p>
+
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>ssh xxxx@sx.serv00.com</code></pre>
+<span style="display:flex;"><span><span style="color:#75715e">#将 xxxx 换成自己的用户名，sx为s1-s4，依照欢迎邮件中的主机名</span>
+<span style="display:flex;"><span><span style="color:#75715e">#命令行在输入密码的时候是看不到的，输完之后直接点回车就可以</span>
+</div><p><strong>到目前位置serv00账号已经注册好了</strong></p>
+<h2 id="二cloudns域名托管到serv00">二、ClouDNS域名托管到serv00<a hidden class="anchor" aria-hidden="true" href="#二cloudns域名托管到serv00">#</a></h2>
+
+<a>打开<a href="https://www.cloudns.net/" target="_blank" rel="noopener">ClouDNS官网</a>和DevilWEB 网络面板（在邮件里面找面板的链接，用账号密码登录）
+<a>删除ClouDNS中域名所有的DNS记录
+<a>托管域名到serv00
+<a>域名会有双向解析的问题，把托管到serv00之后自动生成的DNS记录全部添加到ClouDNS中
+<a>后续如果有新的耳机域名解析也需要添加到ClouDNS
+
+<h2 id="三利用freessl生成免费证书">三、利用FreeSSL生成免费证书<a hidden class="anchor" aria-hidden="true" href="#三利用freessl生成免费证书">#</a></h2>
+
+<a>打开<a href="https://freessl.cn/" target="_blank" rel="noopener">FreeSSL官网</a>(有账号登录，没账号注册，非常简单)
+<a>解析的时候注意serv00和ClouDNS都需要解析
+
+<h2 id="四搭建vless节点">四、🔗搭建vless节点<a hidden class="anchor" aria-hidden="true" href="#四搭建vless节点">#</a></h2>
+<h3 id="1配置开启权限">1，配置【开启权限】<a hidden class="anchor" aria-hidden="true" href="#1配置开启权限">#</a></h3>
+
+<a>第一步需要做的就是开启可以运行自己应用的权限。Additional services -&gt; Run your own applications -&gt; Enabled 如果不开启这一项，自己的用户目录下的所有文件都无法添加可执行权限。
+
+<h3 id="2安装pm2">2，安装PM2<a hidden class="anchor" aria-hidden="true" href="#2安装pm2">#</a></h3>
+<p><a href="https://pm2.io/" target="_blank" rel="noopener">PM2</a> 是一款非常优秀的node.js进程管理工具。可以通过SSH用下面的指令一键安装。</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>bash <(curl -s https://raw.githubusercontent.com/k0baya/alist_repl/main/serv00/install-pm2.sh)
+</code></pre></div><p>使用pm2，请直接用路径调用：~/.npm-global/bin/pm2，例如~/.npm-global/bin/pm2 list 就可以看到自己添加的应用。</p>
+<details>
+<summary><strong>「 另外，在`SSH`中通过下面的指令就可以开启页面监控功能！不需要可以不开 」</strong></summary>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>~/.npm-global/bin/pm2 monitor
+</code></pre></div><p>如果没有账号可以按照提示创建就可以，然后会给出登录页面的地址。
+<a href="https://app.pm2.io/#/bucket/65f3be6efe520b3f5503d9aa" target="_blank" rel="noopener">https://app.pm2.io/#/bucket/65f3be6efe520b3f5503d9aa</a>
+用浏览器登录就可以看到了，非常的方便。</p>
+</details>
+<h3 id="3安装vless">3，安装Vless<a hidden class="anchor" aria-hidden="true" href="#3安装vless">#</a></h3>
+<p>Vless是一个代理节点应用，可以通过SSH用下面的指令一键安装。</p>
+<p>进入项目操作目录,以下命令行中&lt;Your-domain&gt;换成你的域名</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cd ~/domains/&lt;Your-domain&gt;
+</code></pre></div><p>克隆serv00-vless项目到</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>git clone https://github.com/qwer-search/serv00-vless <span style="colo">&amp;&amp;</span> mv -f serv00-vless vless <span style="color:">&amp;&amp;</span> cd vless <span style="color:">&amp;&amp;</span> rm -f README.md
+</code></pre></div><p>在serv00的管理页面上开启一个端口，Port reservation -&gt; Add port添加一个TCP的端口号。再在File Manager 里面找到Vless的文件下的app.js文件，修改里面的端口号为刚刚添加的端口号。类似下面修改为了12345</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>const port <span style="color:">=</span> process.env.PORT <span style="color:2">||</span> 12345;
+</code></pre></div><p>安装依赖</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>npm install
+</code></pre></div><p>安装完毕后，使用PM2启动并守护vless进程：</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>~/.npm-global/bin/pm2 start app.js --name vless
+</code></pre></div><p>接着去你的代理客户端软件中手动添加vless配置即可：</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>地址</td>
+<td>Panel 中 WWW Websites 选项卡里的你的 Domain name</td>
+</tr>
+<tr>
+<td>端口</td>
+<td>你放行的端口</td>
+</tr>
+<tr>
+<td>用户 ID</td>
+<td>37a0bd7c-8b9f-4693-8916-bd1e2da0a817</td>
+</tr>
+<tr>
+<td>传输协议</td>
+<td>ws</td>
+</tr>
+<tr>
+<td>伪装域名</td>
+<td>同地址</td>
+</tr>
+<tr>
+<td>ws path</td>
+<td>/</td>
+</tr>
+</tbody>
+</table>
+<p>也可以复制以下vless节点信息，修改&lt;域名地址&gt;为Panel 中 WWW Websites 选项卡里的你的 Domain name，&lt;端口&gt;为你放行的端口即可</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>vless://37a0bd7c-8b9f-4693-8916-bd1e2da0a817@&lt;域名地址&gt;:&lt;端口&gt;?flow<span style="color:">=</span>&amp;security<span style="color:">=</span>none&amp;encryption<span style="color:">=</span>none&amp;type<span style="color:">=</span>ws&amp;host<span style="color:">=</span>&lt;域名地址&gt;&amp;path<span style="color:">=</span>/&amp;sni<span style="color:">=</span>&amp;fp<span style="color:">=</span>&amp;pbk<span style="color:">=</span>&amp;sid<span style="color:">=</span><span style="color:#75715e">#%E4%B8%80%E4%BC%91vless%EF%BC%8CTG%E7%BE%A4%EF%BC%9Ahttps://t.me/yxjsjl</span>
+</code></pre></div><p>上表没有给出的可以不填。</p>
+<p>我用的客户端是v2rayU，按照这个配置就行。目前测试下来连接不是很稳定，延迟忽高忽低，有300ms左右。</p>
+<p><a href="https://scamalytics.com/" target="_blank" rel="noopener">纯净度检测</a></p>
+<h3 id="4自动化">4，自动化<a hidden class="anchor" aria-hidden="true" href="#4自动化">#</a></h3>
+<p>听说serv00会不定时重启机器，所以我们把PM2添加开机自启。而且serv00每三个月内必须要有一次登录面板或者SSH连接，不然会删号，也可以通过一个脚本解决问题，接下来我会详细说明。</p>
+<h4 id="自动续期">自动续期<a hidden class="anchor" aria-hidden="true" href="#自动续期">#</a></h4>
+<p>新建opt目录,并进入目录</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>mkdir ~/opt
+</code></pre></div><p>新建 auto-renew.sh 脚本：</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cat &gt; auto-renew.sh &lt;&lt; EOF
+#!/bin/bash
+
+while true; do
+  sshpass -p &#39;密码&#39; ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -tt 用户名@地址 &#34;exit&#34; &amp;
+  sleep 259200  #30天为259200秒
+done
+EOF</span>
+</code></pre></div><p>另外记得把其中的密码、用户名、ssh的地址修改为你自己的。</p>
+<p>给 auto-renew.sh添加可执行权限：</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>chmod +x auto-renew.sh
+</code></pre></div><p>使用PM2启动：</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>~/.npm-global/bin/pm2 start ./auto-renew.sh
+</code></pre></div><p>这样就会每隔一个月自动执行一次SSH连接，自己SSH自己进行续期。</p>
+<h4 id="自动启动">自动启动<a hidden class="anchor" aria-hidden="true" href="#自动启动">#</a></h4>
+<p>在serv00的管理页面上找到Cron jobs选项卡，使用Add cron job功能添加任务，Specify time选择After reboot，即为重启后运行。Form type选择Advanced，Command写：</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>/home/你的用户名/.npm-global/bin/pm2 resurrect
+</code></pre></div><p>添加完之后，在SSH窗口保存PM2的当前任务列表快照：</p>
+<div class="highlight"><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>~/.npm-global/bin/pm2 save
+</code></pre></div><p>这样每次serv00不定时重启任务时，都能自动调用PM2读取保存的任务列表快照，恢复任务列表。如果在保存了任务列表快照后又改变了任务PM2的任务列表，需要重新执行pm2 save以更新任务列表。</p>
+
+
+        </div>
+     
+            
+ <!-- 文章内容 -->
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+                </footer>
+</body>
+</html>

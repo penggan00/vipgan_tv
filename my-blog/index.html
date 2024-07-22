@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>peng gan blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header"> <!-- 定义一个类为header的div -->
+        <a href="../index.html">My Blog</a> <!-- 链接内容 -->
+    </div>
+    </header>
+    <main>
+        <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search articles..." oninput="searchArticles()">
+        </div>
+        <div id="articles"></div>
+        <div class="pagination"></div>
+    </main>
+    <script src="articles/articles1.js"></script> <!-- 引用第一份文章数据 -->
+    <script src="articles/articles2.js"></script> <!-- 引用第二份文章数据 -->
+    <script>
+
+        let articles = [];
+        if (typeof articles1 !== 'undefined') {
+            articles = articles.concat(articles1);
+        }
+        if (typeof articles2 !== 'undefined') {
+            articles = articles.concat(articles2);
+        }
+
+        let currentPage = 1;
+        const articlesPerPage = 10;
+
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+            return new Date(dateString).toLocaleDateString('en-CA', options);
+        }
+
+        function displayArticles(articles, page) {
+            const start = (page - 1) * articlesPerPage;
+            const end = page * articlesPerPage;
+            const paginatedArticles = articles.slice(start, end);
+
+            const articlesContainer = document.getElementById('articles');
+            articlesContainer.innerHTML = '';
+            paginatedArticles.forEach(article => {
+                const articleDiv = document.createElement('div');
+                articleDiv.classList.add('post');
+                articleDiv.innerHTML = `
+                    <h2><a href="${article.link}">${article.title}</a></h2>
+                    <span class="timestamp">${formatDate(article.lastModified)}</span>
+                `;
+                articlesContainer.appendChild(articleDiv);
+            });
+
+            const totalPages = Math.ceil(articles.length / articlesPerPage);
+            const paginationContainer = document.querySelector('.pagination');
+            paginationContainer.innerHTML = '';
+
+            const prevButton = document.createElement('button');
+            prevButton.textContent = "<";
+            prevButton.onclick = prevPage;
+            paginationContainer.appendChild(prevButton);
+
+            const pageNumbers = [];
+            if (totalPages <= 5) {
+                for (let i = 1; i <= totalPages; i++) {
+                    pageNumbers.push(i);
+                }
+            } else {
+                if (currentPage > 2) {
+                    pageNumbers.push(1);
+                    pageNumbers.push(2);
+                    if (currentPage > 3) pageNumbers.push('...');
+                }
+
+                if (currentPage > 1) pageNumbers.push(currentPage - 1);
+                pageNumbers.push(currentPage);
+                if (currentPage < totalPages) pageNumbers.push(currentPage + 1);
+
+                if (currentPage < totalPages - 1) {
+                    if (currentPage < totalPages - 2) pageNumbers.push('...');
+                    pageNumbers.push(totalPages - 1);
+                    pageNumbers.push(totalPages);
+                }
+            }
+
+            pageNumbers.forEach(pageNum => {
+                if (pageNum === '...') {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = "...";
+                    paginationContainer.appendChild(ellipsis);
+                } else {
+                    const pageNumButton = document.createElement('button');
+                    pageNumButton.textContent = pageNum;
+                    pageNumButton.onclick = function() {
+                        currentPage = pageNum;
+                        loadArticles();
+                    };
+                    if (pageNum === currentPage) pageNumButton.classList.add('active');
+                    paginationContainer.appendChild(pageNumButton);
+                }
+            });
+
+            const nextButton = document.createElement('button');
+            nextButton.textContent = ">";
+            nextButton.onclick = nextPage;
+            paginationContainer.appendChild(nextButton);
+
+            const pageInput = document.createElement('input');
+            pageInput.type = 'number';
+            pageInput.min = 1;
+            pageInput.max = totalPages;
+            pageInput.value = currentPage;
+            pageInput.onchange = function() {
+                currentPage = parseInt(this.value);
+                loadArticles();
+            };
+            paginationContainer.appendChild(pageInput);
+        }
+
+        function loadArticles() {
+            const sortedArticles = articles.sort((a, b) => new Date(b.lastModified) - new Date(a.lastModified));
+            displayArticles(sortedArticles, currentPage);
+        }
+
+        function nextPage() {
+            if ((currentPage * articlesPerPage) < articles.length) {
+                currentPage++;
+                loadArticles();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                loadArticles();
+            }
+        }
+
+        function searchArticles() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const filteredArticles = articles.filter(article => article.title.toLowerCase().includes(query));
+            displayArticles(filteredArticles, 1);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadArticles);
+        
+    </script>
+    
+</body>
+</html>

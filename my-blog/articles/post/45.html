@@ -1,0 +1,273 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>peng gan Blog</title>  
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+<div class="header"> 
+            <a href="../../index.html">My Blog</a> 
+        </div>
+    <div class="container"> 
+        
+        <div class="subheader"> 
+            <h1>sing-box新手指南        </h1> <!-- 文章主题 -->
+        </div>
+        <div class="date" id="lastModified"></div> 
+        <div class="content">  <!-- 文章内容 --><p>
+
+  <p>视频解说：<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9CQWZia0xpekZHYw" target="_blank" >https://youtu.be/BAfbkLizFGc</a></p><p><strong>自用专线机场推荐：</strong> <a href="https://bulianglin.com/g/aHR0cHM6Ly9iLjg4MDgwNS54eXo" target="_blank" >https://b.880805.xyz</a><br><strong>GIA线路VPS推荐：</strong> <a href="https://bulianglin.com/g/aHR0cHM6Ly9id2cuODgwODA1Lnh5eg" target="_blank" >https://bwg.880805.xyz</a></p><h2>相关链接</h2><p>官方文档：<a href="https://bulianglin.com/g/aHR0cHM6Ly9zaW5nLWJveC5zYWdlcm5ldC5vcmc" target="_blank" >https://sing-box.sagernet.org</a><br>图形化客户端：<a href="https://bulianglin.com/g/aHR0cHM6Ly9zaW5nLWJveC5zYWdlcm5ldC5vcmcvY2xpZW50cw" target="_blank" >https://sing-box.sagernet.org/clients</a><br>参考配置：<a href="https://bulianglin.com/g/aHR0cHM6Ly9zaW5nLWJveC5zYWdlcm5ldC5vcmcvbWFudWFsL3Byb3h5L2NsaWVudC8jYmFzaWMtdHVuLXVzYWdlLWZvci1jaGluZXNlLXVzZXJz" target="_blank" >https://sing-box.sagernet.org/manual/proxy/client/#basic-tun-usage-for-chinese-users</a></p><p>OpenWrt客户端（homeproxy）：<a href="https://bulianglin.com/g/aHR0cHM6Ly9naXRodWIuY29tL2ltbW9ydGFsd3J0L2hvbWVwcm94eQ" target="_blank" >https://github.com/immortalwrt/homeproxy</a><br>支持clash mode（homeproxy）：<a href="https://bulianglin.com/g/aHR0cHM6Ly9naXRodWIuY29tL2J1bGlhbmdsaW4vaG9tZXByb3h5" target="_blank" >https://github.com/bulianglin/homeproxy</a></p><blockquote><p>安装后如果没有显示clash api的选项，请清空浏览器缓存或者开启无痕窗口</p></blockquote><p>谷歌DoH：<a href="https://bulianglin.com/g/aHR0cHM6Ly9kbnMuZ29vZ2xlL2Rucy1xdWVyeQ" target="_blank" >https://dns.google/dns-query</a><br>rule-set规则集：<a href="https://bulianglin.com/g/aHR0cHM6Ly9naXRodWIuY29tL01ldGFDdWJlWC9tZXRhLXJ1bGVzLWRhdC90cmVlL3Npbmc" target="_blank" >https://github.com/MetaCubeX/meta-rules-dat/tree/sing</a></p><h2>相关教程回顾</h2><p>新手入门软路由指南：<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9KZlNKbVBGaUxfcw" target="_blank" >https://youtu.be/JfSJmPFiL_s</a><br>旁路由配置指南：<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9jRk9vYjNkamlPQQ" target="_blank" >https://youtu.be/cFOob3djiOA</a><br>OpenClash新手指南：<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9zODRDV2dLdXM0VQ" target="_blank" >https://youtu.be/s84CWgKus4U</a><br>进入暗网方法大全：<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9XMG85Q3BjU0l5VQ" target="_blank" >https://youtu.be/W0o9CpcSIyU</a><br>DNS泄漏实战演示：<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9UT2hGNVJjVEdpTQ" target="_blank" >https://youtu.be/TOhF5RcTGiM</a><br>DNS泄漏检测原理：<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9mcVJFTTZiMjVTWW4" target="_blank" >https://youtu.be/fqREM6b25SYn</a><br>奈飞DNS解锁原理：<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9WajRUR2Q5SWFRYw" target="_blank" >https://youtu.be/Vj4TGd9IaQc</a></p><h2>参考配置</h2><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>{
+  &quot;log&quot;: {    &quot;disabled&quot;: false,
+    &quot;level&quot;: &quot;warn&quot;,
+    &quot;output&quot;: &quot;/var/run/homeproxy/sing-box-c.log&quot;,
+    &quot;timestamp&quot;: true
+  },
+  &quot;dns&quot;: {
+    &quot;servers&quot;: [
+      {
+        &quot;tag&quot;: &quot;default-dns&quot;,
+        &quot;address&quot;: &quot;223.5.5.5&quot;,
+        &quot;detour&quot;: &quot;direct-out&quot;
+      },
+      {
+        &quot;tag&quot;: &quot;system-dns&quot;,
+        &quot;address&quot;: &quot;local&quot;,
+        &quot;detour&quot;: &quot;direct-out&quot;
+      },
+      {
+        &quot;tag&quot;: &quot;block-dns&quot;,
+        &quot;address&quot;: &quot;rcode://name_error&quot;
+      },
+      {
+        &quot;tag&quot;: &quot;google&quot;,
+        &quot;address&quot;: &quot;https://dns.google/dns-query&quot;,
+        &quot;address_resolver&quot;: &quot;default-dns&quot;,
+        &quot;address_strategy&quot;: &quot;ipv4_only&quot;,
+        &quot;strategy&quot;: &quot;ipv4_only&quot;,
+        &quot;client_subnet&quot;: &quot;1.0.1.0&quot;
+      }
+    ],
+    &quot;rules&quot;: [
+      {
+        &quot;outbound&quot;: &quot;any&quot;,
+        &quot;server&quot;: &quot;default-dns&quot;
+      },
+      {
+        &quot;query_type&quot;: &quot;HTTPS&quot;,
+        &quot;server&quot;: &quot;block-dns&quot;
+      },
+      {
+        &quot;clash_mode&quot;: &quot;direct&quot;,
+        &quot;server&quot;: &quot;default-dns&quot;
+      },
+      {
+        &quot;clash_mode&quot;: &quot;global&quot;,
+        &quot;server&quot;: &quot;google&quot;
+      },
+      {
+        &quot;rule_set&quot;: &quot;cnsite&quot;,
+        &quot;server&quot;: &quot;default-dns&quot;
+      }
+    ],
+    &quot;strategy&quot;: &quot;ipv4_only&quot;,
+    &quot;disable_cache&quot;: false,
+    &quot;disable_expire&quot;: false,
+    &quot;independent_cache&quot;: false,
+    &quot;final&quot;: &quot;google&quot;
+  },
+  &quot;inbounds&quot;: [
+    {
+      &quot;type&quot;: &quot;direct&quot;,
+      &quot;tag&quot;: &quot;dns-in&quot;,
+      &quot;listen&quot;: &quot;::&quot;,
+      &quot;listen_port&quot;: 5333
+    },
+    {
+      &quot;type&quot;: &quot;mixed&quot;,
+      &quot;tag&quot;: &quot;mixed-in&quot;,
+      &quot;listen&quot;: &quot;::&quot;,
+      &quot;listen_port&quot;: 5330,
+      &quot;sniff&quot;: true,
+      &quot;sniff_override_destination&quot;: false,
+      &quot;set_system_proxy&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;redirect&quot;,
+      &quot;tag&quot;: &quot;redirect-in&quot;,
+      &quot;listen&quot;: &quot;::&quot;,
+      &quot;listen_port&quot;: 5331,
+      &quot;sniff&quot;: true,
+      &quot;sniff_override_destination&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;tproxy&quot;,
+      &quot;tag&quot;: &quot;tproxy-in&quot;,
+      &quot;listen&quot;: &quot;::&quot;,
+      &quot;listen_port&quot;: 5332,
+      &quot;network&quot;: &quot;udp&quot;,
+      &quot;sniff&quot;: true,
+      &quot;sniff_override_destination&quot;: false
+    }
+  ],
+  &quot;outbounds&quot;: [
+    {
+      &quot;type&quot;: &quot;direct&quot;,
+      &quot;tag&quot;: &quot;direct-out&quot;,
+      &quot;routing_mark&quot;: 100
+    },
+    {
+      &quot;type&quot;: &quot;block&quot;,
+      &quot;tag&quot;: &quot;block-out&quot;
+    },
+    {
+      &quot;type&quot;: &quot;dns&quot;,
+      &quot;tag&quot;: &quot;dns-out&quot;
+    },
+    {
+      &quot;type&quot;: &quot;urltest&quot;,
+      &quot;tag&quot;: &quot;自动选择&quot;,
+      &quot;outbounds&quot;: [
+        &quot;香港&quot;,
+        &quot;日本&quot;,
+        &quot;美国&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;selector&quot;,
+      &quot;tag&quot;: &quot;手动选择&quot;,
+      &quot;outbounds&quot;: [
+        &quot;direct-out&quot;,
+        &quot;block-out&quot;,
+        &quot;自动选择&quot;,
+        &quot;香港&quot;,
+        &quot;日本&quot;,
+        &quot;美国&quot;
+      ],
+      &quot;default&quot;: &quot;自动选择&quot;
+    },
+    {
+      &quot;type&quot;: &quot;selector&quot;,
+      &quot;tag&quot;: &quot;GLOBAL&quot;,
+      &quot;outbounds&quot;: [
+        &quot;direct-out&quot;,
+        &quot;香港&quot;,
+        &quot;日本&quot;,
+        &quot;美国&quot;
+      ],
+      &quot;default&quot;: &quot;手动选择&quot;
+    },
+    {
+      &quot;type&quot;: &quot;shadowsocks&quot;,
+      &quot;tag&quot;: &quot;香港&quot;,
+      &quot;routing_mark&quot;: 100,
+      &quot;server&quot;: &quot;abc.com&quot;,
+      &quot;server_port&quot;: 10001,
+      &quot;password&quot;: &quot;fdc43e321a&quot;,
+      &quot;method&quot;: &quot;aes-128-gcm&quot;
+    },
+    {
+      &quot;type&quot;: &quot;shadowsocks&quot;,
+      &quot;tag&quot;: &quot;日本&quot;,
+      &quot;routing_mark&quot;: 100,
+      &quot;server&quot;: &quot;abc.com&quot;,
+      &quot;server_port&quot;: 10002,
+      &quot;password&quot;: &quot;fdc43e321a&quot;,
+      &quot;method&quot;: &quot;aes-128-gcm&quot;
+    },
+    {
+      &quot;type&quot;: &quot;shadowsocks&quot;,
+      &quot;tag&quot;: &quot;美国&quot;,
+      &quot;routing_mark&quot;: 100,
+      &quot;server&quot;: &quot;abc.com&quot;,
+      &quot;server_port&quot;: 10003,
+      &quot;password&quot;: &quot;fdc43e321a&quot;,
+      &quot;method&quot;: &quot;aes-128-gcm&quot;
+    }
+  ],
+  &quot;route&quot;: {
+    &quot;rules&quot;: [
+      {
+        &quot;inbound&quot;: &quot;dns-in&quot;,
+        &quot;outbound&quot;: &quot;dns-out&quot;
+      },
+      {
+        &quot;protocol&quot;: &quot;dns&quot;,
+        &quot;outbound&quot;: &quot;dns-out&quot;
+      },
+      {
+        &quot;protocol&quot;: &quot;quic&quot;,
+        &quot;outbound&quot;: &quot;block-out&quot;
+      },
+      {
+        &quot;clash_mode&quot;: &quot;direct&quot;,
+        &quot;outbound&quot;: &quot;direct-out&quot;
+      },
+      {
+        &quot;clash_mode&quot;: &quot;global&quot;,
+        &quot;outbound&quot;: &quot;GLOBAL&quot;
+      },
+      {
+        &quot;rule_set&quot;: [
+          &quot;cnip&quot;,
+          &quot;cnsite&quot;
+        ],
+        &quot;outbound&quot;: &quot;direct-out&quot;
+      }
+    ],
+    &quot;rule_set&quot;: [
+      {
+        &quot;type&quot;: &quot;remote&quot;,
+        &quot;tag&quot;: &quot;cnip&quot;,
+        &quot;format&quot;: &quot;binary&quot;,
+        &quot;url&quot;: &quot;https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/cn.srs&quot;,
+        &quot;download_detour&quot;: &quot;自动选择&quot;
+      },
+      {
+        &quot;type&quot;: &quot;remote&quot;,
+        &quot;tag&quot;: &quot;cnsite&quot;,
+        &quot;format&quot;: &quot;binary&quot;,
+        &quot;url&quot;: &quot;https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geosite/cn.srs&quot;,
+        &quot;download_detour&quot;: &quot;自动选择&quot;
+      }
+    ],
+    &quot;auto_detect_interface&quot;: true,
+    &quot;final&quot;: &quot;手动选择&quot;
+  },
+  &quot;experimental&quot;: {
+    &quot;cache_file&quot;: {
+      &quot;enabled&quot;: true,
+      &quot;path&quot;: &quot;/etc/homeproxy/cache.db&quot;
+    },
+    &quot;clash_api&quot;: {
+      &quot;external_controller&quot;: &quot;192.168.2.1:9090&quot;,
+      &quot;external_ui&quot;: &quot;/etc/homeproxy/ui/&quot;,
+      &quot;external_ui_download_detour&quot;: &quot;自动选择&quot;,
+      &quot;default_mode&quot;: &quot;rule&quot;
+    }
+  }
+}
+</code></pre><h2>Tun</h2><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>{
+   &quot;type&quot;: &quot;tun&quot;,
+   &quot;tag&quot;: &quot;tun-in&quot;,
+   &quot;inet4_address&quot;: &quot;172.19.0.1/30&quot;,
+   &quot;mtu&quot;: 9000,
+   &quot;gso&quot;: true,
+   &quot;auto_route&quot;: true,
+   &quot;stack&quot;: &quot;system&quot;,
+   &quot;sniff&quot;: true,
+   &quot;sniff_override_destination&quot;: false
+}</code></pre><h2>视频文稿（忽略）</h2><p>singbox可以说是目前最强大的网络代理工具，既有比v2ray系更全面的服务器端协议支持，又有比clash系更丰富的客户端配置，还有令人匪夷所思的更新频率，新的代理协议一经发布，singbox永远是最先支持的那个，同时还支持clash api，可以像clash一样使用webui切换节点，非常方便，但是由于singbox的官方文档过于官方，很多朋友直呼看不懂，于是得出了singbox难用的结论，但相信只要你看明白本期教程就会发现singbox其实so easy，为了照顾纯小白用户，前半部分只讲基本上手使用，后半部分则详细讲解软路由上singbox的透明代理流程，当然少不了大家喜闻乐见的dns环节</p><p>这是singbox的项目官网，可以在这里获取最新的更新资讯以及配置文档，包括客户端下载，目前图形化客户端支持android平台，苹果的ios、macos、tvos都支持，windows的话目前没有官方客户端，可以先用其他第三方支持singbox的工具，比如v2rayN，但是使用逻辑和官方客户端不一样，官方客户端更像是clash的使用方式</p><p>先给小白用户演示最简单的使用singbox的方式，以苹果端为例，对系统要求如下，在app store中下载需要使用非国区id，安装非常简单，我已经安装过了就顺便升个级，软件完全免费，非常良心，安装之后打开它，可以看到界面非常简洁，没有任何配置向导，这也是很多人说难用的原因，好在现在很多机场以及在线订阅转换都支持singbox的配置了，所以对于小白用户，我们只需要像使用clash一样使用sing-box即可，首先需要先获取singbox的配置文件，来到profiles配置页面，选择新建配置，随便取个名称，类型改为远程获取，在这里输入机场的订阅地址，如果你的机场显示了singbox的订阅链接按钮，直接点击即可，我这里没有，就直接复制这个通用的订阅地址，然后粘贴到这里，点击创建，机场会根据UA来区分不同的客户端，从而下发不同的配置文件，没有报错说明没有问题，可以在这里查看配置文件的内容，看上去很乱，等会我们再来详细介绍，如果你的机场还不支持下发singbox的订阅文件，或者你是自建节点，请自行谷歌搜索singbox订阅转换，目前有很多订阅转换工具都支持singbox了，但是要注意隐私风险，我这里就不演示了，接着回到主界面，点击启用，不出意外的话就可以正常科学上网了，非常简单，不同的机场会有不同的分流配置，可以在这里进行相应的切换，用惯了clash的用户应该会非常熟悉，尝试访问谷歌，没有问题</p><p>手机客户端也是一样的操作逻辑，在profiles面板添加一条配置，随便给个名称，类型选择远程下载，url填入你的机场订阅，点击创建，没有报错说明一切正常，回到主界面，默认选中了我们刚才添加的配置文件，打开开关，就可以正常使用了，这里可以方便的切换节点，尝试访问谷歌，没有任何问题，安卓端也是同样的操作逻辑，可以看到官方客户端其实非常简洁方便，基本没有任何学习成本，但也仅限于默认配置，但如果你想换个dns服务器，或者开启局域网共享，或者修改代理端口等个性化的自定义配置，你会发现没有任何设置的地方，所有设置都要通过修改json配置文件，对于看不懂文档的朋友来说要实现这点很困难，后半部分我们再来详细说明</p><p>接下来回到软路由篇，在openwrt上使用sing-box，我这里用到的openwrt固件还是之前的imm23.05，希望你已经看过我之前的软路由相关内容了，之前讲过的就不讲了，首先还是针对小白用户的配置方式，来到系统下的软件包，点击更新列表，接着搜索homeproxy，这是之前简单介绍过的使用sing-box内核代理的luci插件，直接安装这个中文包，默认会安装相应的依赖项，点击安装，安装完成后来到服务页面，目前还没有显示插件，你可以尝试刷新网页，这样就会显示了，如果你的还是没有显示的话，可以退出openwrt重新登录，这就是homeproxy的主界面，可以看到要比openclash简洁的多，先来导入节点，来到节点设置，他这里不需要singbox格式的订阅配置，如果你是自建节点，可以点击这里导入分享链接，将你的节点链接粘贴到这里即可，如果是机场订阅链接，来到订阅，在这里填入你的机场订阅地址，如果有多个机场的话可以继续添加，点击保存当前设置，然后点击更新订阅，更新之后回到节点，这样就导入了机场节点了，接着回到客户端设置，设置一个主节点，路由模式按需设置，一般是使用大陆白名单或者gfw黑名单模式，其他保持默认即可，点击保存并应用，稍等片刻，正常情况下这里会显示运行，尝试访问谷歌，没有问题，可以在这里查看相关日志信息，还可以设置服务端，也就是在软路由上搭建节点，一般情况下用不到，以后有机会再说，还可以在这里设置访问控制，常用的就是lan策略，可以规定局域网哪些设备需要代理，默认情况下局域网里所有设备的流量都会经过singbox内核处理，如果你只想要你的手机和电脑可以代理，家里其他人的设备不需要代理，就可以设置为仅允许列表内，也就是白名单模式，将你需要代理的ip添加到列表，然后点击保存并应用，这样的话homeproxy就会帮我们配置nftables防火墙，将这两个ip的流量交给singbox处理，而不在列表里的ip会绕过singbox内核直接访问互联网，为了防止设备ip变动，可以参考这期教程进行静态ip绑定，针对小白用户的配置就到这里了，都是非常简单的</p><p>接下来讲点进阶内容，每个人都有自己的小想法，homeproxy提供的默认配置不一定适合所有人，所以需要自定义配置，将路由模式改成自定义路由，此时就会多出很多配置项，如果你不了解singbox的用法根本无从下手，我会教大家一步步配好</p><p>另外很多软路由用户离不开clash的一个重要原因是clash有webui，用过就知道有多方便，singbox支持clash的api，可以实现和clash一样直接在webui切换节点等操作，但目前homeproxy并不支持配置singbox的clash模式，无法发挥singbox在软路由上的优势，没有webui的话每次切换节点都要登录软路由后台，对于机场用户来说非常不方便，老子曾经曰过，软路由不能没有dashboard，就像西方不能没有耶路撒冷，所以我给homeproxy添加了clash api的功能，由于我只是为了做这个视频才加的功能，为了方便实现改动了原版的配置逻辑，有精力的朋友可以改改再pr到homeproxy主线上去</p><p>首先进入这里下载我修改过的homeproxy，这些用到的信息我会放在视频下方的说明栏，下载这个ipk文件，接着回到软件包，建议先将原来的homeproxy卸载，接着点击上传软件包，将刚才下载的ipk上传安装，安装完成这里提示有错误，原因是刚才卸载的homeproxy配置文件没有删除，这次安装的配置文件并不会覆盖之前的，保存在这个位置，建议使用这个新的配置文件替换掉之前的配置文件，这种基本操作在进阶部分就不演示了，另外singbox内核必须使用1.9以上的版本，我录制视频的时候还是1.8版本，你看到这个视频的时候imm的软件源已经更新到1.9以上了，所以直接在软件源更新即可，不用进行额外的替换内核操作</p><p>回到刚安装的homeproxy，切换为自定义路由， 此时就能看到clash api，接下来不要问为什么，先一步步跟我操作将规则配置好，第一步还是先导入你的节点，接着来到最下面，在这里随便输入一个英文标识，点击添加，将卷标改成自动选择，类型选择urltest，出站选择你需要的节点，可以全部选择上，视频演示我就随便选几个，其他选项保持默认，点击保存，接着再添加一个，卷标改成手动选择，类型选择selector，同样选择你需要的节点，也可以勾选我们刚才添加的自动选择，将默认出站改成自动选择，点击保存，最后再来添加一个全局分组，这个的卷标比较特殊，为了适配webui需要固定为大写的GLOBAL，点击添加，类型选择selector，勾选你需要的节点，可以包括刚才添加的自动选择和手动选择，选择一个默认出站，配置好之后点击保存，回到客户端配置，路由模式改成自定义路由，路由所有端口，代理模式按需选择，这四种模式的区别在openclash那期都讲过，感兴趣的朋友可以回看，同样的目前不演示ipv6，所以先关闭ipv6支持，下期再讲，如果你确认访问国内ip不需要经过singbox内核，可以勾选这个选项使用防火墙规则绕过中国流量，跟刚才讲的访问控制功能类似，覆盖目标地址按需选择，这个功能比较关键，很多莫名其妙的问题都和他有关，等会再细讲，现在先将其关闭，默认出站设为手动选择，每个标签页配置好之后都要先点击保存，来到clash api，启用他，如果你不需要公网访问，外部控制端口不建议使用0.0.0.0，将其改成路由器的ip地址，如果你需要公网访问，应该在这里设置密码，下载ui资源使用的节点设置为自动选择，默认模式按需选择，singbox的分流模式不像clash是固定的direct rule和global名称，只是webui里一般只有这几个选项，所以为了方便在webui里切换分流模式，我们也应该设置为相同的固定值，但实际上你应该清楚singbox的clash模式名称可以随便设置，点击保存，对于软路由小闪存的用户，规则集也是个好功能，让我们不用下载笨重的geosite和geoip数据库，可以节省大量空间，先来添加中国的ip，随便给个名称，点击添加，勾选启用，格式选择二进制文件，规则集到这个地方下载，我们需要中国地区的ip地址，这个json是文本格式，srs是二进制格式，可以在json里看到包含了哪些ip，这些都是中国的ip，大小是200k，srs是二进制格式，看不到内容，但是大小才32k，更建议用二进制的格式，复制链接地址，将其粘贴到这里，下载规则用的出站设置为自动选择，点击保存，再添加一个中国网站规则，这个也才22k，所以相比geo动辄十几兆的数据库，这种按需取用更灵活更省空间，记得点击保存，来到dns服务器，添加一个google的doh服务器，地址解析器选择wan口下发的默认dns，策略改成仅ipv4，出站选择默认，这里的ECS配置是解决dns泄漏局限性的关键，需要1.9以上版本的singbox内核</p><p>你需要在这里填入一个离你比较近的ip地址，比如你在山东，就填个山东的ip，虽然可以填自己的公网ip，但为了个人隐私不建议这么做，如果你实在懒得找，就填入1.0.1.0，这是一个中国ip，记得点击保存，来到dns设置，默认解析策略改成仅ipv4，默认dns服务器选择刚才创建的google，点击保存，接着来到dns规则设置，这里非常关键，dns没配好很容易出现先有鸡还是先有蛋的死循环问题，同样先不用关心为什么这样配置，跟着我一步步操作即可，首先添加节点域名所使用的dns，出站勾选任何，服务器为默认dns，点击保存，接着添加clash的直连模式，clash mode设置为direct，服务器也是默认dns，再来添加一个clash的全局模式，clash mode设置为global，dns服务器选择google，点击保存，最后再添加一个中国网站规则，规则集勾选我们刚才添加的中国网站，服务器同样为 默认dns，点击保存，这样dns规则就算是配置好了，注意要按顺序添加，可以通过拖动这里调整排列顺序，点击保存，最后来到路由规则设置，配置方式和dns规则差不多，首先添加clash的直连模式，clash mode改成direct，出站设置为直连，点击保存，然后添加clash的全局模式，出站改成global，点击保存，最后添加国内网站和ip走直连的规则，规则集勾选刚才添加的ip和网站，出站选择直连，点击保存，这样就算是配置好了，相信大家现在是一脸懵逼，这是正常情况，我也有点懵，先不管，先按这个配置跑起来再说，点击保存并应用，不出意外的话稍等片刻这里会显示运行中，同时可以来到日志页面查看运行状态，最后这里显示started就表示singbox内核启动成功了，此时就可以正常科学上网了，尝试访问google，没有问题，非常快速，并且访问任何国内网站也一样快速，包括国内小众网站，同时解决了一切dns泄漏检测，我目前使用的是香港节点，可以看到dns泄漏检测是没问题的，但这里出现了我的真实ip地址，原因等会再说，另外有一些主要以卖VPN为目的的dns检测网站，如果你没用他家的vpn就会跟你说你的dns请求暴露了bulabula，这种不用理会，你只要看检测结果没有出现国内dns就行了，关于dns泄漏的内容我应该是做的最多的了，对此还有争议的建议回看这期视频，至于要不要解决取决于你自己，我想补充的是，没有墙的地区在大力推行dot和doh这类加密dns来保护用户隐私，CF甚至以保护用户隐私为由连ECS都不愿意支持</p><p>另外我们可以访问刚才设置的clash webui，端口是9090，将地址填入这里，点击add，然后进入网址，这样就进入clash用户熟悉的webui界面了，可以在这里查看节点相关信息，包含我们刚才添加的三个分组，以及分组里对应的节点信息，可以很方便的进行节点切换，包括分流规则，链接状态等信息，这里可以切换分流模式，切换到直连后应该就无法访问谷歌了，需要先将之前的连接打断，确实没法访问了，也可以切换为全局，然后在global这里选择全局使用的节点，又恢复访问了，之后你就可以将这个网址存为书签，下次要切换节点或者查看连接信息就可以通过网页直接查看了，非常方便，不过singbox目前的clash模式还属于实验性功能，并没有完全实现所有的api接口，比如配置页面中无法修改代理端口，也无法切换日志等级，不过这些都是小问题，无伤大雅</p><p>我们刚刚在homeproxy哐哐一通设置，最终生成的singbox配置文件在这个路径，使用sftp工具将其下载下来，这就是最终singbox运行时候使用的配置，接下来我们就通过这个配置文件，来模拟访问网站的时候singbox是怎么工作的</p><p>另外虽然singbox也支持fakeip，但fakeip之前讲clash已经详细介绍过了，在有些使用场景中会造成一些不便，比如配置链式代理，ping个域名啥的，我也收到有些用户反馈使用fakeip会导致游戏无法连接，所以本期主要介绍最符合正常网络环境的realip</p><p>这是为了视频讲解而简化后的配置，主要有四个的功能模块，dns模块、inbounds入站模块、outbounds出站模块、route路由模块，其中dns模块里又包括server服务器和rule规则两个主要部分，结构非常清晰，假设我的电脑要访问google.com，由于不知道谷歌的ip地址，所以需要先进行dns请求获取谷歌的ip地址，请求来到路由器， 路由器会按openclash那期讲过的方法，通过配置dnsmasq或者nftables防火墙将dns请求劫持到singbox监听的5333端口，本期不会涉及防火墙规则讲解，感兴趣可以回看之前的内容，有详细的介绍，总之singbox会从inbounds收到电脑的dns请求，先记住数据是从这个tag标签为dns-in的地方进来的，接着singbox需要确认数据包该走去哪，于是会来到route路由模块，按顺序一条条匹配路由规则，首先第一条规则，如果是从dns-in进来的数据，就从dns-out将数据发出去，刚才我们的数据确实是从tag为dns-in的标签进来的，所以命中了这条规则，于是会将数据交给outbounds里的dns-out准备发送出去，而这条出站的类型是dns，意思是将数据交给自己的dns模块处理，于是这个请求又会来到singbox的dns模块，dns模块得知了你要google的ip地址，他会按规则选择使用哪个dns服务器来获取谷歌的地址，这里有两个dns服务器，这个tag为google的是我们刚才在homeproxy里配置的谷歌doh服务器，这个是homeproxy自动帮我们添加的路由器WAN口下发的默认dns服务器，我这里是114.114.114.114，你的可能是某个内网ip，而这四条就是我们在homeproxy里添加的dns规则，要在这里确认google.com这个域名应该交给哪个dns服务器进行解析，首先第一条规则等会再说，目前我先告诉你不匹配，于是匹配下一条规则，如果clash模式是direct直连，就使用default-dns，也就是默认wan口下发的dns，我们的clash默认模式是rule，所以这条也不匹配，下一条如果clash模式是global全局，就使用谷歌的dns，很明显也不匹配，继续向下，如果规则集是中国的网站，同样使用默认dns，google.com并不是中国网站，所以也不匹配，这四条规则都没有匹配上， 当所有规则都不匹配的时候，就会使用final默认规则，我们在面板中配置的是谷歌的dns，所以会使用这个tag为google的dns服务器，由于这里用的是dns over https，简称doh， 服务器地址是域名，所以这个域名同样需要先经过dns解析为ip地址，负责解析这个域名的dns服务器是这里配置的默认dns，解析策略为仅ipv4，也就是面板中这两个配置，所以这个tag为default-dns将会负责解析dns.google这个域名，并且仅获取ipv4地址，请求将会从tag为direct-out的出站发给114.114.114.114，tag为direct-out的出站类型是direct，也就是直连，所以会直接发给互联网的114.114.114.114，114会帮我们获取到dns.google的ipv4地址为8.8.8.8， 返回给singbox，于是获取google.com ip地址的dns请求会发给8.8.8.8，并且仅获取ipv4，由于我们给这个dns服务器设置的出站是默认，</p><p>并没有和上面的默认dns一样设置detour指定某个节点出站，所以会使用出站路由里的默认出站，默认出站是我们在主界面中设置的手动选择，手动选择是我们在节点中设置的selector，里面包含了这些节点，而手动选择选中的默认节点是自动选择，自动选择也是我们在节点设置里添加的urltest类型，假设我们只选择了这三个节点，会根据延迟的高低自动选择一个出站节点，假设选中了香港的节点，而tag为香港的节点类型为shadowsocks，所以这条发给8.8.8.8询问google.com ip的请求将会使用这个密码进行aes加密，你以为数据终于要发送出去了吗？并没有，此时你会发现机场节点的地址是域名而不是ip，所以同样需要先进行dns解析获取节点的ip，于是乎dns模块又会开始获取abc.com的ip地址，还是先进行dns规则匹配，第一条规则表示匹配any所有outbound出站节点的域名，全都交给默认dns解析，这个abc.com的确就是出站里的某个节点的域名，于是匹配成功，将会交给默认的114进行dns解析，假设获取到的节点ip地址为6.6.6.6，最终这条经过aes加密后的发给8.8.8.8的请求google.com的ip地址的dns数据包将会发给香港节点ip为6.6.6.6的10001端口，节点收到数据后会进行解密，并将数据转发给8.8.8.8，8.8.8.8会帮我们获取google.com的ip地址，假设为2.2.2.2，并将结果返回给节点，节点再经过ss加密后返回给我们路由器的singbox，singbox解密后再将结果返回给电脑的浏览器，加解密过程我就懒得画了，至此就获取到了一个纯正无污染的谷歌ip地址了，这是多么的不容易，所以很多人会劝你别玩弄dns，容易被dns玩弄</p><p>目前我们还只是获取到了谷歌的ip，接下来才是开始访问google，发给2.2.2.2，内容是访问谷歌，数据包来到路由器，会通过redirect将流量重定向到singbox的5331端口，singbox拿到数据后，由于默认开启了sniff，会进行流量嗅探，获取到了这个数据包是https协议，并且访问的目标域名是google.com，接着开始路由匹配确定数据包该从哪里出去，这三条路由规则就是我们在面板上设置的这三个，上面两个dns规则是homeproxy自动帮我们加上的，上面四条都讲过，很明显都无法匹配，来到规则集，如果访问的目标网站的ip或者域名是中国的，那就走direct直连出去，很明显google.com和2.2.2.2都不是中国的，于是所有路由规则都没有匹配上，当所有规则都不匹配的时候，就会走final默认出站，也就是手动选择，于是和刚才发送dns请求一样，这个数据包将会经过手动选择，手动选择里又选中了自动选择，自动选择根据延迟选中了香港节点，数据会经过ss协议封装加密，由于刚才已经经过dns解析获取到了abc.com的域名是6.6.6.6，解析结果会缓存一段时间，所以这次不用再发起dns请求，直接将数据发送给6.6.6.6的10001端口，接下来的步骤就和刚才讲的dns解析一样了，忽略掉中间的加解密过程，谷歌数据首先发给节点，节点将数据经过aes加密后再发给路由器的singbox，singbox使用aes解密后再返回到电脑浏览器，最终谷歌网页内容呈现在我们面前，于是进行了一次成功的科学访问</p><p>假设此时又要访问百度，还是先进行dns请求获取baidu.com的ip地址，数据从dns-in来到singbox，然后进入路由规则，命中了第一条规则，从dns-in进来的数据包就从dns-out发送出去，而dns-out是发往自己的dns模块，于是数据包来到dns，首先进行规则匹配，很显然baidu.com将会命中这条规则，中国网站将会使用默认dns查询，于是使用tag为default-dns的dns服务器发起dns请求，也就是114，并且通过direct直连发出，从而获取到百度的ip，假设为3.3.3.3，电脑获取到百度的ip之后，向这个ip获取baidu.com的首页内容，数据来到路由器，如果你在homeproxy中勾选了绕过中国流量，那么这个访问百度的流量不会进入singbox内核，homeproxy会将所有的中国ip绕行规则添加到nftables防火墙，直接通过防火墙将数据转发出去，少了到singbox内核处理的过程，性能也会有不错的提升，，但是开启绕过中国流量之后你在singbox开启全局代理，中国网站还是不会走代理的，因为数据不是由singbox进行控制了，另外就在我还在写这篇稿子的时候，singbox也更新支持了这个功能，不愧是发版狂魔，再这么发展下去软路由用户连luci界面都可以不用了</p><p>如果没有开启绕过中国流量，那么数据同样会从redirect重定向到5331端口，singbox拿到数据后进行sniff嗅探，获取到了协议是https，域名是baidu.com，接着进行路由规则匹配，最终将会成功匹配这条中国网站的规则，于是通过direct直连将数据发送出去，至此访问一个国内网站的流程也完成了。</p><p>使用clash的fakeip解决dns泄漏有局限性，不在规则列表中的小众国内网站只能交给节点代理，导致没有套国外cdn的国内网站访问很慢，需要靠其他第三方dns插件解决，比较繁琐，而singbox1.9更新的ecs功能搭配realip可以非常优雅的解决这个问题，官方文档也给出了相应的ecs配置参考，并且表示速度比较慢，这里说的慢是指dns解析比较慢，而且也是相对的，对比fakeip当然会慢一点，但如果你平时用香港这种延迟比较低的节点，几乎没有感知，同时realip还有缓存和预解析，另外doh会维持长连接，和裸udp解析相当，关于fakeip和realip的对比可以回看这期视频后半部分，有非常详细的解释</p><p>我们现在用的配置文件可以解决dns泄漏，接下来演示他是如何通过ecs实现精确分流的<br>假设bilibili.com是一个不在规则列表里的国内小众网站，首先电脑还是先发起dns请求查询bilibili.com的ip地址，数据来到singbox的dns模块，首先进行dns规则匹配，前三条无法匹配，第四条由于这个网站比较小众，这个国内网站规则集里并没有收录这个网站，于是乎这个国内网站本该命中的规则却没有命中，所有规则都不匹配后，会使用final里设置的googledns，于是将会使用这个dns解析bilibili.com的ip，同样由于存在dns缓存，dns.google的ip地址之前已经知道了是8.8.8.8，于是乎这个获取bilibili.com的dns请求将会发给8.8.8.8，并且这里还有一个之前没有讲的选项，client subnet是1.0.1.0，这个选项的意思就相当于告诉谷歌的dns服务器，我的ip地址是1.0.1.0，你应该给我一个离这个ip最近的解析结果，由于没有设置detour，这个dns请求将会交给默认的final出站，也就是手动选择，手动选择选中了自动选择，自动选择根据延迟使用了香港节点，于是这个dns请求将会交给香港节点处理，此处还有个细节要注意，我们这里用的是doh，也就是dns over https，也就是使用https协议来进行dns解析，也就是在进行dns解析之前需要进行tcp三次握手建立连接，然后建立tls连接，再使用http的方式传输dns数据，可以看到进行一次解析需要来来回回好几次才能真正开始传递数据，而我们平时常用的udp一个来回就完事了，但是http支持长连接，而doh同样有http的特性，所以也支持长连接，由于之前已经和8.8.8.8建立过连接了，所以这次访问并不需要从头建立tcp和tls连接，可以直接开始发送dns数据，延迟会低很多，有些朋友可能会说，都直接发给节点加密了，为什么不直接使用最直接的udp呢？因为有些机场根本不支持udp，而对于uot的话又和doh没多大区别了，所以为了更通用建议使用doh，至于各种类型dns的区别以后有机会再讲</p><p>谷歌的dns服务器收到请求之后，会帮我们获取bilibili.com的ip地址，此时会有两种情况，如果bilibili.com没套cdn的话，那就会直接获取bilibili中国的ip，假设为5.5.5.5，而如果bilibili.com套了全球各地区的cdn，默认情况下会获取离8.8.8.8最近的某台服务器，8.8.8.8是一个任播地址，而我们的节点在香港，就会获取到离香港最近的服务器ip，假设为4.4.4.4，但是我们告诉谷歌要获取离1.0.1.0最近的服务器ip，而1.0.1.0是中国的ip，所以我们获取到的将会是中国的某一台服务器ip，所以还是返回5.5.5.5</p><p>电脑获取到ip之后开始访问bilibili，数据来到路由器，由于目标ip是中国的，和之前一样，如果开启了绕过中国流量，那么不会进入singbox内核直接转发，没有开启的话就会重定向到singbox内核，并且由于开启了流量嗅探，获取到了bilibili.com的域名，然后开始路由匹配，前四条都无法匹配，而且小众网站并不在中国网站的规则集列表，所以这里也不匹配，但是5.5.5.5匹配到了中国ip，所以将会命中这条规则，数据将会走直连出去，这样就实现了即使小众网站不在域名规则中，同样可以正确进行分流，还没有dns泄漏的问题，dns请求全程都是加密状态，只是这里没有体现出来，太费劲懒得画了，不过相较于直接使用114的udp解析肯定是会慢一点，取决于你对自己隐私的重视程度了，并且是否会根据ecs返回ip也要看权威dns服务器的行为，不能当成万能解药，不过大部分情况都会正确响应</p><p>另外刚才我们访问这个dns泄漏检测的网站，dns检测的结果并没有问题，都是香港的谷歌dns，但这里却出现了我的真实ip，出现真实ip说明我们访问这个网站用了直连，在我们这个配置，命中直连只有两个原因，一个是ip命中，一个是域名命中，如果这个网站套了中国的cdn，根据刚才讲解的ces，就会命中ip规则，但根据我的测试这个网站并没有套中国的cdn，想想也确实不可能，那么只有可能是命中了域名，事实上也确实如此，这个和中国没有半毛钱关系的网站却出现在中国网站的规则列表里，很明显是哪个上游的规则出现了错乱，所以别人的规则集不一定适合你，你可以按照这个格式，创建符合自己需求的分流规则集，并且用singbox指令将json文件转换为srs的二进制文件</p><p>目前为止我们看似解决了所有问题，但没有哪个配置是适合所有人的，假如你平时喜欢通过奈飞之类的流媒体观影，使用本期讲的配置很有可能会导致奈飞解锁失败，比如我现在访问绝命毒的页面，提示页面不存在，很明显是解锁失败了，但我现在用的这个机场明明是支持解锁的，要弄懂这个问题你需要先了解奈飞解锁的原理，机场都是使用dns解锁，可以回看这期视频，有非常详细的讲解</p><p>假设我现在访问netfilx.com，首先进行dns解析，获取到了ip假设为7.7.7.7，注意这个ip是通过谷歌dns获取到的真实的奈飞ip，接着通过https访问这个ip获取奈飞的内容，数据被重定向到singbox，通过嗅探获取到了netflix.com的域名，7.7.7.7和netfilx是国外ip和域名，所以没有命中任何规则，于是数据包会交给香港的节点，将其封装成ss协议的格式，目标ip是7.7.7.7，目标端口是443，目标内容是绝命毒师，当然内容的话已经是经过加密了，然后发送给节点服务器，节点拿到数据后，帮我们访问7.7.7.7，此时就出现问题了，节点本身并不能解锁奈飞，所以也就无法成功观看了，解决这个问题需要开启覆盖目标地址，开启之后再使用同样的节点访问奈飞，就可以成功解锁进入了</p><p>流程还是和之前一样，我们通过dns获取到了奈飞的正确ip7.7.7.7，接着发起http请求，数据被重定向到singbox，通过嗅探获取到了netflix.com的域名，7.7.7.7和netfilx是国外ip和域名，所以没有命中任何规则，于是数据包会交给香港的节点，将其封装成ss协议的格式，此时需要注意，由于我们开启了覆盖目标地址，也就是嗅探复写设置为了true，会用我们刚才嗅探到的域名netflix.com覆盖目标地址，也就是发送的目标地址是netflix.com，目标端口是443，目标内容是绝命毒师，加密后发送给节点服务器，节点拿到数据后，由于收到的是域名，他会在他的环境下进行dns解析来获取netflix.com的ip地址，由于配置了dns解锁奈飞的规则，他获取到的并不是真实的奈飞ip7.7.7.7，而是获取到sni反代服务器的ip地址，假设为9.9.9.9，数据将会发给这台服务器，而这台专门用来解锁奈飞的服务器会帮节点访问奈飞，于是就能成功访问奈飞了，这就是嗅探和复写的主要作用，嗅探主要用来进行域名分流规则匹配，复写主要用嗅探到的域名替换掉访问目标ip，而有些机场的节点默认会开启嗅探复写，所以你本地不开的话也可以正常解锁，另外开了嗅探复写之后，进行dns泄漏检测的时候可能会出现google之外的dns提供商，因为节点服务器也会对泄漏检测的域名进行dns解析，所以节点使用的dns服务器也会包含在内，可以用这个方式来判断你用的机场是否开启了嗅探复写，dns泄漏检测的原理可以回看这期视频</p><p>部分客户端，比如v2rayN和x-ui面板的默认行为是开启流量嗅探sniffing的同时也会开启复写，但有些情况下不能开启复写，会出现网络问题，比如智能家居无法连接，进不去tor暗网等情况，原因我在这期视频中也讲过，tor网络中的进行连接的域名是随机的假域名，主要是看ip，如果你将嗅探得到的假域名发给节点，节点通过dns解析拿不到这个假域名的ip，于是访问失败，此时你就要关闭复写才能正常访问，所以复写功能得按需启用</p><p>现在很多机场也提供了chatgpt解锁，但有可能出现即使开启了嗅探复写还是无法成功解锁的情况，通过日志我们可以得知使用了基于udp的quic协议访问chatgpt，但是没有成功嗅探到域名，没有域名也就无法进行复写，所以发给节点的直接是ip而不是域名，如果节点也没有开启嗅探复写，就无法交给sni反代，导致无法解锁的情况，解决这个问题的方法是之前讲过的关闭浏览器的quic功能，或者添加一条屏蔽quic流量的规则，或者屏蔽https的dns查询类型，这样就会屏蔽quic，从而使用http2访问chatgpt，又可以成功嗅探域名进行复写解锁了</p><p>总之每个人的需求不同，没有适合所有人的万能配置，有的话我就不用费劲讲那么多了，希望大家看完之后都能举一反三作出符合自己需求的配置。相信看过本期教程再去看官方文档会有新的收获</p><p>最后这个软路由的singbox配置简单修改一下就能放到其他客户端去使用了，主要区别是入站劫持的处理方式不同，跟着视频演示删改这几个地方即可，日志路径删掉，不需要保存到文件，默认dns设置一个公网dns，比如阿里的223.5.5.5，将inbound入站全部删掉，替换为这段，嗅探复写按需开启，如果你要共享局域网连接，请自行参考官方文档创建一个mixed入站，把本地路径都删掉，第一条dns入站规则删掉，接着创建一个本地配置文件，类型选择local，创建之后打开进行编辑，使用刚才修改后的配置文件替换掉里面的内容，点击保存，切换到刚才创建的配置，尝试启用，报错了，clash api绑定的ip是路由器的，忘记改了，修改成127.0.0.1，这样就能启动成功了，手机客户端也是同样的处理方式。</p><p>另外正如之前说的，singbox的clash mode名称可以随便填，你要是想的话可以配置direct走全局，也可以配置global走直连，也可以添加更多其他自定义模式，比如添加一个block模式屏蔽所有连接，在dns规则和出站路由规则处添加block的clash mode，保存后重新启动配置，就可以在面板上选择block模式了，切换为block之后所有网站也将无法访问了，换成其他模式又恢复了，可以说是相当方便</p>          
+                             
+        
+  </div>
+    
+    </div> <!-- 文章内容 -->    
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+    </footer>
+</body>
+</html>

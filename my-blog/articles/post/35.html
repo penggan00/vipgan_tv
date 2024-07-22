@@ -1,0 +1,180 @@
+<!DOCTYPE html> <!-- 声明文档类型 -->
+<html lang="en"> <!-- 设置文档语言为英语 -->
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，以确保页面在移动设备上正确显示 -->
+    <title>peng gan Blog</title>  <!-- 设置页面标题 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+</head>
+<body>
+<div class="header"> <!-- 定义一个类为header的div -->
+            <a href="../../index.html">My Blog</a> <!-- 链接内容 -->
+        </div>
+    <div class="container"> <!-- 定义一个类为container的div -->
+        
+        <div class="subheader"> <!-- 定义一个类为subheader的div -->
+            <h1>Telegram接入ChatGPT-4</h1> <!-- 文章主题 -->
+      </div>
+        <div class="date" id="lastModified"></div> <!-- 定义一个类为date的div，显示创建时的日期与时间 -->
+        <div class="content"> <!-- 定义一个类为content的div -->
+            <!-- 文章内容 --><p>
+
+            <p>安装准备：一台VPS、Telegram API、OpenAI API key</p>
+
+
+
+            <p>开源项目地址：【<a rel="noreferrer noopener" href="https://github.com/karfly/chatgpt_telegram_bot" data-type="URL" data-id="https://github.com/karfly/chatgpt_telegram_bot" target="_blank">点击进入</a>】</p>
+            
+            
+            
+            <p>1、SSH连接工具Fianlshell下载链接：【<a rel="noreferrer noopener" href="https://www.hostbuf.com/t/988.html" data-type="URL" data-id="https://www.hostbuf.com/t/988.html" target="_blank">点击进入</a>】</p>
+            
+            
+            
+            <p>2、获取Telegram API和获取OpenAI API key，参考视频：【<a rel="noreferrer noopener" href="https://youtu.be/dHzybcC9j0o" data-type="URL" data-id="https://youtu.be/dHzybcC9j0o" target="_blank">点击进入</a>】</p>
+            
+            
+            
+            <p>3、下载并安装开源项目</p>
+            
+            
+            
+            <ul>
+            <li>安装git</li>
+            </ul>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt install git</code></pre>
+            
+            
+            
+            <ul>
+            <li>先把开源项目克隆过来</li>
+            </ul>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>git clone https://github.com/karfly/chatgpt_telegram_bot.git</code></pre>
+            
+            
+            
+            <ul>
+            <li>进入文件目录</li>
+            </ul>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cd /root/chatgpt_telegram_bot</code></pre>
+            
+            
+            
+            <ul>
+            <li>更改文件名称</li>
+            </ul>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>mv config/config.example.yml config/config.yml</code></pre>
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>mv config/config.example.env config/config.env</code></pre>
+            
+            
+            
+            <ul>
+            <li>双击打开config.yml文件，添加前面准备好的Telegram API和OpenAI API keys</li>
+            </ul>
+            
+            
+            
+            <p>4、安装Docker和Docker Compose</p>
+            
+            
+            
+            <ul>
+            <li>安装Docker</li>
+            </ul>
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt update</code></pre>
+                <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt install curl</code></pre>
+                <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>curl -fsSL get.docker.com -o get-docker.sh</code></pre>
+                <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>sh get-docker.sh</code></pre>
+            
+            
+            
+            <ul>
+            <li>Docker管理</li>
+            </ul>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>systemctl start docker  #启动容器</code></pre>
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>systemctl enable docker #开机自启</code></pre>
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>systemctl status docker #查看状态</code></pre>
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker --version #查看docker版本</code></pre>
+            
+            
+            
+            <ul>
+            <li>安装Docker Compose</li>
+            </ul>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt-get install docker-compose</code></pre>
+            
+            
+            
+            <ul>
+            <li>重启服务器</li>
+            </ul>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>reboot</code></pre>
+            
+            
+            
+            <ul>
+            <li>再次进入文件目录</li>
+            </ul>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cd /root/chatgpt_telegram_bot</code></pre>
+            
+            
+            
+            <ul>
+            <li>执行安装</li>
+            </ul>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker-compose --env-file config/config.env up --build</code></pre>
+            
+            
+            
+            <p>5、机器人使用命令</p>
+            
+            
+            
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>/retry– 重新生成最后的机器人答案</code></pre>
+                <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>/new– 开始新对话</code></pre>
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>/mode– 选择聊天模式</code></pre>
+                        <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>/balance– 显示余额</code></pre>
+                            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>/help– 显示帮助</code></pre>
+            
+                    
+                    
+                        </div><!-- .entry-content .clear -->
+            </div>
+
+            
+ <!-- 文章内容 -->
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+                </footer>
+</body>
+</html>

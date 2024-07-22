@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif; /* 字体为 Arial 或无衬线字体 */
+    background-color: #f7f7f7; /* 背景颜色为浅灰色 */
+    color: #333; /* 文本颜色为深灰色 */
+    margin: 0; /* 外边距为 0 */
+    padding: 0; /* 内边距为 0 */
+    display: flex; /* 以弹性布局 */
+    flex-direction: column; /* 主轴为列方向 */
+    align-items: center; /* 水平居中 */
+    padding-top: 20px; /* 顶部内边距 20 像素 */
+}
+
+.category {
+    width: 90%; /* 宽度为 90% */
+    max-width: 600px; /* 最大宽度为 600 像素 */
+    margin-bottom: 2px; /* 底部外边距 20 像素 */
+    background-color: #f7f7f7; /* 背景颜色为浅灰色 */
+}
+
+.category h2 {
+    font-size: 20px; /* 字体大小 20 像素 */
+    background-color: #ddd; /* 背景颜色为浅灰色 */
+    padding: 10px; /* 内边距 10 像素 */
+    margin: 0; /* 外边距为 0 */
+    border-radius: 5px 5px 0 0; /* 上边框半径 5 像素 */
+}
+
+a {
+    text-decoration: none;
+  }
+
+.links {
+    display: flex; /* 以弹性布局 */
+    flex-wrap: wrap; /* 可换行 */
+    background-color: #fff; /* 背景颜色为白色 */
+    border-radius: 0 0 5px 5px; /* 下边框半径 5 像素 */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 阴影效果 */
+    margin: 0; /* 外边距为 0 */
+    padding: 0; /* 内边距为 0 */
+}
+
+.links a {
+    flex: 1 1 33%; /* 弹性比例为 1，可拉伸，宽度占 33% */
+    text-decoration: none; /* 无文本装饰 */
+    color: #333; /* 文本颜色为深灰色 */
+    padding: 15px; /* 内边距 15 像素 */
+    box-sizing: border-box; /* 盒模型以边框为准 */
+    text-align: center; /* 文本居中 */
+    transition: background-color 0.3s; /* 过渡效果，背景颜色 0.3 秒 */
+}
+
+.links a:hover {
+    background-color: #eee; /* 鼠标悬停时背景颜色为浅灰色 */
+}
+
+.search-container {
+    display: flex; /* 以弹性布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    padding: 10px; /* 内边距 10 像素 */
+    background-color: #f7f7f7; /* 背景颜色为浅灰色 */
+    border-radius: 5px; /* 边框半径 5 像素 */
+    margin-bottom: 2px; /* 底部外边距 20 像素 */
+}
+
+.blog-link {
+    margin-right: 20px; /* 右外边距 20 像素 */
+    font-size: 20px; /* 字体大小 20 像素 */
+    text-decoration: none; /* 无文本装饰 */
+    color: #333; /* 文本颜色为深灰色 */
+
+}
+
+.search-form {
+    display: flex; /* 以弹性布局 */
+    align-items: center; /* 垂直居中 */
+}
+
+.search-box {
+    width: 110px; /* 设置搜索框宽度 */
+    padding: 6px; /* 内边距 5 像素 */
+    border: 1px solid #ccc; /* 边框为 1 像素实线灰色 */
+    border-radius: 3px; /* 边框半径 3 像素 */
+    margin-right: 10px; /* 右外边距 10 像素 */
+}
+
+.search-button:hover {
+    background-color: #555; /* 鼠标悬停时背景颜色变深 */
+}
+
+.email-links {
+    display: flex; /* 以弹性布局 */
+    justify-content: space-between; /* 左右间距合理 */
+    align-items: center; /* 垂直居中 */
+    padding: 10px; /* 内边距 10 像素 */
+    background-color: #f7f7f7; /* 背景颜色为浅灰色 */
+    margin-top: -19px; /* 顶部内边距相对于上面元素减少 19 像素 */
+}
+
+.email-links a {
+    color: #333; /* 文本颜色为深灰色 */
+    text-decoration: none; /* 无文本装饰 */
+    padding: 4px 10px; /* 内边距 5 像素 10 像素 */
+}
+
+footer { 
+    display: flex; /* 弹性盒布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    background-color: #f7f7f7; /* 背景颜色为浅灰色 */
+    padding: 15px; /* 内边距 */
+   
+   
+}
+
+footer a {    
+    text-decoration: none; /* 去除下划线 */
+    color: #333; /* 设置文字颜色 */
+    width: 36px; /* 设置输入框宽度 */
+    
+}

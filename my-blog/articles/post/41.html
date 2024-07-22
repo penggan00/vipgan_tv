@@ -1,0 +1,225 @@
+<!DOCTYPE html> <!-- 声明文档类型 -->
+<html lang="en"> <!-- 设置文档语言为英语 -->
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，以确保页面在移动设备上正确显示 -->
+    <title>peng gan Blog</title>  <!-- 设置页面标题 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+</head>
+<body>
+<div class="header"> <!-- 定义一个类为header的div -->
+            <a href="../../index.html">My Blog</a> <!-- 链接内容 -->
+        </div>
+    <div class="container"> <!-- 定义一个类为container的div -->
+        
+        <div class="subheader"> <!-- 定义一个类为subheader的div -->
+            <h1>安卓adb命令</h1> <!-- 文章主题 -->
+        </div>
+        <div class="date" id="lastModified"></div> <!-- 定义一个类为date的div，显示日期与时间 -->
+        <div class="content"> <!-- 定义一个类为content的div -->
+
+
+          <b>  <a href="https://www.123pan.com/s/slcETd-SO6Md.html" target="_blank">adb工具PC</a></b> 
+             <p>  Android Debug Bridge (ADB) 是一个通用命令行工具，可以与设备进行通信和执行各种操作。
+              <b>   <p>   以下是一些常用的 ADB 命令：</b>
+
+                 
+            <p>   - 连接设备
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb devices</code></pre>  
+            
+            
+           
+            
+              <p>    - 连接远程设备
+             
+                <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb connect IP地址:端口</code></pre>
+              
+              连接到网络上的设备。
+            
+            - 断开连接
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb disconnect IP地址:端口</code></pre>
+              
+              断开与远程设备的连接。
+            
+            文件操作
+            - 推送文件到设备
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb push <本地路径> <设备路径></code></pre>
+              
+              将本地文件推送到设备。
+            
+            - 从设备拉取文件
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb pull <设备路径> <本地路径></code></pre>
+              
+              将设备上的文件拉取到本地。
+            
+            Shell 操作
+            - 启动设备 shell
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell</code></pre>
+              
+              进入设备的命令行界面。
+            
+            - 执行 shell 命令
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell <命令></code></pre>
+              
+              在设备上执行特定的 shell 命令。例如：
+             
+              <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code></code>adb shell ls /sdcard</code></pre>
+              
+            应用管理
+            - 安装应用
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb install <APK路径></code></pre>
+              
+              安装 APK 文件到设备。
+            
+            - 卸载应用
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb uninstall <包名></code></pre>
+              
+              从设备卸载应用。
+            
+            - 列出已安装应用
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell pm list packages</code></pre>
+              
+            - 启动应用
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell am start -n <包名>/<活动名></code></pre>
+              
+              启动应用的指定活动。例如：
+             
+              <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code></code>adb shell am start -n com.example.app/.MainActivity</code></pre>
+              
+            设备控制
+            - 重启设备
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb reboot</code></pre>
+              
+            - 进入恢复模式
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb reboot recovery</code></pre>
+              
+            - 进入引导加载程序模式
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb reboot bootloader</code></pre>
+              
+            日志记录
+            - 查看设备日志
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb logcat</code></pre>
+              
+              实时查看设备日志。
+            
+            - 保存日志到文件
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb logcat -d > logcat.txt</code></pre>
+              
+              将日志保存到本地文件。
+            
+            高级命令
+            - 获取设备信息
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell getprop</code></pre>
+              
+              获取设备的所有属性信息。
+            
+            - 屏幕截图
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb exec-out screencap -p > screenshot.png</code></pre>
+              
+              获取设备屏幕截图并保存到本地。
+            
+            - 录制屏幕
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell screenrecord /sdcard/screenrecord.mp4</code></pre>
+              
+              开始屏幕录制，按 Ctrl+C 停止录制并保存到设备。
+            
+            端口转发
+            - 转发端口
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb forward tcp:<本地端口> tcp:<设备端口></code></pre>
+              
+              将本地端口转发到设备端口。
+            
+            - 移除转发
+             
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb forward --remove tcp:<本地端口></code></pre></div>
+              
+          <p>  这些命令可以帮助你在调试和开发 Android 应用时更有效地与设备进行交互。根据需要，可以结合使用这些命令来执行更复杂的操作。
+            要使用 ADB 获取设备的 root 权限，设备必须已经被 root 过。以下是一些常见的 ADB root 命令和相关操作：
+
+检查设备是否已 root
+首先，你可以检查设备是否已获得 root 权限：
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell</code></pre>
+su
+如果设备已 root，你将进入 root shell（提示符通常会变为 #）。
+
+获取 root 权限
+在某些设备上，你可以直接通过以下命令获取 root 权限：
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb root</code></pre>
+如果设备支持，命令会重新启动 ADB 以 root 模式运行。
+
+安装和使用 su 二进制文件
+如果设备已 root，并且已安装 su 二进制文件，你可以使用以下命令：
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell</code></pre>
+su
+使用 Magisk 或 SuperSU
+如果你使用 Magisk 或 SuperSU 等 root 管理工具，可以确保这些工具已正确安装，并且你已授予 ADB shell root 权限。
+
+提升权限运行特定命令
+你可以使用 su -c 命令来在 root shell 中执行特定命令：
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell</code></pre>
+  <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>su -c "your_command"</code></pre>
+例如：
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code></code>adb shell</code></pre>
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code></code>su -c "mkdir /data/new_directory"</code></pre>
+
+安装 SuperSU 或 Magisk
+如果你的设备尚未 root，可以通过以下步骤进行 root：
+1. 解锁设备的 bootloader（具体步骤根据设备不同而异）。
+2. 安装自定义恢复（如 TWRP）。
+3. 通过自定义恢复刷入 Magisk 或 SuperSU zip 文件。
+
+具体示例
+以下是一个具体示例，展示如何通过 ADB 获取 root 权限并执行命令：
+
+1. **连接设备并检查 root 权限**：
+   
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb devices
+adb shell
+su</code></pre>
+  
+
+2. **如果设备未 root，则使用 `adb root` 获取 root 权限（如果支持）**：
+   
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb root
+adb remount</code></pre>
+  
+
+3. **在 root shell 中执行命令**：
+   
+
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>adb shell
+su -c "mkdir /data/new_directory"
+`</code></pre>
+
+注意事项
+- 确保你了解 root 设备的风险，包括潜在的安全问题和保修失效。
+- 确保你已备份数据，以防止在 root 过程中数据丢失。
+- 不同设备的 root 方法可能有所不同，请参考设备的具体指南。
+
+通过这些步骤和命令，你可以在已 root 的 Android 设备上使用 ADB 获取 root 权限并执行各种操作。
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+    </footer>
+</body>
+</html>

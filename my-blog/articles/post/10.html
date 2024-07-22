@@ -1,0 +1,75 @@
+<!DOCTYPE html> <!-- 声明文档类型 -->
+<html lang="en"> <!-- 设置文档语言为英语 -->
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，以确保页面在移动设备上正确显示 -->
+    <title>peng gan Blog</title>  <!-- 设置页面标题 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+</head>
+<body>
+<div class="header"> <!-- 定义一个类为header的div -->
+            <a href="../../index.html">My Blog</a> <!-- 链接内容 -->
+        </div>
+    <div class="container"> <!-- 定义一个类为container的div -->
+        
+        <div class="subheader"> <!-- 定义一个类为subheader的div -->
+            <h1>咪咕 MIGU-JT-U2 安装第三方软件</h1>
+      </div>
+        <div class="date" id="lastModified"></div> <!-- 定义一个类为date的div，显示创建时的日期与时间 -->
+        <div class="content"> <!-- 定义一个类为content的div -->
+            <!-- 文章内容 -->
+              
+        
+          
+            <p>大致的看了下，还是发现用拆机 TTL 大法能轻松解决应用安装问题，以下是安装教程：</p>
+           
+              
+                    <p>准备工具：U盘、TTL 转 USB 线（CH340G 或 2303 皆可）、
+                        <p>  <b> putty下载:</b><a href="https://www.123pan.com/s/slcETd-4u6Md.html" target="_blank">https://www.123pan.com/s/slcETd-4u6Md.html</a></p>
+               
+                    <p> TTL 转 USB 线的驱动<a href="https://www.123pan.com/s/slcETd-1u6Md.html" target="_blank">https://www.123pan.com/s/slcETd-1u6Md.html</a></p>
+
+               
+                    <p>右键我的电脑——属性——设备管理器——端口——COM"X"（X 就是最后位数字）——属性——端口设置——改为“115200”——确定；</p>
+                    <img src="https://img.penggan.cloudns.be/file/a274b798cfd1cff6ee7b7.jpg" />
+            
+                    <p>下载软件到 U 盘，然后修改文件名字（参考下方修改），接着将 U 盘插入咪咕盒子 MIGU-JT-U2 盒子 USB 接口，</p>
+                    
+                    <p>   <a>dangbei1.apk ----->当贝桌面(下载：http://www.dangbei.com/zhuomian/)</a>
+                        <p>      <a>dangbei2.apk ----->当贝市场(下载：https://webapk.dangbei.net/update/dangbeimarket.apk)</a>
+         
+                    <p>接入 TTL 线，按照图中方式接线，1=RX 2=TX 最右=GND；</p>
+                    <p>   <img src="https://img.penggan.cloudns.be/file/0e99d664595eb7a763dac.jpg" />
+            
+                    <p>打开 putty.exe，按图中的顺序设置即可，COM 后面的数字按照自己电脑的数字输入即可，设置完成选择 open，接着机顶盒通电开启盒子，此时 putty 会开始跑代码（如果没有跑代码就将机顶盒上 TTL 线的 RX 和 TX 对调一下）；</p>
+              
+                <p>   <img src="https://img.penggan.cloudns.be/file/53ece0a3064a8b8d12fdd.jpg" />
+            
+                    <p>   <b>开始安装：</b>
+                    
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cd /mnt/usbhost/Storage01</code></pre>，进入 U 盘</a>
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>pm install dangbei2.apk，安装当贝市场，当显示 Success</code></pre>即可成功；</a>
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>mount -r -w -o remount /system</code></pre>挂载系统路径；</a>
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cp dangbei1.apk /system/app</code></pre>复制当贝桌面到系统路径；</a>
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>chmod 644 /system/app/dangbei1.apk</code></pre>给予当贝桌面权限，实现自启动；</a>
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>am start com.dangbei.tvlaunhcer</code></pre>启动当贝桌面；</a>
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cd /system/app</code></pre>进入系统 app 路径；</a>
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>rm Update.apk</code></pre>删除系统更新；</a>
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>rm CMCC_AUTH_ZJ_V1.1_20150506_17_signed.apk</code></pre>删除检测终端；</a>
+                        <a><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>rm CMCCAuth.apk</code></pre>删除检测终端；</a>
+                    
+                        <p>  <img src="https://img.penggan.cloudns.be/file/112e612c462fdf3c1f7e0.png" />
+                            <p>  <img src="https://img.penggan.cloudns.be/file/fb25ff787afceeb15d83d.png" />
+                                <p>     <img src="https://img.penggan.cloudns.be/file/9aa3390452e209e583457.jpg" />
+         
+           
+            
+ <!-- 文章内容 -->
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+                </footer>
+</body>
+</html>

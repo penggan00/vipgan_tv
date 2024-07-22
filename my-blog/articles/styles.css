@@ -1,0 +1,157 @@
+body {
+    background-color: #f7f7f7; /* 设置背景色 */
+    color: #333; /* 设置文字颜色 */
+    margin: 0; /* 去除页面默认外边距 */
+    padding: 0; /* 去除页面默认内边距 */
+    align-items: center; /* 水平居中 */
+    max-width: 800px; /* 设置最大宽度为800px */
+    text-decoration: none; /* 去除下划线 */
+    padding-left: 10px; /* 左内边距10px */
+    padding-right: 10px; /* 右内边距10px */
+    margin: 0 auto; /* 将页面水平居中 */
+    word-wrap: break-word; /* 自动换行 */
+    font-family: Arial, sans-serif;   
+}
+
+.header { /* 设置header类的样式 */
+    background-color: #f7f7f7; /* 设置背景色 */
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
+    padding: 8px 0px 8px 0px; /* 内边距 */
+    position: sticky; /* 固定在页面顶部 */
+    z-index: 1000; /* 设置层叠顺序 */
+    text-align: center; /* 文本居中 */
+}
+
+.header a { /* 设置header中的a元素样式 */
+    text-decoration: none; /* 去除下划线 */
+    margin: 0; /* 去除默认外边距 */
+
+    color: #333; /* 设置文字颜色 */
+    justify-content: center; /* 水平居中显示 */
+    font-weight: bold; /* 设置字体加粗 */
+    font-family: Georgia; /* 设置字体 */
+
+}
+
+pre {
+    position: relative; /* 相对定位 */
+    padding: 8px; /* 内边距 */
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px; /* 圆角 */
+    white-space: pre-wrap; /* 自动换行 */
+    font-family: Arial, sans-serif;
+    max-height: 300px; 
+    overflow-y: auto;  /* 允许垂直滚动 */
+}
+
+
+.content a { /* 设置container类的样式 */
+    text-decoration: none; /* 去除下划线 */
+    
+}
+
+.content,.content a,h1, h2, h3, h4, h5, h6 { 
+    font-size: 1.1em; /* 设置字体大小 */
+    text-decoration: none; /* 去除下划线 */
+   
+}
+
+
+.container{ 
+    font-size: 16px; /* 设置字体大小 */
+    padding-left: 12px; /* 左内边距 */
+    padding-right: 12px; /* 右内边距 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+.copy-button {
+    position: absolute; /* 绝对定位 */
+    top: 1px; /* 距离顶部1px */
+    right: 10px; /* 距离右边10px */
+    padding: 5px; /* 内边距 */
+    background: #007bff; /* 背景颜色 */
+    color: #fff; /* 文字颜色 */
+    border: none; /* 无边框 */
+    border-radius: 3px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停样式 */
+}
+
+.copy-button:hover {
+    background: #0056b3; /* 悬停背景颜色 */
+}
+
+img {
+    max-width: 98%; /* 最大宽度100% */
+    height: auto; /* 自动调整高度 */
+    display: block; /* 块级元素显示 */
+    margin: 0 auto; /* 居中对齐 */
+}
+
+code {      
+    font-family: Consolas, "Courier New", monospace; /* 设置字体 */
+    font-size: 0.84em; /* 设置字体大小 */
+}
+
+.subheader { /* 设置subheader类的样式 */
+    text-align: center; /* 设置文字居中 */
+    color: #333333; /* 设置文字颜色 */
+    text-decoration: none; /* 去除下划线 */
+    margin-top: 20px; /* 上边距6px */
+}
+
+
+.date { /* 设置date类的样式 */
+    text-align: center; /* 设置文字居中 */
+    margin: 0px 0; /* 设置上下外边距为0 */
+    color: #777; /* 设置文字颜色 */
+    margin-top: -6px; /* 设置上外边距为-10px */
+    font-size: 0.8em; /* 设置字体大小 */
+    margin-bottom: 30px; /* 下边距-2px */
+}
+
+footer { 
+    display: flex; /* 弹性盒布局 */
+    justify-content: center; /* 水平居中 */
+    background-color: #f7f7f7; /* 背景颜色为浅灰色 */
+    padding: 60px; /* 内边距 */
+    margin-top: -18px; /* 上边距6px */
+
+}
+
+footer a {    
+    text-decoration: none; /* 去除下划线 */
+    color: #333; /* 设置文字颜色 */
+    display: flex; /* 弹性盒布局 */
+    white-space: nowrap;
+}
+
+.iframe {
+    width: 100%; /* 宽度100% */
+    height: 100%; /* 高度100% */
+}
+
+.video-box {
+    position: relative; /* 相对定位 */
+    width: 100%; /* 宽度100% */
+    height: 0; /* 高度为0 */
+    padding-bottom: 56.25%; /* 设置宽高比为16:9 */
+    overflow: hidden; /* 超出隐藏 */
+}
+
+.video-box iframe {
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 顶部0 */
+    left: 0; /* 左边0 */
+}
+
+@media (max-width: 800px) { /* 设置媒体查询，当屏幕宽度小于800px时应用以下样式 */
+    .subheader h1 { 
+        font-size: 1em; /* 设置字体大小 */
+    }  
+    .content,.content a,h1, h2, h3, h4, h5, h6 { 
+        font-size: 0.96em; /* 设置字体大小 */
+    }  
+ 
+
+}

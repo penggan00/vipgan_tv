@@ -1,0 +1,96 @@
+<!DOCTYPE html> <!-- 声明文档类型 -->
+<html lang="en"> <!-- 设置文档语言为英语 -->
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，以确保页面在移动设备上正确显示 -->
+    <title>peng gan Blog</title>  <!-- 设置页面标题 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+</head>
+<body>
+<div class="header"> <!-- 定义一个类为header的div -->
+            <a href="../../index.html">My Blog</a> <!-- 链接内容 -->
+        </div>
+    <div class="container"> <!-- 定义一个类为container的div -->
+        
+        <div class="subheader"> <!-- 定义一个类为subheader的div -->
+            <h1> 高效的仿站神器</h1> <!-- 文章主题 -->
+      </div>
+        <div class="date" id="lastModified"></div> <!-- 定义一个类为date的div，显示创建时的日期与时间 -->
+        <div class="content"> <!-- 定义一个类为content的div -->
+            <!-- 文章内容 -->
+              
+        
+     
+        
+                    <h1>一个简单的工具，可使用 AI 将屏幕截图、模型和 Figma 设计转换为干净、实用的代码</h1>
+                    <p>视频播放器</p>
+                    <h2>支持的堆栈：</h2>
+                    
+                        <a>HTML + CSS</a>
+                        <a>React + CSS</a>
+                        <a>Vue + CSS</a>
+                        <a>Bootstrap</a>
+                        <a>Ionic + CSS</a>
+                        <a>Tailwind CSS</a>
+                   
+                    <h2>支持的AI模型：</h2>
+                    
+                        <a>GPT-4 Turbo（2024 年 4 月）- 最佳型号</a>
+                        <a>GPT-4 Vision（2023 年 11 月）- 在某些输入上比 GPT-4 Turbo 更好的好模型</a>
+                        <a>Claude 3 Sonnet – 对于许多输入来说，速度更快，并且与 GPT-4 视觉相当或更好</a>
+                        <a>用于图像生成的 DALL-E 3</a>
+                   
+                    <h2>实验性支持：</h2>
+                    <p>用于拍摄正在运行的网站的视频/屏幕记录并将其转变为功能原型。</p>
+                    
+                        <a>谷歌应用程序快速 3</a>
+                   
+                    <h2>开源项目：</h2>
+                    <p><a href="https://github.com/your-github-link">GitHub</a></p>
+                    <h2>网盘下载：</h2>
+                    <p><a href="https://your-cloud-storage-link">点击下载</a></p>
+                    <h2>安装教程：</h2>
+                    <h3>运行后端：</h3>
+                    <div class="code">
+                       <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cd backend
+echo "OPENAI_API_KEY=sk-your-key" > .env
+poetry install
+poetry shell
+poetry run uvicorn main:app --reload --port 7001
+</code></pre>
+                    </div>
+                    <p>如果您想使用 Anthropic，请将与您的 Anthropic 的 API 密钥一起添加到 backend/.env 文件中。</p>
+                    <h3>运行前端：</h3>
+                    <div class="code">
+                       <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cd frontend
+yarn
+yarn dev
+</code></pre>
+                    </div>
+                    <p>打开 <a href="http://localhost:5173">http://localhost:5173</a> 以使用该应用程序。</p>
+                    <h3>调试模式：</h3>
+                    <p>如果您不想浪费 GPT4-Vision 积分，您可以在模拟模式下运行后端（该模式会传输预先录制的响应）：</p>
+                    <div class="code">
+                       <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>MOCK=true poetry run uvicorn main:app --reload --port 7001
+</code></pre>
+                    </div>
+                    <h3>Docker 一键安装命令：</h3>
+                    <div class="code">
+                       <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>echo "OPENAI_API_KEY=sk-your-key" > .env
+docker-compose up -d --build
+</code></pre>
+                    </div>
+                 
+            
+            
+            
+           
+ <!-- 文章内容 -->
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+                </footer>
+</body>
+</html>

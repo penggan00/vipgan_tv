@@ -1,0 +1,175 @@
+/* 设置整个页面的字体为 Arial 或 sans-serif，背景色为 #f7f7f7，文字颜色为 #333，去除页面的默认边距和内边距 */
+body {
+    background-color: #f7f7f7; /* 设置背景色 */
+    color: #333; /* 设置文字颜色 */
+    margin: 0; /* 去除页面默认外边距 */
+    padding: 0; /* 去除页面默认内边距 */
+    align-items: center; /* 水平居中 */
+    max-width: 800px; /* 设置最大宽度为900px */
+    text-decoration: none; /* 去除文本装饰 */
+    padding-left: 10px; /* 左内边距10px */
+    padding-right: 10px; /* 右内边距10px */
+    margin: 0 auto; /* 将页面水平居中 */
+    word-wrap: break-word; /* 自动换行 */
+    font-family: Arial, sans-serif; /* 设置字体 */
+}
+
+main {
+    /* 主内容区的样式 */
+}
+
+/* 设置页眉部分的样式，背景色为 #f7f7f7，带有轻微阴影效果，文本居中显示，固定在页面顶部，z-index 属性用于层叠顺序 */
+.header {
+    text-decoration: none; /* 去除下划线 */
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
+    padding: 8px 0px 8px 0px; /* 内边距 */
+    padding: 8px 0; /* 上下内边距8px */
+    position: sticky; /* 固定在页面顶部 */
+    z-index: 1000; /* 设置层叠顺序 */
+    text-align: center; /* 文本居中 */
+}
+
+/* 设置页眉中 a 标签的样式 */
+.header a {
+    text-decoration: none; /* 去除下划线 */
+    margin: 0; /* 去除默认外边距 */
+    font-size: 20px; /* 设置字体大小 */
+    color: #333; /* 设置文字颜色 */
+    justify-content: center; /* 水平居中显示 */
+    font-weight: bold; /* 字体加粗 */
+    font-family: Georgia; /* 设置字体 */
+}
+
+/* 设置文章部分的样式，背景色为 #fff，带有阴影效果，下边距为 1px，内边距为 20px，边框圆角为 5px */
+.post {
+    background-color: #ffffff; /* 设置背景色 */
+    margin-bottom: 9px; /* 下边距1px */
+    border-radius: 5px; /* 设置边框圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
+    padding: 12px 20px; /* 设置内边距 */
+    font-size: 1.1em; /* 设置字体大小 */
+    color: #888; /* 设置文字颜色 */
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: space-between; /* 水平两端对齐 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 设置文章标题的样式 */
+.post h2 {
+    font-size: 16px; /* 设置字体大小 */
+    text-align: left; /* 文本左对齐 */
+    margin-top: 0px; /* 去除上外边距 */
+    margin-bottom: 0px; /* 去除下外边距 */
+    padding: 0px; /* 去除内边距 */
+    
+}
+
+/* 设置文章链接的样式，颜色为黑色，去除下划线 */
+.post a {
+    color: #000; /* 设置文字颜色 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+/* 设置文章链接悬停时的样式，添加下划线 */
+.post a:hover {
+    text-decoration: underline; /* 添加下划线 */
+}
+
+/* 设置文章时间戳的样式 */
+.timestamp {
+    font-size: 0.7em; /* 设置字体大小 */
+    color: #888; /* 设置文字颜色 */
+    margin-left: auto; /* 自动左边距 */
+    white-space: nowrap; /* 不换行 */
+}
+
+/* 设置页脚部分的样式，背景色为 #fff，文本居中显示，固定在页面底部，带有阴影效果 */
+footer { 
+    display: flex; /* 弹性盒布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    background-color: #f7f7f7; /* 背景颜色为浅灰色 */
+    padding: 15px; /* 内边距 */
+   
+}
+footer a {    
+    text-decoration: none; /* 去除下划线 */
+    color: #333; /* 设置文字颜色 */
+}
+
+/* 设置搜索框容器的样式，使用 Flex 布局，水平居中显示 */
+.search-container {
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: center; /* 水平居中显示 */
+ 
+
+}
+
+/* 设置搜索输入框的样式，宽度为 100%，最大宽度为 900px，内边距为 9px，字体大小为 14px */
+#search-input {
+    width: 100%; /* 设置宽度 */
+    max-width: 800px; /* 设置最大宽度 */
+    padding: 9px; /* 设置内边距 */
+    font-size: 15px; /* 设置字体大小 */
+    margin-top: 6px; /* 上边距5px */
+    margin-bottom: 6px; /* 下边距-2px */
+ 
+}  
+
+/* 设置分页按钮激活状态的样式 */
+.pagination button.active {
+    background-color: #000; /* 设置背景色 */
+    color: #ffffff; /* 设置文字颜色 */
+}
+
+/* 设置分页容器的样式，使用 Flex 布局，水平居中显示，垂直居中显示 */
+.pagination button {
+    padding: 6px; /* 设置内边距 */
+    justify-content: center; /* 水平居中显示 */
+    align-items: center; /* 垂直居中显示 */
+}
+
+/* 设置按钮的样式，左右边距为 2px，内边距为 5px 10px，光标样式为指针 */
+button {
+    margin: 0 2px; /* 左右边距2px */
+    padding: 5px 10px; /* 设置内边距 */
+    cursor: pointer; /* 设置光标样式 */
+    margin-top: 13px; /* 上边距13px */
+    position: relative; /* 相对定位 */
+    left: 10px; /* 左移10px */
+}
+
+/* 设置分页输入框的样式 */
+.pagination input[type="number"] {
+    width: 36px; /* 设置输入框宽度 */
+    height: 25px; /* 设置输入框高度 */
+    text-align: center; /* 文字居中 */
+    margin-left: 3px; /* 左边距3px */
+    position: relative; /* 相对定位 */
+    left: 10px; /* 左移10px */
+}
+
+/* 在小屏幕下的响应式布局 */
+@media (max-width: 800px) {
+    .pagination button {
+        padding: 5px; /* 设置内边距 */
+    }
+    body {
+        font-size: 0.92em; /* 设置字体大小 */
+    }
+    .post h2 {
+        font-size: 0.96em; /* 设置字体大小 */
+    }
+    .search-container {
+        padding-left: 4px; /* 左内边距4px */
+        padding-right: 7px; /* 右内边距6px */
+    }
+    #search-input {
+        width: 99%; /* 设置宽度 */
+    }
+
+    .pagination input[type="number"] {
+        width: 25px; /* 设置输入框宽度 */
+        text-align: center; /* 文字居中 */
+    }
+}

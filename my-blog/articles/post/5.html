@@ -1,0 +1,146 @@
+<!DOCTYPE html> <!-- 声明文档类型 -->
+<html lang="en"> <!-- 设置文档语言为英语 -->
+<head>
+    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，以确保页面在移动设备上正确显示 -->
+    <title>peng gan Blog</title>  <!-- 设置页面标题 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+</head>
+<body>
+<div class="header"> <!-- 定义一个类为header的div -->
+            <a href="../../index.html">My Blog</a> <!-- 链接内容 -->
+        </div>
+    <div class="container"> <!-- 定义一个类为container的div -->
+        
+        <div class="subheader"> <!-- 定义一个类为subheader的div -->
+            <h1> 玩客云刷CasaOS教程2.0</h1> <!-- 文章主题 -->
+      </div>
+        <div class="date" id="lastModified"></div> <!-- 定义一个类为date的div，显示创建时的日期与时间 -->
+        <div class="content"> <!-- 定义一个类为content的div -->
+            <!-- 文章内容 -->
+            <p>
+             
+                <p>玩客云Armbian固件下载地址：<a href="https://github.com/hzyitc/armbian-onecloud/releases" target="_blank">https://github.com/hzyitc/armbian-onecloud/releases</a></p>
+                <p>需要注意的是，CasaOS还不能支持最新版的底包，所以我们需要下载之前的老版本。在下载页面上往下拉，找到6.1.9这个版本。我们需要去下载带mini和burn字样的刷机包。mini代表最小安装包，burn代表线刷包。</p>
+            
+                <h2>刷入eMMC</h2>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cd /boot/install/</code></pre>
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>sudo ./install.sh</code></pre>
+                <p>检查时间：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>date -R</code></pre>
+                <p>如果时区及时间不对，执行下面的操作：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>cp /usr/share/zoneinfo/Asia/Shanghai</code></pre> <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>/etc/localtime</code></pre>
+                        <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>timedatectl set-timezone Asia/Shanghai</code></pre>
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt-get install ntpdate</code></pre>
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>date -R</code></pre>
+            
+                <h2>更换源</h2>
+                <p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/armbian/" target="_blank">清华大学开源软件镜像站</a><p/>
+                
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>nano /etc/apt/sources.list</code></pre>
+<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free
+            #deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free
+            deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free
+            #deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free
+            deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free
+            #deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free
+            deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ bullseye-security main contrib non-free
+            #deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ bullseye-security main contrib non-free</code></pre>
+                
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>sudo apt update</code></pre>
+                <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt list --upgradable</code></pre>
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>sudo apt-get update && sudo apt-get upgrade -y</code></pre>
+                        <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt install docker.io</code></pre>
+            
+                <h2>解决Conda命令未找到的问题</h2>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>echo export PATH=/home/aa/anaconda3/bin:$PATH >> ~/.bashrc</code></pre>
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>source ~/.bashrc</code></pre>
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>conda info --envs</code></pre>
+            
+                <h2>安装CasaOS系统</h2>
+                <p>CasaOS的安装只需要以下任意一条代码即可：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>wget -qO- https://get.casaos.io | sudo bash</code></pre>
+                <p>或者：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>curl -fsSL https://get.casaos.io | sudo bash</code></pre>
+            
+                <h2>Alist密码</h2>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker logs alist</code></pre>
+                <p>安装好CasaOS系统后，可以在软件市场里一键添加软件源：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>https://play.cuse.eu.org/Cpe204-Appstore-play-arm.zip</code></pre>
+                        <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>http://play.cuse.eu.org/Cpe204-Appstore-play-arm.zip</code></pre>
+                <p>小伙伴反馈，添加这个源需要网络环境支持。如果无法添加的话就需要再SSH里安装docker。</p>
+                <p>ps：又有小伙伴反馈http的地址源可以添加成功。</p>
+            
+                <h2>安装Alist</h2>
+                <p>打开ssh，用root账号登录。输入代码安装Alist：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker run -d --restart=unless-stopped -v /etc/alist:/opt/alist/data -p 5244:5244 -e PUID=0 -e PGID=0 -e UMASK=022 --name="alist" xhofe/alist:latest</code></pre>
+            
+                <h2>安装CasaOS</h2>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>wget -qO- https://get.casaos.io | sudo bash</code></pre>
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>curl -fsSL https://get.casaos.io | sudo bash</code></pre>
+            
+                <h2>安装可道云</h2>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker pull kodcloud/kodexplorer:latest
+docker run -d -it --name kodexplorer -p 58989:80 -v /data/docker/kodbox:/var/www/html --restart=always kodcloud/kodexplorer:latest</code></pre>
+            
+                <h2>安装Cups开启无线打印服务器</h2>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt-get install ghostscript</code></pre>
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt-get install dc</code></pre>
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt-get install foomatic-db-engine</code></pre>
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt-get install cups</code></pre>
+            
+                <h2>安装宝塔</h2>
+                <p>拉取镜像：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker pull centos:centos7</code></pre>
+                <p>创建容器：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker run -tid --name baota -p 80:80 -p 8888:8888 --restart always centos:centos7</code></pre>
+                <p>进入容器：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker exec -it baota /bin/bash</code></pre>
+                <p>安装宝塔：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>yum install -y wget && wget -O install.sh http://download.bt.cn/install/install.sh && sh install.sh</code></pre>
+            
+                <h2>安装青龙</h2>
+                <p>拉取镜像：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker pull whyour/qinglong:2.10.13</code></pre>
+                <p>创建容器：</p>
+                
+                    <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>docker run -dit \\
+-v $PWD/ql/config:/ql/config \\
+-v $PWD/ql/log:/ql/log \\
+-v $PWD/ql/db:/ql/db \\
+-v $PWD/ql/repo:/ql/repo \\
+-v $PWD/ql/raw:/ql/raw \\
+-v $PWD/ql/scripts:/ql/scripts \\
+-v $PWD/ql/jbot:/ql/jbot \\
+-p 5700:5700 \\
+--name qinglong \\
+--hostname qinglong \\
+--restart unless-stopped \\
+whyour/qinglong:2.10.13</code></pre>
+
+                 <!-- 文章内容 -->
+            </div>
+        </div>
+        <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+                </footer>
+</body>
+</html>
