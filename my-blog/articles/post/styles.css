@@ -36,15 +36,17 @@ body {
 
 pre{
     font-family: 'Courier New', monospace;
-    max-height: 300px; 
+    max-height: 600px; 
     position: relative; /* 相对定位 */
     padding: 8px; /* 内边距 */
-    background-color: #e0e0e0;
-    color: #444444;
+    background-color: #000000;
+    color: #ffffff;
     border-radius: 5px; /* 圆角 */
     overflow-x: auto;  /* 允许垂直滚动 */
     overflow-y: auto;  /* 允许垂直滚动 */
+
 }
+
 
 .content,.content a,.content p,h1, h2, h3, h4, h5, h6 { 
     font-size: 1em; /* 设置字体大小 */
@@ -61,7 +63,7 @@ pre{
     top: 4px; /* 距离顶部1px */
     right: 10px; /* 距离右边10px */
     padding: 4px; /* 内边距 */
-    background: #000000; /* 背景颜色 */
+    background: #007bff; /* 背景颜色 */
     color: #fff; /* 文字颜色 */
     border: none; /* 无边框 */
     border-radius: 3px; /* 圆角 */
