@@ -1,0 +1,206 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>peng gan Blog</title>  
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+<div class="header"> 
+            <a href="../../index.html">My Blog</a> 
+        </div>
+    <div class="container"> 
+        
+        <div class="subheader"> 
+            <h1>     解锁流媒体、chatgpt        </h1> <!-- 文章主题 -->
+        </div>
+        <div class="date" id="lastModified"></div> 
+        <div class="content">  <!-- 文章内容 --><p>
+
+       
+            <h2>视频教程</h2><a href="https://www.youtube.com/embed/W-fDjn0MxeI" target="_blank" >https://www.youtube.com/embed/W-fDjn0MxeI</a><h2>视频文档</h2><p>住宅ip提供商：<a href="https://bulianglin.com/g/aHR0cDovL2lwLjg4MDgwNS54eXo" target="_blank" >http://ip.880805.xyz</a></p><p>检测IP类型：<a href="https://bulianglin.com/g/aHR0cHM6Ly9pcGluZm8uaW8" target="_blank" >https://ipinfo.io</a><br>检测IP欺诈：<a href="https://bulianglin.com/g/aHR0cHM6Ly9zY2FtYWx5dGljcy5jb20vaXA" target="_blank" >https://scamalytics.com/ip</a></p></li></ul><h3>安卓端使用住宅IP(链式代理)</h3><p>假定你已经有自己的节点，<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9zOTBmZVJtZHI5QQ" target="_blank" >节点搭建教程</a></p></blockquote><ul><li>使用代理工具：<a href="https://bulianglin.com/g/aHR0cHM6Ly9mLWRyb2lkLm9yZy9yZXBvL2lvLm5la29oYXNla2FpLmFuWHJheV8xNzUuYXBr" target="_blank" >AnXray</a></li></ul><h3>苹果端使用住宅IP(链式代理)</h3><p>假定你已经有自己的节点，<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9zOTBmZVJtZHI5QQ" target="_blank" >节点搭建教程</a></p></blockquote><ul><li>使用代理工具：<a href="https://bulianglin.com/g/aHR0cHM6Ly9hcHBzLmFwcGxlLmNvbS91cy9hcHAvc2hhZG93cm9ja2V0L2lkOTMyNzQ3MTE4" target="_blank" >Shadowrocket</a></li></ul><h3>无链式代理使用住宅IP</h3><p>假定你通过X-UI搭建了节点，<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9zOTBmZVJtZHI5QQ" target="_blank" >节点搭建教程</a></p></blockquote><p>VPS执行更新geosite指令：<br><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>wget https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat -O /usr/local/x-ui/bin/geosite.dat</code></pre></p><h4>x-ui配置模板（指定网站走住宅IP）：</h4><p><a href="https://bulianglin.com/g/aHR0cHM6Ly94dGxzLmdpdGh1Yi5pby9jb25maWcvcm91dGluZy5odG1sI-mihOWumuS5ieWfn-WQjeWIl-ihqA" target="_blank" >https://xtls.github.io/config/routing.html#预定义域名列表</a></p><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>{
+    &quot;services&quot;: [
+      &quot;HandlerService&quot;,
+      &quot;LoggerService&quot;,
+      &quot;StatsService&quot;
+    ],
+    &quot;tag&quot;: &quot;api&quot;
+  },
+  &quot;inbounds&quot;: [
+    {
+      &quot;listen&quot;: &quot;127.0.0.1&quot;,
+      &quot;port&quot;: 62789,
+      &quot;protocol&quot;: &quot;dokodemo-door&quot;,
+      &quot;settings&quot;: {
+        &quot;address&quot;: &quot;127.0.0.1&quot;
+      },
+      &quot;tag&quot;: &quot;api&quot;
+    }
+  ],
+  &quot;outbounds&quot;: [
+    {
+      &quot;protocol&quot;: &quot;freedom&quot;,
+      &quot;settings&quot;: {}
+    },
+    {
+      &quot;tag&quot;: &quot;zhuzai_proxy&quot;,
+      &quot;protocol&quot;: &quot;socks&quot;,
+      &quot;settings&quot;: {
+        &quot;servers&quot;: [
+          {
+            &quot;address&quot;: &quot;8.8.8.8&quot;,
+            &quot;port&quot;: 8888,
+            &quot;users&quot;: [
+              {
+                &quot;user&quot;: &quot;user&quot;,
+                &quot;pass&quot;: &quot;pass&quot;
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      &quot;protocol&quot;: &quot;blackhole&quot;,
+      &quot;settings&quot;: {},
+      &quot;tag&quot;: &quot;blocked&quot;
+    }
+  ],
+  &quot;policy&quot;: {
+    &quot;system&quot;: {
+      &quot;statsInboundDownlink&quot;: true,
+      &quot;statsInboundUplink&quot;: true
+    }
+  },
+  &quot;routing&quot;: {
+    &quot;rules&quot;: [
+      {
+        &quot;type&quot;: &quot;field&quot;,
+        &quot;outboundTag&quot;: &quot;zhuzai_proxy&quot;,
+        &quot;domain&quot;: [
+          &quot;ip125.com&quot;,
+          &quot;geosite:openai&quot;,
+          &quot;geosite:netflix&quot;,
+          &quot;geosite:facebook&quot;,
+          &quot;geosite:paypal&quot;,
+          &quot;geosite:twitter&quot;,
+          &quot;geosite:amazon&quot;,
+          &quot;geosite:disney&quot;
+        ]
+      },
+      {
+        &quot;inboundTag&quot;: [
+          &quot;api&quot;
+        ],
+        &quot;outboundTag&quot;: &quot;api&quot;,
+        &quot;type&quot;: &quot;field&quot;
+      },
+      {
+        &quot;ip&quot;: [
+          &quot;geoip:private&quot;
+        ],
+        &quot;outboundTag&quot;: &quot;blocked&quot;,
+        &quot;type&quot;: &quot;field&quot;
+      },
+      {
+        &quot;outboundTag&quot;: &quot;blocked&quot;,
+        &quot;protocol&quot;: [
+          &quot;bittorrent&quot;
+        ],
+        &quot;type&quot;: &quot;field&quot;
+      }
+    ]
+  },
+  &quot;stats&quot;: {}
+}</code></pre><h4>x-ui配置模板（所有网站走住宅IP）：</h4><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>{
+  &quot;api&quot;: {
+    &quot;services&quot;: [
+      &quot;HandlerService&quot;,
+      &quot;LoggerService&quot;,
+      &quot;StatsService&quot;
+    ],
+    &quot;tag&quot;: &quot;api&quot;
+  },
+  &quot;inbounds&quot;: [
+    {
+      &quot;listen&quot;: &quot;127.0.0.1&quot;,
+      &quot;port&quot;: 62789,
+      &quot;protocol&quot;: &quot;dokodemo-door&quot;,
+      &quot;settings&quot;: {
+        &quot;address&quot;: &quot;127.0.0.1&quot;
+      },
+      &quot;tag&quot;: &quot;api&quot;
+    }
+  ],
+  &quot;outbounds&quot;: [
+    {
+      &quot;tag&quot;: &quot;zhuzai_proxy&quot;,
+      &quot;protocol&quot;: &quot;socks&quot;,
+      &quot;settings&quot;: {
+        &quot;servers&quot;: [
+          {
+            &quot;address&quot;: &quot;8.8.8.8&quot;,
+            &quot;port&quot;: 8888,
+            &quot;users&quot;: [
+              {
+                &quot;user&quot;: &quot;user&quot;,
+                &quot;pass&quot;: &quot;pass&quot;
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      &quot;protocol&quot;: &quot;blackhole&quot;,
+      &quot;settings&quot;: {},
+      &quot;tag&quot;: &quot;blocked&quot;
+    }
+  ],
+  &quot;policy&quot;: {
+    &quot;system&quot;: {
+      &quot;statsInboundDownlink&quot;: true,
+      &quot;statsInboundUplink&quot;: true
+    }
+  },
+  &quot;routing&quot;: {
+    &quot;rules&quot;: [
+      {
+        &quot;inboundTag&quot;: [
+          &quot;api&quot;
+        ],
+        &quot;outboundTag&quot;: &quot;api&quot;,
+        &quot;type&quot;: &quot;field&quot;
+      },
+      {
+        &quot;ip&quot;: [
+          &quot;geoip:private&quot;
+        ],
+        &quot;outboundTag&quot;: &quot;blocked&quot;,
+        &quot;type&quot;: &quot;field&quot;
+      },
+      {
+        &quot;outboundTag&quot;: &quot;blocked&quot;,
+        &quot;protocol&quot;: [
+          &quot;bittorrent&quot;
+        ],
+        &quot;type&quot;: &quot;field&quot;
+      }
+    ]
+  },
+  &quot;stats&quot;: {}
+}</code></pre><h2>视频文稿（忽略）</h2><p>关于住宅IP我之前<br>已经做过一期视频给大家科普了<br>详细内容可以<a href="https://bulianglin.com/archives/homeip.html" target="_blank" >回看之前的视频</a><br>简单来讲就是可以避免被风控<br>由于住宅IP只是普通的socks代理<br>很容易被墙<br>国内直连的话肯定是没办法使用的<br>所以必须通过链式代理的方式使用<br>上期视频主要<br>演示了怎么在电脑上实现链式代理<br>视频发出后收到很多朋友的留言<br>他们的业务主要在手机上操作<br>想直接在手机端使用<br>所以本期就来补充一下住宅IP的用法<br>介绍安卓端和苹果端怎么通过<br>链式代理使用住宅IP<br>以及不用链式代理<br>也能使用住宅IP的方法<br>即使你没有住宅IP的需求<br>链式代理的技巧也是非常实用的<br>相信你在其他使用场景也会用到<br>关于住宅IP代理这里再补充一下<br>上期给大家带来了一些误解<br>当时我说可以用来运营TikTok<br>指的是可以用来上传视频<br>有些朋友以为可以用来开直播<br>那肯定是不行的<br>因为这种住宅IP<br>有效期只有几个小时<br>一般都是用完就换<br>最常见的用法是进行批量注册<br>比如现在大火的chatGPT账号<br>卖号的商家<br>都是通过住宅IP代理进行批量注册<br>注册一个就换一个IP<br>防止被封控<br>然后再以十几二十块的价格出售<br>住宅IP加上接码成本也就一两块钱<br>商机就这么来了<br>这里只是简单的举个例子<br>很多网赚项目都需要<br>用到住宅IP<br>如果你觉得有效期几个小时太短了<br>希望能长期有效<br>则需要使用静态住宅IP<br>今天我们也会一起介绍<br>住宅IP没有免费的只能花钱买<br>你可以自己寻找合适的住宅IP商家<br>我使用的商家是ip2world<br>价格相对便宜一点<br>网址我会放在视频下方<br>点击这里进行注册<br>输入你的邮箱和密码即可<br>这是我的邀请码<br>注册后点击这里进行登录<br>我的账户上还有3000多个住宅IP<br>这是大家通过我的邀请码<br>注册后购买了 就会奖励我一些IP<br>他家支持将IP转移出售给其他人<br>所以我打算将这价值300美元的住宅IP<br>全部抽奖送掉<br>总共30个名额<br>每人100个<br>在评论区回复包含关键字报名<br>就算是参与了<br>我会提取有关键字的评论<br>随机抽取30名用户<br>开奖时间请关注本频道动态<br>他家的住宅IP<br>目前有三种类型的计费方式<br>第一种就是我们上期介绍过的<br>按个数计费<br>大概10美分一个IP<br>每个IP的有效期只有几个小时<br>不过没有流量限制<br>适合用来做流量消耗比较大<br>时间不用太长的操作<br>比如上传视频<br>这次抽奖送的就是这种IP<br>第二种是按流量计费<br>IP个数不限<br>适合用来批量操作需要频繁更换IP<br>流量消耗不大的项目<br>比如批量注册chatGPT<br>第三种是独享静态住宅ip<br>ip地址固定不变<br>代理长期有效<br>并且无限流量<br>适合长期需要<br>固定IP防止被封控的项目<br>比如使用chatGPT 解锁奈飞 登录Paypal<br>跨境电商等项目<br>本期主要给大家介绍流量计费住宅IP<br>和静态住宅IP如何使用<br>按个数计费的住宅IP<br>上期已经详细介绍过了<br>有需要的朋友请回看上期视频<br>点击这里可以购买相应计费方式的套餐<br>先看一下流量计费套餐的价格<br>最低的是5G<br>价格18刀<br>相当于每G流量3.6刀<br>流量有效期为半年<br>没接触过的朋友可能觉得<br>这个价格怎么这么贵<br>其实对于住宅IP来讲<br>这个价格已经算是比较便宜了<br>我见过最贵的商家是15刀1个G<br>而且这家还有一个长期折扣码可以用<br>选择你的支付方式<br>当前选中的套餐价格为75刀<br>这个折扣码可以获得25%的优惠<br>将折扣码输入到这里<br>点击应用<br>可以看到便宜了将近20刀<br>并且这个折扣码不是只能用一次<br>而是每次购买的时候都可以使用<br>长期有效<br>建议保存<br>点击buy付款即可<br>再来看一下静态住宅IP<br>可以按天买 按周买 按月买<br>买多久这个IP就能用多久<br>并且可以续期<br>如果你想固定使用一个IP<br>用这种最合适<br>目前有以下几个地区<br>美国弗尼吉亚 中国台湾<br>英国伦敦 美国纽约 中国香港<br>后续应该还会有其他地区<br>美国的IP 5刀1个月<br>其他地区的7.5刀<br>可以选择购买的数量<br>然后点击buy plan<br>会跳转到付款位置<br>选择支付方式 同样也能使用折扣码<br>购买之后就可以使用了<br>授权方式有IP白名单和账号密码两种<br>为了简单一点<br>我们只介绍账号密码的使用方式<br>点击auth user list进入授权用户列表<br>可以在这里创建账号密码<br>点击add users 填写用户名密码<br>也可以在这里限制<br>这个用户最多可以使用多少流量<br>点击确认<br>提示用户名已经被使用<br>换一个用户名即可<br>创建成功后就可以使用住宅IP了<br>先演示流量计费IP<br>点击get proxices 获取代理IP<br>选择user pass的认证方式<br>也就是账号密码认证<br>上面显示了我的剩余流量<br>以及流量到期时间<br>默认选中了我刚才创建的账户<br>这里可以选择你想要的住宅IP归属地<br>每个国家都有<br>比如日本的<br>可以进一步选择地区<br>比如东京<br>接着比较关键的一步是IP的获取方式<br>默认选中的是随机IP<br>也就是每一次连接都会更换IP<br>Sticky IP译为粘性IP<br>表示一段时间内使用同一个IP<br>如果选择粘性IP<br>则还可以进一步设置<br>多少分钟后自动更换IP<br>先来演示使用随机IP<br>下方生成了服务器的域名和端口<br>以及用户名和密码<br>有了这些信息<br>我们就可以连接socks代理服务器了<br>同时生成了一条查询代理IP的指令<br>复制这条指令<br>打开CMD 将指令粘贴上去<br>回车执行<br>可以看到返回了代理的ip地址<br>地址是日本东京的IP<br>此时我们再次执行这条指令<br>又返回了另一个日本东京的住宅IP<br>这就是随机IP的效果<br>每次都会使用你选定地区里的<br>不同的代理IP<br>这种方式非常适合使用pose的提交表单<br>一次就能完成的项目<br>ip地址无限使用<br>也不用消耗多少流量<br>前提是你能解决<br>目标服务器的反爬虫机制<br>我们可以使用上期讲过的方法<br>来查询这些IP的欺诈值<br>关于欺诈值大家可以用作参考<br>毕竟每个人的用处都不一样<br>分数的高低不一定会<br>影响你操作的项目<br>而且这些商家的IP<br>也都是从上游采购的<br>很多平台都在使用相同的IP<br>所以没有说哪一个商家的IP<br>就特别干净<br>也可能是我没有发现<br>如果有的话<br>也欢迎在评论区给大家分享<br>测试结果还不错 大部分在合理水平<br>粘性IP可以设置IP的有效时长<br>比如我这里设置1分钟<br>也就是说1分钟内无论我访问多少次<br>IP都不会变<br>复制这条指令再来测试一下<br>返回了日本东京的IP<br>一分钟内我再次访问还是同一个IP<br>经过一分钟的等待<br>再测试的时候就会换成新的代理IP了<br>看一下我们刚才的操作<br>消耗了多少流量<br>只有7K<br>这是因为我们只是通过命令执行<br>如果是开网页的话<br>需要加载很多图片等其他信息<br>就会消耗很多流量<br>住宅IP在电脑上一般是配合<br>指纹浏览器使用<br>网上有很多教程我这里就不演示了<br>主要介绍怎么在手机端使用<br>回到获取代理IP的页面<br>根据你的需求进行设置<br>复制服务器地址<br>安卓端目前只推荐已经停止更新的AnXray<br>其他代理工具可能无法使用<br>下载地址我会放在视频下方的说明栏<br>首先你需要有一个能用的节点<br>不管是机场节点还是你自己搭建的<br>先来连接测试一下<br>能够成功握手<br>就说明节点可以正常使用<br>跟着视频演示添加一条socks节点<br>服务器填写刚才复制的域名<br>端口填写这里的6001<br>复制这串用户名<br>粘贴上去<br>再填上密码<br>可以随便给一个备注名称<br>点击右上角的保存<br>此时我们就添加了一条<br>住宅IP的socks代理了<br>但是不能直接使用<br>可以看到无法连接<br>现在才是关键的步骤<br>根据视频演示<br>找到最下方的链式代理<br>点击添加服务器配置<br>先选择能正常使用的节点<br>再次添加服务器配置<br>选择住宅IP的socks节点<br>这样操作之后<br>相当于我们的数据<br>先发给能正常使用的香港节点<br>再由香港节点转交给住宅IP的代理<br>因为香港和住宅IP之间没有防火墙<br>可以正常连接<br>随便设置一个备注名称<br>点击右上角保存<br>这样我们就多了一条链式代理的节点了<br>选中该节点启用代理<br>再来测试连接<br>能够成功握手说明可以正常使用<br>访问谷歌也是没有问题的<br>苹果端推荐使用小火箭<br>同样也是链式代理的方法<br>首先需要一个可以正常使用的节点<br>跟着视频演示添加住宅IP的socks代理<br>同样也是填写服务器端口用户名密码<br>随便给一个备注<br>点击右上角保存<br>此时测试会显示超时无法使用<br>因为还没有进行链式代理<br>进入重新修改<br>点击代理通过<br>选择可以正常使用的香港节点<br>点击保存<br>此时再来测试<br>可以正常使用了<br>查询一下IP<br>是一个巴西的IP<br>因为没有指定地区<br>所以是随机的<br>刚才我们设置的是30分钟后更换IP<br>这里教大家一个小技巧<br>如果你想马上更换IP<br>只需要把用户名<br>session后面的字符串修改一下<br>随便改成什么都可以<br>它只是一个标识<br>改了之后就相当于一个新的标识<br>所以会使用新的代理IP<br>保存之后记得要断开重连才会生效<br>此时再来测试IP<br>就会变成新的IP了<br>可以看到变成了加拿大的住宅IP<br>这就是在手机端通过链式<br>代理的方式使用住宅IP的方法<br>最后再来了解一下静态住宅IP<br>静态住宅IP是个人独享的IP<br>只有你一个人用并且没有流量限制<br>先来查询一下<br>我的静态住宅IP的欺诈值<br>还是那句话<br>每个人的用处不一样<br>分数高低仅供参考<br>静态住宅IP提供了两个端口<br>2000是给IP白名单用的<br>2333是给账号密码用的<br>我们用的是账号密码<br>所以使用2333端口<br>使用方式和流量计费的住宅IP是一样的<br>手机端就不演示了<br>简单在电脑上演示一下<br>使用v2rayN添加一个socks代理<br>填写地址和端口<br>用户名和密码可以在这里查看<br>和流量计费用的是同样的用户名和密码<br>内核选择Xray<br>点击确定<br>尝试测速<br>可以看到是没有问题的<br>速度还挺快<br>如果你直接测速的话可能用不了<br>因为我用了class的TUN模式<br>相当于开了链式代理<br>怎么操作的话<br>可以回看上期的住宅IP视频<br>接着将v2rayN配置为系统代理<br>先查询一下IP<br>可以看到是我使用的香港住宅IP<br>看一下是否解锁奈飞<br>能进到绝命毒师的介绍页面<br>说明可以解锁非自制剧<br>但是当我把TUN模式关掉后<br>相当于我本地直连了住宅IP<br>此时肯定是无法访问了<br>开启TUN模式后<br>又恢复正常了<br>如果你用的是机场的节点<br>只有通过这种链式代理的方式<br>才能使用住宅IP<br>而如果你是自建的节点<br>又觉得链式代理很麻烦<br>可以通过之前介绍过的二级代理方式<br>来使用住宅IP<br>我这里只演示使用x-ui<br>自建节点配置二级代理的方式<br>先确认你搭建的节点可以正常使用<br>访问谷歌没有问题<br>但是无法访问奈飞<br>因为这个VPS商家的IP<br>全部被奈飞拉黑了<br>用这个节点访问奈飞会被拒绝<br>先执行这条指令更新站点数据库<br>因为x-ui已经两年没有更新了<br>数据库太老了<br>不更新的话<br>无法使用chatGPT这种新的分流域名<br>然后进入面板设置的xray相关设置<br>用我给大家的模板<br>替换自带的配置模板<br>这些用到的代码<br>我会放在视频下方的说明栏<br>在这里输入你的静态住宅IP信息<br>分别替换IP 端口<br>用户名<br>密码忘了可以点击这里查看<br>然后在这里设置访问哪些网站<br>使用静态住宅IP的代理<br>这里只设置了openAI<br>也就是chatGPT以及迪士尼<br>可以在这里添加任意多个网站<br>比如奈飞 脸书 Paypal<br>亚马逊等等<br>修改完成后全选<br>将原来的模板内容替换掉<br>点击保存配置<br>然后重启面板<br>这时我们这个被奈飞拉黑的新加坡节点<br>就能通过静态住宅IP访问奈飞了<br>可以看到没有问题<br>由于我们的静态住宅IP是香港的<br>所以是解锁香港的奈飞<br>访问paypal也会使用静态住宅IP<br>可以看到跳转到香港的网址<br>查询IP的话还是新加坡的IP<br>因为这个查询IP的网站<br>我们并没有设置让他使用静态住宅IP<br>这样就不需要配置链式代理了<br>直接连接你的自建节点<br>就能让指定的网站使用住宅IP了</p>
+        </div>
+    </div>
+        
+ 
+    
+    </div> <!-- 文章内容 -->    
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+    </footer>
+</body>
+</html>

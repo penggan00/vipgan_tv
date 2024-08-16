@@ -1,155 +1,154 @@
 body {
-    background-color: #f7f7f7; /* 设置背景色 */
-    color: #333; /* 设置文字颜色 */
-    margin: 0; /* 去除页面默认外边距 */
-    padding: 0; /* 去除页面默认内边距 */
-    align-items: center; /* 水平居中 */
-    max-width: 800px; /* 设置最大宽度为900px */
-    text-decoration: none; /* 去除文本装饰 */
-    padding-left: 10px; /* 左内边距10px */
-    padding-right: 10px; /* 右内边距10px */
-    margin: 0 auto; /* 将页面水平居中 */
-    word-wrap: break-word; /* 自动换行 */
-    font-family: Arial, sans-serif; /* 设置字体 */
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    max-width: 800px;
+    text-decoration: none;
+    padding: 0 10px;
+    margin: 0 auto;
+    word-wrap: break-word;
+    font-family: Arial, sans-serif;
 }
 
 .header {
-    text-decoration: none; /* 去除下划线 */
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
-    padding: 8px 0px 8px 0px; /* 内边距 */
-    padding: 8px 0; /* 上下内边距8px */
-    position: sticky; /* 固定在页面顶部 */
-    z-index: 1000; /* 设置层叠顺序 */
-    text-align: center; /* 文本居中 */
+    text-decoration: none;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    position: sticky;
+    z-index: 1000;
+    text-align: center;
 }
 
-/* 设置页眉中 a 标签的样式 */
 .header a {
-    text-decoration: none; /* 去除下划线 */
-    margin: 0; /* 去除默认外边距 */
-    font-size: 20px; /* 设置字体大小 */
-    color: #333; /* 设置文字颜色 */
-    justify-content: center; /* 水平居中显示 */
-    font-weight: bold; /* 字体加粗 */
-    font-family: Georgia; /* 设置字体 */
+    text-decoration: none;
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    justify-content: center;
+    font-weight: bold;
+    font-family: Georgia;
 }
 
-pre{
+pre {
     font-family: 'Courier New', monospace;
-    max-height: 600px; 
-    position: relative; /* 相对定位 */
-    padding: 8px; /* 内边距 */
-    background-color: #000000;
-    color: #ffffff;
-    border-radius: 5px; /* 圆角 */
-    overflow-x: auto;  /* 允许垂直滚动 */
-    overflow-y: auto;  /* 允许垂直滚动 */
-
+    max-height: px;
+    position: relative;
+    padding: 8px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    overflow: auto;
 }
 
-
-.content,.content a,.content p,h1, h2, h3, h4, h5, h6 { 
-    font-size: 1em; /* 设置字体大小 */
-    text-decoration: none; /* 去除下划线 */
- 
+.content, .content a, .content p, h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    text-decoration: none;
 }
-.content p{ 
+
+.content p {
     line-height: 1.5em;
-    text-decoration: none; /* 去除下划线 */
 }
 
 .copy-button {
-    position: absolute; /* 绝对定位 */
-    top: 4px; /* 距离顶部1px */
-    right: 10px; /* 距离右边10px */
-    padding: 4px; /* 内边距 */
-    background: #007bff; /* 背景颜色 */
-    color: #fff; /* 文字颜色 */
-    border: none; /* 无边框 */
-    border-radius: 3px; /* 圆角 */
-    cursor: pointer; /* 鼠标悬停样式 */
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    padding: 4px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .copy-button:hover {
-    background: #0056b3; /* 悬停背景颜色 */
+    background: #0056b3;
+}
+
+a
+{  text-decoration: none;
 }
 
 img {
-    max-width: 100%; /* 最大宽度100% */
-    height: auto; /* 自动调整高度 */
-    display: block; /* 块级元素显示 */
-    margin: 0 auto; /* 居中对齐 */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-code {      
-    font-family: Consolas, "Courier New", monospace; /* 设置字体 */
-    font-size: 0.84em; /* 设置字体大小 */
+code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.84em;
 }
 
-.subheader { /* 设置subheader类的样式 */
-    text-align: center; /* 设置文字居中 */
-    color: #333333; /* 设置文字颜色 */
-    text-decoration: none; /* 去除下划线 */
-    margin-top: 20px; /* 上边距6px */
-    font-size: 1.1em; /* 设置字体大小 */
+.subheader {
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 1.1em;
 }
 
-
-.date { /* 设置date类的样式 */
-    text-align: center; /* 设置文字居中 */
-    margin: 0px 0; /* 设置上下外边距为0 */
-    color: #777; /* 设置文字颜色 */
-    margin-top: -6px; /* 设置上外边距为-10px */
-    font-size: 0.8em; /* 设置字体大小 */
-    margin-bottom: 30px; /* 下边距-2px */
+.date {
+    text-align: center;
+    margin: 0;
+    color: #777;
+    margin-top: -6px;
+    font-size: 0.8em;
+    margin-bottom: 30px;
 }
 
-footer { 
-    display: flex; /* 弹性盒布局 */
-    justify-content: center; /* 水平居中 */
-    background-color: #f7f7f7; /* 背景颜色为浅灰色 */
-    padding: 60px; /* 内边距 */
-    margin-top: -18px; /* 上边距6px */
-
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #f7f7f7;
+    padding: 60px;
+    margin-top: -18px;
 }
 
-footer a {    
-    text-decoration: none; /* 去除下划线 */
-    color: #333; /* 设置文字颜色 */
-    display: flex; /* 弹性盒布局 */
+footer a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
     white-space: nowrap;
 }
 
 .iframe {
-    width: 100%; /* 宽度100% */
-    height: 100%; /* 高度100% */
+    width: 100%;
+    height: 100%;
 }
 
 .video-box {
-    position: relative; /* 相对定位 */
-    width: 100%; /* 宽度100% */
-    height: 0; /* 高度为0 */
-    padding-bottom: 56.25%; /* 设置宽高比为16:9 */
-    overflow: hidden; /* 超出隐藏 */
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
 }
 
 .video-box iframe {
-    position: absolute; /* 绝对定位 */
-    top: 0; /* 顶部0 */
-    left: 0; /* 左边0 */
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-@media (max-width: 800px) { /* 设置媒体查询，当屏幕宽度小于800px时应用以下样式 */
-    .subheader h1 { 
-        font-size: 0.98em; /* 设置字体大小 */
-    }  
-    .content,.content a,.content p,h1, h2, h3, h4, h5, h6 { 
-        font-size: 0.99em; /* 设置字体大小 */
-    }  
- 
-    .container{ 
-        padding-left: 7px; /* 左内边距 */
-        padding-right: 12px; /* 右内边距 */
-        text-decoration: none; /* 去除下划线 */
+@media (max-width: 600px) {
+    .subheader h1 {
+        font-size: 0.98em;
+    }
+
+    .content, .content a, .content p, h1, h2, h3, h4, h5, h6 {
+        font-size: 0.99em;
+    }
+
+    .container {
+        padding-left: 7px;
+        padding-right: 12px;
+        text-decoration: none;
+    }
+    pre {
+        max-height: 65px;
     }
 }

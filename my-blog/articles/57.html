@@ -1,0 +1,455 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>peng gan Blog</title>  
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+<div class="header"> 
+            <a href="../../index.html">My Blog</a> 
+        </div>
+    <div class="container"> 
+        
+        <div class="subheader"> 
+            <h1>刷机OnePlus 5</h1> 
+        </div>
+        <div class="date" id="lastModified"></div> 
+        <div class="content">  <!-- 文章内容 --><p>
+
+     
+                                    <p>一加（OnePlus） OnePlus 5（A5000） 线刷详细图解，MsmDownloadTool工具高通9008底层救砖教程
+          
+                                                                        
+        
+        <p><strong>工具简介：</strong></p>
+        
+       
+        <p>MSMDownloadTool是一个通用的一加手机线刷工具，适合高通芯片组方案手机，支持SMT下载模式和售后升级模式，支持连接多个一加手机批量刷机，通过刷机，可以实现一加手机救砖、清账户、清密码的功能，解决一加手机遇到的各种问题。</p>
+        
+        
+        <p><strong>注意事项：</strong></p>
+        
+       
+        
+        
+        <p>刷机会清除所有数据，包括话机密码，提前做好备份。</p>
+        
+        
+        <p>手机电量建议在30%以上。</p>
+        
+        
+        <p>刷机途中不要触碰手机或者开机键。</p>
+        
+        
+        <p>台式机刷机建议使用后置USB口。</p>
+        
+        
+        <p>刷机前建议看完教程再进行操作，事半功倍。</p>
+        
+        </ol>
+        
+        
+        <p><strong>准备工作：</strong></p>
+        
+       
+        
+        
+        <p><a href="https://onfix.cn/rom?bid=786" target="_blank" rel="noopener">点击下载并解压缩，线刷工具和固件，一般压缩在一起了。</a></p>
+        
+        
+        <p><a href="https://onfix.cn/course/3367" target="_blank" rel="noopener">点击下载并安装刷机驱动。</a></p>
+        
+        
+        <p>一台Windows系统PC一台，64位系统优先。</p>
+        
+    
+        <p>
+            <a href="https://www.ixigua.com/iframe/7014006747148845599?autoplay=0" target="_blank" rel="noopener"><strong>视频参考教程</strong></a>
+        </p>
+        <p>&nbsp;</p>
+        
+        <strong>下面是图文参考教程：</strong>
+       
+                                                                                                    </div>
+                                                                                            <!-- 操作步骤开始 -->
+                                    <ul class="nav nav-tabs bderbb" role="tablist">
+                                        <li role="presentation" class="active"><a href="#step" aria-controls="content" role="tab" data-toggle="tab">步骤列表</a>
+                                   
+                                    <div class="tab-content mt15" style="margin-bottom:22px">
+                                        <div role="tabpanel" class="tab-pane active" id="step">
+                                                                                <div class="step-item">
+                                                <h2 class="step-title">
+                                                    <strong class="stepValue">步骤 1</strong>
+                                                    <span class="stepTitle">安装驱动</span>
+                                                </h2>
+                                                <div class="step-content-box cl imgbox  hidden-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/0CppdR7SCBo6q4jn6mZyLimgTSfSMbu1dMrUve8o.png.thumb.jpg" data-original="/storage/course/0CppdR7SCBo6q4jn6mZyLimgTSfSMbu1dMrUve8o.png" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/Qd3Q8ox07ogEka4NC4aagZztu31zgGNM0w5y6XJ7.png.thumb.jpg" data-original="/storage/course/Qd3Q8ox07ogEka4NC4aagZztu31zgGNM0w5y6XJ7.png" class="zoom hidden ">
+                                                                                                        <img id="aimg_2" aid="2" src="https://onfix.cn/storage/course/sUzxTLfVMhKUWJGTOxx1v7grxLtlIfWmn5KlmKRY.png.thumb.jpg" data-original="/storage/course/sUzxTLfVMhKUWJGTOxx1v7grxLtlIfWmn5KlmKRY.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/0CppdR7SCBo6q4jn6mZyLimgTSfSMbu1dMrUve8o.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/Qd3Q8ox07ogEka4NC4aagZztu31zgGNM0w5y6XJ7.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/sUzxTLfVMhKUWJGTOxx1v7grxLtlIfWmn5KlmKRY.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>驱动由vivo官方提供的，一加也通用，已经签名安装方便，更适合64的系统，更适合新手使用，所以强烈推荐。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>如果你刷过其他高通的手机，可以略过这步，因为高通驱动通用、通用、通用。</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="step-content-box cl imgbox  visible-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/0CppdR7SCBo6q4jn6mZyLimgTSfSMbu1dMrUve8o.png.thumb.jpg" data-original="/storage/course/0CppdR7SCBo6q4jn6mZyLimgTSfSMbu1dMrUve8o.png" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/Qd3Q8ox07ogEka4NC4aagZztu31zgGNM0w5y6XJ7.png.thumb.jpg" data-original="/storage/course/Qd3Q8ox07ogEka4NC4aagZztu31zgGNM0w5y6XJ7.png" class="zoom hidden ">
+                                                                                                        <img id="aimg_2" aid="2" src="https://onfix.cn/storage/course/sUzxTLfVMhKUWJGTOxx1v7grxLtlIfWmn5KlmKRY.png.thumb.jpg" data-original="/storage/course/sUzxTLfVMhKUWJGTOxx1v7grxLtlIfWmn5KlmKRY.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/0CppdR7SCBo6q4jn6mZyLimgTSfSMbu1dMrUve8o.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/Qd3Q8ox07ogEka4NC4aagZztu31zgGNM0w5y6XJ7.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/sUzxTLfVMhKUWJGTOxx1v7grxLtlIfWmn5KlmKRY.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>驱动由vivo官方提供的，一加也通用，已经签名安装方便，更适合64的系统，更适合新手使用，所以强烈推荐。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>如果你刷过其他高通的手机，可以略过这步，因为高通驱动通用、通用、通用。</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                <div class="step-item">
+                                                <h2 class="step-title">
+                                                    <strong class="stepValue">步骤 1</strong>
+                                                    <span class="stepTitle">运行刷机工具</span>
+                                                </h2>
+                                                <div class="step-content-box cl imgbox  hidden-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/nmzZc1DWipPQ2B4cJ1ta2TlUuMFx4IdOSPBksWc1.png.thumb.jpg" data-original="/storage/course/nmzZc1DWipPQ2B4cJ1ta2TlUuMFx4IdOSPBksWc1.png" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/oN51Rgk08W5nIsVGaX3dWzcYlg9sLWTPLOiXYe4j.png.thumb.jpg" data-original="/storage/course/oN51Rgk08W5nIsVGaX3dWzcYlg9sLWTPLOiXYe4j.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/nmzZc1DWipPQ2B4cJ1ta2TlUuMFx4IdOSPBksWc1.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/oN51Rgk08W5nIsVGaX3dWzcYlg9sLWTPLOiXYe4j.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>解压下载好的固件包，在刷机工具上点击右键“以管理员身份运行”，这个很重要以免刷机途中报错。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>高版本工具有选项，选择“Other”再点击“Next”即可</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="step-content-box cl imgbox  visible-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/nmzZc1DWipPQ2B4cJ1ta2TlUuMFx4IdOSPBksWc1.png.thumb.jpg" data-original="/storage/course/nmzZc1DWipPQ2B4cJ1ta2TlUuMFx4IdOSPBksWc1.png" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/oN51Rgk08W5nIsVGaX3dWzcYlg9sLWTPLOiXYe4j.png.thumb.jpg" data-original="/storage/course/oN51Rgk08W5nIsVGaX3dWzcYlg9sLWTPLOiXYe4j.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/nmzZc1DWipPQ2B4cJ1ta2TlUuMFx4IdOSPBksWc1.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/oN51Rgk08W5nIsVGaX3dWzcYlg9sLWTPLOiXYe4j.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>解压下载好的固件包，在刷机工具上点击右键“以管理员身份运行”，这个很重要以免刷机途中报错。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>高版本工具有选项，选择“Other”再点击“Next”即可</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                <div class="step-item">
+                                                <h2 class="step-title">
+                                                    <strong class="stepValue">步骤 1</strong>
+                                                    <span class="stepTitle">手机进入刷机模式</span>
+                                                </h2>
+                                                <div class="step-content-box cl imgbox  hidden-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/2rOPa9i01uz6eV99JglJrbE6Zv6G5FT9UUgiy92P.jpeg.thumb.jpg" data-original="/storage/course/2rOPa9i01uz6eV99JglJrbE6Zv6G5FT9UUgiy92P.jpeg" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/oMiatkCo98avKQrwPXiA4CUGHBiTsCY73uoeFbMw.jpeg.thumb.jpg" data-original="/storage/course/oMiatkCo98avKQrwPXiA4CUGHBiTsCY73uoeFbMw.jpeg" class="zoom hidden ">
+                                                                                                        <img id="aimg_2" aid="2" src="https://onfix.cn/storage/course/QtNKltQCy7JoKbYGJRfjSZHwhkgKqhnA7MoeNPjx.png.thumb.jpg" data-original="/storage/course/QtNKltQCy7JoKbYGJRfjSZHwhkgKqhnA7MoeNPjx.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/2rOPa9i01uz6eV99JglJrbE6Zv6G5FT9UUgiy92P.jpeg.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/oMiatkCo98avKQrwPXiA4CUGHBiTsCY73uoeFbMw.jpeg.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/QtNKltQCy7JoKbYGJRfjSZHwhkgKqhnA7MoeNPjx.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>如图打开设备管理器</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>手机彻底关机（最好是电池拆掉，重新安装），同时按住【音量上键】+【音量下键】然后插入USB线。注意此时屏幕无任何显示。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>当看到设备管理器中识别到了&quot;Qualcomm HS-USB QDLoader 9008&quot;的端口就可以松手了。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>注意：端口必须是Qualcomm HS-USB QDLoader 9008这个名字（COM后面数字可以不同），不是的话请检查驱动，否则可能刷机会有报错</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="step-content-box cl imgbox  visible-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/2rOPa9i01uz6eV99JglJrbE6Zv6G5FT9UUgiy92P.jpeg.thumb.jpg" data-original="/storage/course/2rOPa9i01uz6eV99JglJrbE6Zv6G5FT9UUgiy92P.jpeg" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/oMiatkCo98avKQrwPXiA4CUGHBiTsCY73uoeFbMw.jpeg.thumb.jpg" data-original="/storage/course/oMiatkCo98avKQrwPXiA4CUGHBiTsCY73uoeFbMw.jpeg" class="zoom hidden ">
+                                                                                                        <img id="aimg_2" aid="2" src="https://onfix.cn/storage/course/QtNKltQCy7JoKbYGJRfjSZHwhkgKqhnA7MoeNPjx.png.thumb.jpg" data-original="/storage/course/QtNKltQCy7JoKbYGJRfjSZHwhkgKqhnA7MoeNPjx.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/2rOPa9i01uz6eV99JglJrbE6Zv6G5FT9UUgiy92P.jpeg.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/oMiatkCo98avKQrwPXiA4CUGHBiTsCY73uoeFbMw.jpeg.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/QtNKltQCy7JoKbYGJRfjSZHwhkgKqhnA7MoeNPjx.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>如图打开设备管理器</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>手机彻底关机（最好是电池拆掉，重新安装），同时按住【音量上键】+【音量下键】然后插入USB线。注意此时屏幕无任何显示。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>当看到设备管理器中识别到了&quot;Qualcomm HS-USB QDLoader 9008&quot;的端口就可以松手了。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>注意：端口必须是Qualcomm HS-USB QDLoader 9008这个名字（COM后面数字可以不同），不是的话请检查驱动，否则可能刷机会有报错</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                <div class="step-item">
+                                                <h2 class="step-title">
+                                                    <strong class="stepValue">步骤 1</strong>
+                                                    <span class="stepTitle">开始刷机</span>
+                                                </h2>
+                                                <div class="step-content-box cl imgbox  hidden-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/iIXW6uOGXVrFxUprQehXIVVdXVYQ8ijzbeB8LguS.png.thumb.jpg" data-original="/storage/course/iIXW6uOGXVrFxUprQehXIVVdXVYQ8ijzbeB8LguS.png" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/16YiirOr8NPLsIvY7bKK8PemG3kADNoZiUMUFIUa.png.thumb.jpg" data-original="/storage/course/16YiirOr8NPLsIvY7bKK8PemG3kADNoZiUMUFIUa.png" class="zoom hidden ">
+                                                                                                        <img id="aimg_2" aid="2" src="https://onfix.cn/storage/course/gxfuGA2ZfEAdfFIpTM1oO0LSHFeCczc3okCUjJMC.png.thumb.jpg" data-original="/storage/course/gxfuGA2ZfEAdfFIpTM1oO0LSHFeCczc3okCUjJMC.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/iIXW6uOGXVrFxUprQehXIVVdXVYQ8ijzbeB8LguS.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/16YiirOr8NPLsIvY7bKK8PemG3kADNoZiUMUFIUa.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/gxfuGA2ZfEAdfFIpTM1oO0LSHFeCczc3okCUjJMC.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>设备管理器中识别到“Qualcomm HS-USB QDLoader 9008”的同时，刷机工具中也已经识别到了“COM设备”有的需要向下滑动才能看到。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>识别到了“COM设备”点击【Start】就开始刷机了</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>刷机途中请勿触碰手机</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="step-content-box cl imgbox  visible-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/iIXW6uOGXVrFxUprQehXIVVdXVYQ8ijzbeB8LguS.png.thumb.jpg" data-original="/storage/course/iIXW6uOGXVrFxUprQehXIVVdXVYQ8ijzbeB8LguS.png" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/16YiirOr8NPLsIvY7bKK8PemG3kADNoZiUMUFIUa.png.thumb.jpg" data-original="/storage/course/16YiirOr8NPLsIvY7bKK8PemG3kADNoZiUMUFIUa.png" class="zoom hidden ">
+                                                                                                        <img id="aimg_2" aid="2" src="https://onfix.cn/storage/course/gxfuGA2ZfEAdfFIpTM1oO0LSHFeCczc3okCUjJMC.png.thumb.jpg" data-original="/storage/course/gxfuGA2ZfEAdfFIpTM1oO0LSHFeCczc3okCUjJMC.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/iIXW6uOGXVrFxUprQehXIVVdXVYQ8ijzbeB8LguS.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/16YiirOr8NPLsIvY7bKK8PemG3kADNoZiUMUFIUa.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/gxfuGA2ZfEAdfFIpTM1oO0LSHFeCczc3okCUjJMC.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>设备管理器中识别到“Qualcomm HS-USB QDLoader 9008”的同时，刷机工具中也已经识别到了“COM设备”有的需要向下滑动才能看到。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>识别到了“COM设备”点击【Start】就开始刷机了</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>刷机途中请勿触碰手机</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                <div class="step-item">
+                                                <h2 class="step-title">
+                                                    <strong class="stepValue">步骤 1</strong>
+                                                    <span class="stepTitle">刷机成功</span>
+                                                </h2>
+                                                <div class="step-content-box cl imgbox  hidden-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/XwuAfPZtqgJWitilcQiPmmVr6eFQg7yLkWj8LSSe.png.thumb.jpg" data-original="/storage/course/XwuAfPZtqgJWitilcQiPmmVr6eFQg7yLkWj8LSSe.png" class="zoom ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>直到工具提示“文件下载完毕”或者“USB下载完成”的绿色字样，就表示刷机成功了</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>拔下数据线，并长按开机键直到显示Logo或者震动后松手，刷机后第一次开机时间比较长，以后在开机就好了，请耐心等待。</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="step-content-box cl imgbox  visible-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/XwuAfPZtqgJWitilcQiPmmVr6eFQg7yLkWj8LSSe.png.thumb.jpg" data-original="/storage/course/XwuAfPZtqgJWitilcQiPmmVr6eFQg7yLkWj8LSSe.png" class="zoom ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>直到工具提示“文件下载完毕”或者“USB下载完成”的绿色字样，就表示刷机成功了</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>拔下数据线，并长按开机键直到显示Logo或者震动后松手，刷机后第一次开机时间比较长，以后在开机就好了，请耐心等待。</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                <div class="step-item">
+                                                <h2 class="step-title">
+                                                    <strong class="stepValue">步骤 1</strong>
+                                                    <span class="stepTitle">线刷常见报错解决方法</span>
+                                                </h2>
+                                                <div class="step-content-box cl imgbox  hidden-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/xjZrCipOFolMEHgKNVVlZFWaHTBIT0XhStVShhqI.jpeg.thumb.jpg" data-original="/storage/course/xjZrCipOFolMEHgKNVVlZFWaHTBIT0XhStVShhqI.jpeg" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/d2vZnEjVd4kpPeLkBZiQtLFpTUXG133L74W4azXi.png.thumb.jpg" data-original="/storage/course/d2vZnEjVd4kpPeLkBZiQtLFpTUXG133L74W4azXi.png" class="zoom hidden ">
+                                                                                                        <img id="aimg_2" aid="2" src="https://onfix.cn/storage/course/XhhImR29jt5FMt3DnqWwH5gRYZvOSLbMbckp0BeS.png.thumb.jpg" data-original="/storage/course/XhhImR29jt5FMt3DnqWwH5gRYZvOSLbMbckp0BeS.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/xjZrCipOFolMEHgKNVVlZFWaHTBIT0XhStVShhqI.jpeg.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/d2vZnEjVd4kpPeLkBZiQtLFpTUXG133L74W4azXi.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/XhhImR29jt5FMt3DnqWwH5gRYZvOSLbMbckp0BeS.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>端口名字与图中要一样，端口前不能有叹号，否则可能刷机报错，如果名字不符或者有叹号，重新返回第一步安装驱动</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>要以管理员身份运行刷机工具，否则刷机途中可能报错，没关系重新来过即可。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>如果刷机报错，一定要彻底关机（最好是电池拆掉，重新安装）再重新操作，要不9008端口可能无响应，无法在刷机</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="step-content-box cl imgbox  visible-mobile">
+                                                    <div class="step-img ">
+                                                                                                        <img id="aimg_0" aid="0" src="https://onfix.cn/storage/course/xjZrCipOFolMEHgKNVVlZFWaHTBIT0XhStVShhqI.jpeg.thumb.jpg" data-original="/storage/course/xjZrCipOFolMEHgKNVVlZFWaHTBIT0XhStVShhqI.jpeg" class="zoom ">
+                                                                                                        <img id="aimg_1" aid="1" src="https://onfix.cn/storage/course/d2vZnEjVd4kpPeLkBZiQtLFpTUXG133L74W4azXi.png.thumb.jpg" data-original="/storage/course/d2vZnEjVd4kpPeLkBZiQtLFpTUXG133L74W4azXi.png" class="zoom hidden ">
+                                                                                                        <img id="aimg_2" aid="2" src="https://onfix.cn/storage/course/XhhImR29jt5FMt3DnqWwH5gRYZvOSLbMbckp0BeS.png.thumb.jpg" data-original="/storage/course/XhhImR29jt5FMt3DnqWwH5gRYZvOSLbMbckp0BeS.png" class="zoom hidden ">
+                                                                                                    </div>
+                                                    <div class="step-content">
+                                                                                                        <div class="step-img-thumb cl ">
+                                                                                                                <div class="img-thumb-item  active "><img src="https://onfix.cn/storage/course/xjZrCipOFolMEHgKNVVlZFWaHTBIT0XhStVShhqI.jpeg.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/d2vZnEjVd4kpPeLkBZiQtLFpTUXG133L74W4azXi.png.thumb.jpg" /></div>
+                                                                                                                <div class="img-thumb-item "><img src="https://onfix.cn/storage/course/XhhImR29jt5FMt3DnqWwH5gRYZvOSLbMbckp0BeS.png.thumb.jpg" /></div>
+                                                                                                            </div>
+                                                                                                        <div class="step-content-column">
+                                                            <ul class="step-lines">
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>端口名字与图中要一样，端口前不能有叹号，否则可能刷机报错，如果名字不符或者有叹号，重新返回第一步安装驱动</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>要以管理员身份运行刷机工具，否则刷机途中可能报错，没关系重新来过即可。</p>
+                                                                
+                                                                                                                        
+                                                                    <i class="pull-left"></i>
+                                                                    <p>如果刷机报错，一定要彻底关机（最好是电池拆掉，重新安装）再重新操作，要不9008端口可能无响应，无法在刷机</p>
+                                                                
+                                                                                                                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                            </div>
+  
+ 
+    
+    </div> 
+    </div>
+    <script src="script.js"></script>
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+    </footer>
+</body>
+</html>

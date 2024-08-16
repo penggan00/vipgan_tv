@@ -1,66 +1,144 @@
-<!DOCTYPE html> <!-- 声明文档类型 -->
-<html lang="en"> <!-- 设置文档语言为英语 -->
+<!DOCTYPE html> 
+<html lang="en"> 
 <head>
-    <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，以确保页面在移动设备上正确显示 -->
-    <title>peng gan Blog</title>  <!-- 设置页面标题 -->
-    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>peng gan Blog</title>  
+    <link rel="stylesheet" href="styles.css"> 
 </head>
-<style>
-.content a,
-.content {
-
-    flex: 1 1 33%; /* 弹性比例为 1，可拉伸，宽度占 33% */
-    text-decoration: none; /* 无文本装饰 */
-    color: #333; /* 文本颜色为深灰色 */
-    box-sizing: border-box; /* 盒模型以边框为准 */
-    text-align: center; /* 文本居中 */
-    flex-wrap: wrap; /* 可换行 */
-    margin-right: 20px; /* 右外边距 20 像素 */
-    font-size: 20px; /* 字体大小 20 像素 */
-    text-decoration: none; /* 无文本装饰 */
-    color: #333; /* 文本颜色为深灰色 */
-
-}
-@media (max-width: 800px) { 
-  .content a,
-  .content {
-
- }
-}
-
-</style>
 <body>
-<div class="header"> <!-- 定义一个类为header的div -->
-            <a href="../../index.html">My Blog</a> <!-- 链接内容 -->
+<div class="header"> 
+            <a href="../../index.html">My Blog</a> 
         </div>
-    <div class="container"> <!-- 定义一个类为container的div -->
+    <div class="container"> 
         
-        <div class="subheader"> <!-- 定义一个类为subheader的div -->
-            <h1> 阿里云盘搜索</h1> <!-- 文章主题 -->
-      </div>
-        <div class="date" id="lastModified"></div></div> <!-- 定义一个类为date的div，显示创建时的日期与时间 -->
-        <div class="content"> <!-- 定义一个类为content的div -->
-            <!-- 文章内容 -->
+        <div class="subheader"> 
+            <h1>       节点最完美的隐藏方案       </h1> <!-- 文章主题 -->
+        </div>
+        <div class="date" id="lastModified"></div> 
+        <div class="content">  <!-- 文章内容 --><p>
 
-            <td> <a href="https://wuweipansou.top/" target="_blank">无为盘搜</a></td>
-             <a href="https://www.xzso.net/" target="_blank">小站盘搜</a> 
-             <a href="https://www.aliyundrive.com/s/ZKkCDMhrMja/folder/6488ff1718efbcfa1cf34a069ce1729bf9aefd74/" target="_blank">游戏</a>  
-                  <a href="https://www.aliyundrive.com/s/w4S62HispGN/folder/650f214463c0c180dc384225bb770a172cf69d3b/" target="_blank">新剧</a> <br><br>
-              <a href="https://www.qileso.com/page/2/" target="_blank">奇搜</a> 
-                  <a href="https://www.upyunso.com//" target="_blank">云搜</a> 
-                     <a href="https://yiso.fun/" target="_blank">易搜</a>
+  <p>naive的原理和<a href="https://bulianglin.com/g/aHR0cHM6Ly95b3V0dS5iZS9ndzJWbDFoODlXbw" target="_blank" >trojan</a>很像，除去<a href="https://bulianglin.com/archives/nicename.html" target="_blank"  target="_blank" >保姆级教程</a>搭建的节点消除了服务器tls指纹和隐藏了所有翻墙服务以及伪装成正常网站，naive协议更上一层，消除了客户端的tls指纹和tls-in-tls特征，并且naive协议基于http2，自带多路复用，对比ws需要频繁握手来讲延迟更低，前面也说过naive客户端使用chrome浏览器内核作为网络协议栈，从防火墙的角度来看，就像是你在正常的使用正常的谷歌浏览器访问正常的网站</p><p>关于tls指纹在节点搭建完成后再给大家演示，了解之后你会知道没有隐藏服务器tls指纹将会有什么后果，记得看到最后。</p><p>总而言之，这真的是目前最安全的搭建方式了，另外虽然之前的保姆级教程搭建的节点存在tls-in-tls特征，但我并不认为防火墙能精准识别这种流量。所以为了方便，你仍然可以使用之前的保姆级教程搭建安全的节点。如果你想更上一层，接下来我就来手把手教大家搭建naive节点</p><p>既然是手把手那理应从vps购买与连接、域名注册与dns解析讲起，不过这些内容之前已经详细介绍过了，如果你是新手小白，请看<a href="https://bulianglin.com/archives/nicename.html" target="_blank"  target="_blank" >保姆教程</a>的前10分25秒，详细讲解了以上前置内容</p><p>另外节点的速度主要和线路有关，如果你不愿意在这上面花太多时间折腾也不差钱，只想有个自己专属的节点实现高速稳定科学上网，建议使用保姆教程中给大家推荐的<a href="https://bulianglin.com/g/aHR0cHM6Ly9id2cuYnVsaWFuZ2xpbi5jb20v" target="_blank" >搬瓦工三网CN2 GIA线路</a>，一步到位省的闹心。</p><p>我当前的操作系统是<code>ubuntu22.04 amd64</code>，如果你使用其他操作系统，在搭建过程中如果和视频的预期效果不同，希望你能自行解决，域名已经做好了dns解析绑定到了当前VPS的ip地址，接下来正式进行搭建操作。</p><h2>视频教程</h2>     <a href="https://www.youtube.com/embed/F2VsjS6fybs">https://www.youtube.com/embed/F2VsjS6fybs</a> 
+  <p><strong>SSH工具</strong><br>FinalShell：<a href="https://bulianglin.com/g/aHR0cHM6Ly93d3cuaG9zdGJ1Zi5jb20vdC85ODguaHRtbA" target="_blank" >https://www.hostbuf.com/t/988.html</a></p><p>v2rayN客户端：<a href="https://bulianglin.com/g/aHR0cHM6Ly9naXRodWIuY29tLzJkdXN0L3YycmF5Tg" target="_blank" >https://github.com/2dust/v2rayN</a></p><h2>naive服务端配置</h2><h3>编译安装caddy+naive：</h3><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>apt install golang-go
+go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
+~/go/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive</code></pre><p>如果第二条指令执行出错，可以尝试执行<code>go env -w GO111MODULE=on</code> 再重试，还不行的话请自行搜索升级go版本方法</p><h3>Caddyfile配置：</h3><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>:443, naive.buliang0.tk #你的域名
+tls <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="77120f161a071b1237120f161a071b125914181a">[email&#160;protected]</a> #你的邮箱
+route {
+ forward_proxy {
+   basic_auth user pass #用户名和密码
+   hide_ip
+   hide_via
+   probe_resistance
+  }
+ #支持多用户
+ forward_proxy {
+   basic_auth user2 pass2 #用户名和密码
+   hide_ip
+   hide_via
+   probe_resistance
+  }
+ reverse_proxy  https://demo.cloudreve.org  { #伪装网址
+   header_up  Host  {upstream_hostport}
+   header_up  X-Forwarded-Host  {host}
+  }
+}</code></pre><h3>caddy常用指令：</h3><p>前台运行caddy：<code>./caddy run</code><br>后台运行caddy：<code>./caddy start</code><br>停止caddy：<code>./caddy stop</code><br>重载配置：<code>./caddy reload</code></p><p>caddy配置守护进程（开机自启）：<a href="https://bulianglin.com/g/aHR0cHM6Ly9naXRodWIuY29tL2tsemdyYWQvbmFpdmVwcm94eS93aWtpL1J1bi1DYWRkeS1hcy1hLWRhZW1vbg" target="_blank" >https://github.com/klzgrad/naiveproxy/wiki/Run-Caddy-as-a-daemon</a></p><h3>自定义端口：</h3><blockquote><p>naive如果要用自定义端口，需要使用json的配置方式，新手可以直接跳过</p></blockquote><p>启动方式：<code>./caddy start --config config.json</code></p><p><strong>config.json内容：</strong></p><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>//需删除注释内容caddy才能加载
+{
+ &quot;apps&quot;: {
+   &quot;http&quot;: {
+     &quot;servers&quot;: {
+       &quot;srv0&quot;: {
+         &quot;listen&quot;: [
+           &quot;:4431&quot;   //监听端口
+         ],
+         &quot;routes&quot;: [
+           {
+             &quot;handle&quot;: [
+               {
+                 &quot;auth_user_deprecated&quot;: &quot;user&quot;,   //用户名
+                 &quot;auth_pass_deprecated&quot;: &quot;pass&quot;,  //密码
+                 &quot;handler&quot;: &quot;forward_proxy&quot;,
+                 &quot;hide_ip&quot;: true,
+                 &quot;hide_via&quot;: true,
+                 &quot;probe_resistance&quot;: {}
+               }
+             ]
+           },
+           {
+             &quot;handle&quot;: [
+               {
+                 &quot;handler&quot;: &quot;reverse_proxy&quot;,
+                 &quot;headers&quot;: {
+                   &quot;request&quot;: {
+                     &quot;set&quot;: {
+                       &quot;Host&quot;: [
+                         &quot;{http.reverse_proxy.upstream.hostport}&quot;
+                       ],
+                       &quot;X-Forwarded-Host&quot;: [
+                         &quot;{http.request.host}&quot;
+                       ]
+                     }
+                   }
+                 },
+                 &quot;transport&quot;: {
+                   &quot;protocol&quot;: &quot;http&quot;,
+                   &quot;tls&quot;: {}
+                 },
+                 &quot;upstreams&quot;: [
+                   {
+                     &quot;dial&quot;: &quot;demo.cloudreve.org:443&quot;  //伪装网址
+                   }
+                 ]
+               }
+             ]
+           }
+         ],
+         &quot;tls_connection_policies&quot;: [
+           {
+             &quot;match&quot;: {
+               &quot;sni&quot;: [
+                 &quot;naive.buliang0.tk&quot;  //域名
+               ]
+             },
+             &quot;certificate_selection&quot;: {
+               &quot;any_tag&quot;: [
+                 &quot;cert0&quot;
+               ]
+             }
+           }
+         ],
+         &quot;automatic_https&quot;: {
+           &quot;disable&quot;: true
+         }
+       }
+     }
+   },
+   &quot;tls&quot;: {
+     &quot;certificates&quot;: {
+       &quot;load_files&quot;: [
+         {
+           &quot;certificate&quot;: &quot;/root/a.crt&quot;,  //公钥路径
+           &quot;key&quot;: &quot;/root/a.key&quot;,   //私钥路径
+           &quot;tags&quot;: [
+             &quot;cert0&quot;
+           ]
+         }
+       ]
+     }
+   }
+ }
+}</code></pre><h2>客户端配置</h2><p>naive客户端：<a href="https://bulianglin.com/g/aHR0cHM6Ly9naXRodWIuY29tL2tsemdyYWQvbmFpdmVwcm94eS9yZWxlYXNlcy9sYXRlc3Q" target="_blank" >https://github.com/klzgrad/naiveproxy/releases/latest</a></p><p>客户端配置：</p><pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>{
+  &quot;listen&quot;: &quot;socks://127.0.0.1:1080&quot;,
+  &quot;proxy&quot;: &quot;https://user:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="daaabba9a99abfa2bbb7aab6bff4b9b5b7">[email&#160;protected]</a>&quot;
+}</code></pre><p><div class="tip inlineBlock warning">使用v2rayN加载naive内核需要将配置文件的log行删除，否则会断流</div><h2>TLS指纹查看</h2><p>jarm工具：<a href="https://bulianglin.com/g/aHR0cHM6Ly9naXRodWIuY29tL3NhbGVzZm9yY2UvamFybQ" target="_blank" >https://github.com/salesforce/jarm</a></p><p>下载jarm：<code>wget https://raw.githubusercontent.com/salesforce/jarm/master/jarm.py</code><br>查看网站jarm指纹：<code>python3 jarm.py naive.buliang0.tk</code></p><p>网络空间资产搜索引擎：<a href="https://bulianglin.com/g/aHR0cHM6Ly9mb2ZhLmluZm8" target="_blank" >https://fofa.info</a></p>          </div>
+                           
         
-                     <a href="https://www.alipansou.com/" target="_blank">猫狸盘搜</a>  <br><br>
-                     <a href="  https://www.nmme.xyz/" target="_blank">橘子盘搜</a>  
-                   
-            
- <!-- 文章内容 -->
-        </div>
+ 
+    
+    </div> <!-- 文章内容 -->    
     </div>
     <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
     <footer>
         <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
-                </footer>
+    </footer>
 </body>
 </html>

@@ -29,6 +29,77 @@ a {
     text-decoration: none;
   }
 
+
+        .cont {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;  /* 或者使用 space-evenly */
+        }
+        
+
+        .item {
+            width: 25%; /* 每个标签占23%的宽度 */
+            text-align: center;
+            box-sizing: border-box; /* 包括padding和border在width和height之内 */
+            
+        }
+
+        .item img {
+            width: 27px;  /* 自定义宽度 */
+            height: 27px; /* 自定义高度 */
+            object-fit: cover; /* 确保图片按照比例裁剪以适应容器 */
+            display: block;
+            margin: 0 auto; /* 保证图片水平居中 */
+        }
+
+        .item a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            display: block;
+          
+        }
+
+        .item a:hover {
+            color: #007BFF; /* 當鼠標懸停時，文字變藍色 */
+        }
+
+
+        .item span {
+            display: block;
+            margin-top: 5px; /* 确保文字紧贴图片下方 */
+        }
+
+
+  pre{
+    font-family: 'Courier New', monospace;
+    max-height: 600px; 
+    position: relative; /* 相对定位 */
+    padding: 8px; /* 内边距 */
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px; /* 圆角 */
+    overflow-x: auto;  /* 允许垂直滚动 */
+    overflow-y: auto;  /* 允许垂直滚动 */
+
+}
+
+
+.copy-button {
+    position: absolute; /* 绝对定位 */
+    top: 4px; /* 距离顶部1px */
+    right: 10px; /* 距离右边10px */
+    padding: 4px; /* 内边距 */
+    background: #007bff; /* 背景颜色 */
+    color: #fff; /* 文字颜色 */
+    border: none; /* 无边框 */
+    border-radius: 3px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停样式 */
+}
+
+.copy-button:hover {
+    background: #0056b3; /* 悬停背景颜色 */
+}
 .links {
     display: flex; /* 以弹性布局 */
     flex-wrap: wrap; /* 可换行 */
@@ -108,14 +179,11 @@ footer {
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
     background-color: #f7f7f7; /* 背景颜色为浅灰色 */
-    padding: 15px; /* 内边距 */
-   
-   
+    padding: 10px; /* 内边距 */
+    text-decoration: none; /* 去除下划线 */
 }
 
 footer a {    
-    text-decoration: none; /* 去除下划线 */
     color: #333; /* 设置文字颜色 */
-    width: 36px; /* 设置输入框宽度 */
-    
+    width: 45px; /* 设置输入框宽度 */
 }

@@ -1,0 +1,194 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>peng gan Blog</title>  
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+<div class="header"> 
+            <a href="../../index.html">My Blog</a> 
+        </div>
+    <div class="container"> 
+        
+        <div class="subheader"> 
+            <h1>       sing-box         </h1> <!-- 文章主题 -->
+        </div>
+        <div class="date" id="lastModified"></div> 
+        <div class="content">  <!-- 文章内容 --><p>
+
+
+    <p>说起网络代理工具大家第一时间想到的应该是v2ray和clash，最近又有另一个非常火的网络代理工具出现了，sing-box，和v2ray属于同一种类型的工具，但是sing-box对协议支持的丰富程度可以说无人能及，本期教程就来带大家简单上手sing-box，使用sing-box搭建一个非常骚的shadowtls节点</p><h2>视频教程</h2>  <a href="https://www.youtube.com/embed/o-IFEu4GENE" target="_blank">https://www.youtube.com/embed/o-IFEu4GENE</a></div><hr><h2>安装sing-box</h2>
+    官方文档：<a href="https://sing-box.sagernet.org" target="_blank" >https://sing-box.sagernet.org</a><br>下载sing-box：<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>wget https://github.com/SagerNet/sing-box/releases/download/v1.0.4/sing-box_1.0.4_linux_amd64.deb</code></pre></p><p>最新版请在项目官方地址获取：<a href="https://bulianglin.com/g/aHR0cHM6Ly9naXRodWIuY29tL1NhZ2VyTmV0L3NpbmctYm94L3JlbGVhc2VzL2xhdGVzdA" target="_blank" >https://github.com/SagerNet/sing-box/releases/latest</a></p></blockquote><p>安装sing-box：<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>dpkg -i sing-box_1.0.4_linux_amd64.deb</code></pre></p><p>查看安装包内容：<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>dpkg -c sing-box_1.0.4_linux_amd64.deb</code></pre></p><p>修改配置文件：<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>vim /etc/sing-box/config.json</code></pre></p><p>查看sing-box状态：<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>systemctl status sing-box.service</code></pre></p><p>启动sing-box：<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>systemctl start sing-box.service</code></pre></p>sing-box服务端shadowtls配置<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>{
+&quot;inbounds&quot;: [
+{
+&quot;type&quot;: &quot;shadowtls&quot;,
+&quot;listen_port&quot;: 443,
+&quot;handshake&quot;: {
+  &quot;server&quot;: &quot;www.bing.com&quot;,
+  &quot;server_port&quot;: 443 
+},
+&quot;detour&quot;: &quot;shadowsocks-in&quot;
+},
+{
+&quot;type&quot;: &quot;shadowsocks&quot;,
+&quot;tag&quot;: &quot;shadowsocks-in&quot;,
+&quot;listen&quot;: &quot;127.0.0.1&quot;,
+&quot;method&quot;: &quot;2022-blake3-aes-128-gcm&quot;,
+&quot;password&quot;: &quot;8JCsPssfgS8tiRwiMlhARg==&quot;
+}
+]
+}</code></pre>sing-box客户端shadowtls配置socks/http代理模式<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>{
+&quot;inbounds&quot;: [
+{
+&quot;type&quot;: &quot;mixed&quot;,
+&quot;listen_port&quot;: 1080,
+&quot;sniff&quot;: true,
+&quot;set_system_proxy&quot;: true
+}
+],
+&quot;outbounds&quot;: [
+{
+&quot;type&quot;: &quot;shadowsocks&quot;,
+&quot;method&quot;: &quot;2022-blake3-aes-128-gcm&quot;,
+&quot;password&quot;: &quot;8JCsPssfgS8tiRwiMlhARg==&quot;,
+&quot;detour&quot;: &quot;shadowtls-out&quot;,
+&quot;multiplex&quot;: {
+  &quot;enabled&quot;: true,
+  &quot;max_connections&quot;: 4,
+  &quot;min_streams&quot;: 4
+}
+},
+{
+&quot;type&quot;: &quot;shadowtls&quot;,
+&quot;tag&quot;: &quot;shadowtls-out&quot;,
+&quot;server&quot;: &quot;填写服务器ip地址&quot;,
+&quot;server_port&quot;: 443,
+&quot;tls&quot;: {
+  &quot;enabled&quot;: true,
+  &quot;server_name&quot;: &quot;www.bing.com&quot;
+}
+},
+{
+&quot;type&quot;: &quot;direct&quot;,
+&quot;tag&quot;: &quot;direct&quot;
+},
+{
+&quot;type&quot;: &quot;block&quot;,
+&quot;tag&quot;: &quot;block&quot;
+}
+],
+&quot;route&quot;: {
+&quot;rules&quot;: [
+{
+  &quot;geosite&quot;: &quot;category-ads-all&quot;,
+  &quot;outbound&quot;: &quot;block&quot;
+},
+{
+  &quot;geosite&quot;: &quot;cn&quot;,
+  &quot;geoip&quot;: &quot;cn&quot;,
+  &quot;outbound&quot;: &quot;direct&quot;
+}
+]
+}
+}
+</code></pre>TUN模式<pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>{
+&quot;dns&quot;: {
+&quot;servers&quot;: [
+{
+  &quot;tag&quot;: &quot;google&quot;,
+  &quot;address&quot;: &quot;tls://8.8.8.8&quot;
+},
+{
+  &quot;tag&quot;: &quot;local&quot;,
+  &quot;address&quot;: &quot;223.5.5.5&quot;,
+  &quot;detour&quot;: &quot;direct&quot;
+}
+],
+&quot;rules&quot;: [
+{
+  &quot;geosite&quot;: &quot;cn&quot;,
+  &quot;server&quot;: &quot;local&quot;
+}
+],
+&quot;strategy&quot;: &quot;ipv4_only&quot;
+},
+&quot;inbounds&quot;: [
+{
+&quot;type&quot;: &quot;tun&quot;,
+&quot;inet4_address&quot;: &quot;172.19.0.1/30&quot;,
+&quot;auto_route&quot;: true,
+&quot;sniff&quot;: true
+}
+],
+&quot;outbounds&quot;: [
+{
+&quot;type&quot;: &quot;shadowsocks&quot;,
+&quot;method&quot;: &quot;2022-blake3-aes-128-gcm&quot;,
+&quot;password&quot;: &quot;8JCsPssfgS8tiRwiMlhARg==&quot;,
+&quot;detour&quot;: &quot;shadowtls-out&quot;,
+&quot;multiplex&quot;: {
+  &quot;enabled&quot;: true,
+  &quot;max_connections&quot;: 4,
+  &quot;min_streams&quot;: 4
+}
+},
+{
+&quot;type&quot;: &quot;shadowtls&quot;,
+&quot;tag&quot;: &quot;shadowtls-out&quot;,
+&quot;server&quot;: &quot;填写服务器ip地址&quot;,
+&quot;server_port&quot;: 443,
+&quot;tls&quot;: {
+  &quot;enabled&quot;: true,
+  &quot;server_name&quot;: &quot;www.bing.com&quot;
+}
+},
+{
+&quot;type&quot;: &quot;direct&quot;,
+&quot;tag&quot;: &quot;direct&quot;
+},
+{
+&quot;type&quot;: &quot;block&quot;,
+&quot;tag&quot;: &quot;block&quot;
+},
+{
+&quot;type&quot;: &quot;dns&quot;,
+&quot;tag&quot;: &quot;dns-out&quot;
+}
+],
+&quot;route&quot;: {
+&quot;rules&quot;: [
+{
+  &quot;protocol&quot;: &quot;dns&quot;,
+  &quot;outbound&quot;: &quot;dns-out&quot;
+},
+{
+  &quot;geosite&quot;: &quot;category-ads-all&quot;,
+  &quot;outbound&quot;: &quot;block&quot;
+},
+{
+  &quot;geosite&quot;: &quot;cn&quot;,
+  &quot;geoip&quot;: &quot;cn&quot;,
+  &quot;outbound&quot;: &quot;direct&quot;
+}
+],
+&quot;auto_detect_interface&quot;: true
+}
+}
+</code></pre>          </div>
+
+
+
+
+        
+ 
+    
+    </div> <!-- 文章内容 -->    
+    </div>
+    <script src="script.js"></script> <!-- 引用外部JavaScript文件 -->
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+    </footer>
+</body>
+</html>
