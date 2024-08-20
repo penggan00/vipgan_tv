@@ -69,15 +69,15 @@ http://39.134.115.163:8080/PLTV/88888888/224/3221225490/2/index.m3u8
 http://39.134.115.163:8080/PLTV/88888888/224/3221225488/2/index.m3u8
 #EXTINF:-1 tvg-id="江西卫视" tvg-name="江西卫视" tvg-logo="https://penggan.pp.ua/tv/tv/江西卫视.png" group-title="IPTV",江西卫视
 http://39.134.115.163:8080/PLTV/88888888/224/3221225492/2/index.m3u8
-#EXTINF:-1 tvg-id="江西都市" tvg-name="江西都市" tvg-logo="https://penggan.pp.ua/tv/tv/江西都市.png" group-title="IPTV",江西都市
+#EXTINF:-1 tvg-id="江西都市频道" tvg-name="江西都市频道" tvg-logo="https://penggan.pp.ua/tv/tv/江西都市.png" group-title="IPTV",江西都市
 http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225584/index.m3u8?fmt=ts2hls
-#EXTINF:-1 tvg-id="江西经济" tvg-name="江西经济" tvg-logo="https://penggan.pp.ua/tv/tv/江西经济生活.png" group-title="IPTV",江西经济
+#EXTINF:-1 tvg-id="江西经济生活" tvg-name="江西经济生活" tvg-logo="https://penggan.pp.ua/tv/tv/江西经济生活.png" group-title="IPTV",江西经济
 http://39.134.115.163:8080/PLTV/88888910/224/3221226206/index.m3u8
-#EXTINF:-1 tvg-id="江西影视" tvg-name="江西影视" tvg-logo="https://penggan.pp.ua/tv/tv/江西影视旅游.png" group-title="IPTV",江西影视
+#EXTINF:-1 tvg-id="江西影视旅游" tvg-name="江西影视旅游" tvg-logo="https://penggan.pp.ua/tv/tv/江西影视旅游.png" group-title="IPTV",江西影视
 http://39.134.115.163:8080/PLTV/88888910/224/3221226291/index.m3u8
-#EXTINF:-1 tvg-id="江西公共" tvg-name="江西公共" tvg-logo="https://penggan.pp.ua/tv/tv/江西公共农业.png" group-title="IPTV",江西公共
+#EXTINF:-1 tvg-id="江西公共农业" tvg-name="江西公共农业" tvg-logo="https://penggan.pp.ua/tv/tv/江西公共农业.png" group-title="IPTV",江西公共
 http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225578/index.m3u8?fmt=ts2hls
-#EXTINF:-1 tvg-id="江西少儿" tvg-name="江西少儿" tvg-logo="https://penggan.pp.ua/tv/tv/江西少儿.png" group-title="IPTV",江西少儿
+#EXTINF:-1 tvg-id="江西少儿频道" tvg-name="江西少儿频道" tvg-logo="https://penggan.pp.ua/tv/tv/江西少儿.png" group-title="IPTV",江西少儿
 http://39.134.115.163:8080/PLTV/88888910/224/3221226194/index.m3u8
 #EXTINF:-1 tvg-id="深圳卫视" tvg-name="深圳卫视" tvg-logo="https://penggan.pp.ua/tv/tv/深圳卫视.png" group-title="IPTV",深圳卫视
 http://39.134.115.163:8080/PLTV/88888888/224/3221225598/2/index.m3u8
@@ -97,7 +97,7 @@ http://39.134.115.163:8080/PLTV/88888888/224/3221225585/2/index.m3u8
 http://39.134.115.163:8080/PLTV/88888888/224/3221225483/2/index.m3u8
 #EXTINF:-1 tvg-id="吉林卫视" tvg-name="吉林卫视" tvg-logo="https://penggan.pp.ua/tv/tv/吉林卫视.png" group-title="IPTV",吉林卫视
 http://39.134.115.163:8080/PLTV/88888910/224/3221226355/index.m3u8
-#EXTINF:-1 tvg-id="江西教育" tvg-name="江西教育" tvg-logo="https://penggan.pp.ua/tv/tv/江西教育.png" group-title="IPTV",江西教育
+#EXTINF:-1 tvg-id="江西教育频道" tvg-name="江西教育频道" tvg-logo="https://penggan.pp.ua/tv/tv/江西教育.png" group-title="IPTV",江西教育
 http://39.134.115.163:8080/PLTV/88888910/224/3221226197/index.m3u8
 #EXTINF:-1 tvg-id="纪实人文" tvg-name="纪实人文" tvg-logo="https://penggan.pp.ua/tv/tv/纪实人文.png" group-title="IPTV",纪实人文
 http://39.134.115.163:8080/PLTV/88888910/224/3221225655/index.m3u8
@@ -122,25 +122,23 @@ http://39.134.115.163:8080/PLTV/88888910/224/3221226238/index.m3u8
 #EXTINF:-1 tvg-id="newtv超级电影" tvg-name="newtv超级电影" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV超级电影.png" group-title="IPTV",超级电影
 http://39.134.115.163:8080/PLTV/88888910/224/3221225766/index.m3u8
 http://39.134.115.163:8080/PLTV/88888910/224/3221225623/index.m3u8
-#EXTINF:-1 tvg-id="超级电视剧" tvg-name="超级电视剧" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV超级电视剧.png" group-title="IPTV",超级电视剧
+#EXTINF:-1 tvg-id="newtv超级电视剧" tvg-name="newtv超级电视剧" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV超级电视剧.png" group-title="IPTV",超级电视剧
 http://39.134.115.163:8080/PLTV/88888910/224/3221225765/index.m3u8
-#EXTINF:-1 tvg-id="中国功夫" tvg-name="中国功夫" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV中国功夫.png" group-title="IPTV",中国功夫
+#EXTINF:-1 tvg-id="newtv中国功夫" tvg-name="newtv中国功夫" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV中国功夫.png" group-title="IPTV",中国功夫
 http://39.134.115.163:8080/PLTV/88888910/224/3221225712/index.m3u8
-#EXTINF:-1 tvg-id="军旅剧场" tvg-name="军旅剧场" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV军旅剧场.png" group-title="IPTV",军旅剧场
+#EXTINF:-1 tvg-id="newtv军旅剧场" tvg-name="newtv军旅剧场" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV军旅剧场.png" group-title="IPTV",军旅剧场
 http://39.134.115.163:8080/PLTV/88888910/224/3221225669/index.m3u8
-#EXTINF:-1 tvg-id="潮妈辣婆" tvg-name="潮妈辣婆" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV潮妈辣婆.png" group-title="IPTV",潮妈辣婆
+#EXTINF:-1 tvg-id="newtv潮妈辣婆" tvg-name="newtv潮妈辣婆" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV潮妈辣婆.png" group-title="IPTV",潮妈辣婆
 http://39.134.115.163:8080/PLTV/88888910/224/3221225708/index.m3u8
-#EXTINF:-1 tvg-id="家庭剧场" tvg-name="家庭剧场" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV家庭剧场.png" group-title="IPTV",家庭剧场
+#EXTINF:-1 tvg-id="newtv家庭剧场" tvg-name="newtv家庭剧场" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV家庭剧场.png" group-title="IPTV",家庭剧场
 http://39.134.115.163:8080/PLTV/88888910/224/3221225713/index.m3u8
-#EXTINF:-1 tvg-id="精品大剧" tvg-name="精品大剧" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV精品大剧.png" group-title="IPTV",精品大剧
+#EXTINF:-1 tvg-id="newtv精品大剧" tvg-name="newtv精品大剧" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV精品大剧.png" group-title="IPTV",精品大剧
 http://39.134.115.163:8080/PLTV/88888910/224/3221225714/index.m3u8
-#EXTINF:-1 tvg-id="明星大片" tvg-name="明星大片" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV明星大片.png" group-title="IPTV",明星大片
+#EXTINF:-1 tvg-id="newtv明星大片" tvg-name="newtv明星大片" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV明星大片.png" group-title="IPTV",明星大片
 http://39.134.115.163:8080/PLTV/88888910/224/3221225716/index.m3u8
-#EXTINF:-1 tvg-id="精品萌宠" tvg-name="精品萌宠" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV精品萌宠.png" group-title="IPTV",精品萌宠
-http://39.134.115.163:8080/PLTV/88888910/224/3221226245/index.m3u8
-#EXTINF:-1 tvg-id="超级综艺" tvg-name="超级综艺" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV超级综艺.png" group-title="IPTV",超级综艺
+#EXTINF:-1 tvg-id="newtv超级综艺" tvg-name="newtv超级综艺" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV超级综艺.png" group-title="IPTV",超级综艺
 http://39.134.115.163:8080/PLTV/88888910/224/3221225768/index.m3u8
-#EXTINF:-1 tvg-id="金牌综艺" tvg-name="金牌综艺" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV金牌综艺.png" group-title="IPTV",金牌综艺
+#EXTINF:-1 tvg-id="newtv金牌综艺" tvg-name="newtv金牌综艺" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV金牌综艺.png" group-title="IPTV",金牌综艺
 http://39.134.115.163:8080/PLTV/88888910/224/3221225711/index.m3u8
 #EXTINF:-1 tvg-id="欢乐剧场" tvg-name="欢乐剧场" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV欢乐剧场.png" group-title="IPTV",欢乐剧场
 http://39.134.115.163:8080/PLTV/88888910/224/3221226210/index.m3u8
@@ -148,12 +146,14 @@ http://39.134.115.163:8080/PLTV/88888910/224/3221226210/index.m3u8
 http://39.134.115.163:8080/PLTV/88888910/224/3221225678/index.m3u8
 #EXTINF:-1 tvg-id="中国功夫" tvg-name="中国功夫" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV中国功夫.png" group-title="IPTV",中国功夫
 http://39.134.115.163:8080/PLTV/88888910/224/3221225660/index.m3u8
-#EXTINF:-1 tvg-id="影迷电影" tvg-name="影迷电影" tvg-logo="https://penggan.pp.ua/tv/tv/CHC影迷电影.png" group-title="IPTV",CHC影迷电影
+#EXTINF:-1 tvg-id="精品萌宠" tvg-name="精品萌宠" tvg-logo="https://penggan.pp.ua/tv/tv/NEWTV精品萌宠.png" group-title="IPTV",精品萌宠
+http://39.134.115.163:8080/PLTV/88888910/224/3221226245/index.m3u8
+#EXTINF:-1 tvg-id="CHC1" tvg-name="CHC影迷电影" tvg-logo="https://penggan.pp.ua/tv/tv/CHC影迷电影.png" group-title="IPTV",CHC影迷电影
 http://39.134.115.163:8080/PLTV/88888910/224/3221226305/index.m3u8
-#EXTINF:-1 tvg-id="CHC动作电影" tvg-name="动作电影" tvg-logo="https://penggan.pp.ua/tv/tv/CHC动作电影.png" group-title="IPTV",CHC动作电影
-http://39.134.115.163:8080/PLTV/88888910/224/3221226308/index.m3u8
-#EXTINF:-1 tvg-id="家庭影院" tvg-name="家庭影院" tvg-logo="https://penggan.pp.ua/tv/tv/CHC家庭影院.png" group-title="IPTV",CHC家庭影院
+#EXTINF:-1 tvg-id="CHC2" tvg-name="CHC家庭影院" tvg-logo="https://penggan.pp.ua/tv/tv/CHC家庭影院.png" group-title="IPTV",CHC家庭影院
 http://39.134.115.163:8080/PLTV/88888910/224/3221226319/index.m3u8
+#EXTINF:-1 tvg-id="CHC3" tvg-name="CHC动作电影" tvg-logo="https://penggan.pp.ua/tv/tv/CHC动作电影.png" group-title="IPTV",CHC动作电影
+http://39.134.115.163:8080/PLTV/88888910/224/3221226308/index.m3u8
 #EXTINF:-1 tvg-id="睛彩青少" tvg-name="睛彩青少" tvg-logo="https://penggan.pp.ua/tv/tv/睛彩青少.png" group-title="IPTV",睛彩青少
 http://39.134.115.163:8080/PLTV/88888910/224/3221226261/index.m3u8
 #EXTINF:-1 tvg-id="凤凰中文" tvg-name="凤凰中文" tvg-logo="https://penggan.pp.ua/tv/tv/凤凰卫视中文台.png" group-title="IPTV",凤凰中文
