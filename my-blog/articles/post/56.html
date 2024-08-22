@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>peng gan Blog</title>  
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+<div class="header"> 
+            <a href="../../index.html">My Blog</a> 
+        </div>
+    <div class="container"> 
+        
+        <div class="subheader"> 
+            <h1>    Cloudflare Worker       </h1> 
+        </div>
+        <div class="date" id="lastModified"></div> 
+        <div class="content">  <!-- 文章内容 --><p>
+
+
+                <p> 在Worker编辑器中，输入以下JavaScript代码：
+
+            <pre><button class="copy-button" onclick="copyToClipboard(this)">复制</button><code>export default {
+              async fetch(request) {
+                /**
+                 * Replace `remote` with the host you wish to send requests to
+                 */
+                const remote = "https://epg.112114.xyz/pp.xml";
+            
+                return await fetch(remote, request);
+              },
+            };</pre></code>
+
+
+  
+    </div>
+    <script src="script.js"></script>
+    <footer>
+        <a href="https://t.me/g9999_bot/" target="_blank">&copy; 2024 peng gan. All rights reserved.</a>    
+    </footer>
+</body>
+</html>

@@ -31,7 +31,7 @@ const articles1 = [
     { title: "闲置安卓手机当旁路", link: "articles/post/30.html", lastModified: "2024-06-23 16:21:00" },
     { title: "节点最完美的隐藏方案 ", link: "articles/post/31.html", lastModified: "2024-06-25 16:21:00" },
     { title: "10年免费主机部署vless节点", link: "articles/post/32.html", lastModified: "2024-06-25 16:21:00" },
-    { title: "ClouDNS托管到cloudflare", link: "articles/post/33.html", lastModified: "2024-06-25 19:21:00" },
+    { title: "tv epg", link: "articles/post/33.html", lastModified: "2024-06-25 19:21:00" },
     { title: "提取手机中的APK文件", link: "articles/post/34.html", lastModified: "2024-06-29 00:21:00" },
     { title: "Telegram接入ChatGPT-4", link: "articles/post/35.html", lastModified: "2024-06-29 00:31:00" },
     { title: "linux命令大全", link: "articles/post/36.html", lastModified: "2024-06-29 00:41:00" },
